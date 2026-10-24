@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>สร้างบัญชี | PC Repair Hub</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body class="auth-page">
+
+
+    <!-- =================================
+         กล่องสร้างบัญชี
+    ================================== -->
+
+    <div class="auth-container">
+
+
+        <!-- โลโก้ -->
+
+        <img
+            src="images/logo.png"
+            alt="PC Repair Hub Logo"
+            class="auth-logo"
+        >
+
+
+        <!-- หัวข้อ -->
+
+        <h1>
+            สร้างบัญชี
+        </h1>
+
+
+        <!-- คำอธิบาย -->
+
+        <p class="auth-subtitle">
+            สร้างบัญชีเพื่อใช้งาน PC Repair Hub
+        </p>
+
+
+        <!-- =================================
+             แบบฟอร์มสร้างบัญชี
+        ================================== -->
+
+        <form
+            id="registerForm"
+            class="auth-form"
+        >
+
+
+            <!-- ชื่อ - นามสกุล -->
+
+            <label for="fullname">
+                ชื่อ - นามสกุล
+            </label>
+
+            <input
+                type="text"
+                id="fullname"
+                placeholder="กรอกชื่อ - นามสกุล"
+                autocomplete="name"
+                required
+            >
+
+
+            <!-- ชื่อผู้ใช้ -->
+
+            <label for="username">
+                ชื่อผู้ใช้
+            </label>
+
+            <input
+                type="text"
+                id="username"
+                placeholder="กรอกชื่อผู้ใช้"
+                autocomplete="username"
+                required
+            >
+
+
+            <!-- อีเมล -->
+
+            <label for="email">
+                อีเมล
+            </label>
+
+            <input
+                type="email"
+                id="email"
+                placeholder="กรอกอีเมล"
+                autocomplete="email"
+                required
+            >
+
+
+            <!-- รหัสผ่าน -->
+
+            <label for="password">
+                รหัสผ่าน
+            </label>
+
+            <input
+                type="password"
+                id="password"
+                placeholder="กรอกรหัสผ่านอย่างน้อย 6 ตัว"
+                autocomplete="new-password"
+                required
+            >
+
+
+            <!-- ยืนยันรหัสผ่าน -->
+
+            <label for="confirmPassword">
+                ยืนยันรหัสผ่าน
+            </label>
+
+            <input
+                type="password"
+                id="confirmPassword"
+                placeholder="กรอกรหัสผ่านอีกครั้ง"
+                autocomplete="new-password"
+                required
+            >
+
+
+            <!-- ปุ่มสร้างบัญชี -->
+
+            <button
+                type="submit"
+                class="auth-button"
+            >
+                สร้างบัญชี
+            </button>
+
+
+        </form>
+        <p id="googleAuthMessage" class="google-auth-message" role="status" aria-live="polite"></p>
+
+
+        <!-- =================================
+             ไปหน้า Login
+        ================================== -->
+
+        <p class="auth-link">
+
+            มีบัญชีอยู่แล้ว?
+
+            <a href="login.html">
+                เข้าสู่ระบบ
+            </a>
+
+        </p>
+
+
+        <!-- =================================
+             กลับหน้าแรก
+        ================================== -->
+
+        <p class="auth-home">
+
+            <a href="index.html">
+                ← กลับหน้าแรก
+            </a>
+
+        </p>
+
+
+    </div>
+
+
+    <!-- =================================
+         JavaScript
+    ================================== -->
+
+    <script type="module" src="firebase-auth.js"></script>
+    <script src="satisfaction-popup.js" defer></script>
+</body>
+
+</html>

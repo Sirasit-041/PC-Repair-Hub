@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Hardware - PC Repair Hub</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="hardware-page" data-public-category="CAT001">
+
+    <!-- =========================
+         NAVBAR
+    ========================== -->
+
+    
+
+<header class="main-navbar">
+    <a href="index.html" class="main-logo">
+        <img src="images/logo.png" alt="PC Repair Hub Logo">
+        <span>PC Repair Hub</span>
+    </a>
+    <button class="menu-toggle" id="menuToggle"
+        type="button"
+        aria-label="เปิดเมนู"
+        aria-expanded="false"
+        aria-controls="sideMenu">☰</button>
+</header>
+
+
+<div class="menu-overlay" id="menuOverlay"></div>
+
+<aside class="side-menu" id="sideMenu" aria-hidden="true" inert>
+    <div class="side-menu-header">
+        <strong>เมนูหลัก</strong>
+        <button type="button" id="menuClose" aria-label="ปิดเมนู">✕</button>
+    </div>
+
+    
+<nav class="side-menu-links">
+    <a href="index.html">🏠 หน้าแรก</a>
+    <a href="hardware.html">🔧 Hardware</a>
+    <a href="software.html">💿 Software</a>
+    <a href="os.html">🖥️ Operating System</a>
+    <a href="network.html">🌐 Network</a>
+    <a href="my-library.html">📚 My Library</a>
+    <a href="ask-question.html">❓ ถามคำถาม</a>
+    <a href="technician-editor.html">🧰 Technician Dashboard</a>
+    <a href="admin-dashboard.html">⚙️ Admin Dashboard</a>
+</nav>
+
+
+    <div class="side-menu-account">
+        <a href="login.html" id="loginLink">🔑 เข้าสู่ระบบ</a>
+        <a href="register.html" id="registerLink">👤 สร้างบัญชี</a>
+        <a href="#" id="logoutLink"
+           onclick="logout(); return false;"
+           style="display:none;">🚪 ออกจากระบบ</a>
+    </div>
+</aside>
+
+
+
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <section class="hardware-hero">
+
+        <div class="hardware-hero-content">
+
+            <span class="hardware-tag">
+                ⚙ Hardware
+            </span>
+
+            <h1>
+                Hardware
+            </h1>
+
+            <h2>
+                รวมวิธีแก้ไขปัญหาเกี่ยวกับอุปกรณ์คอมพิวเตอร์
+            </h2>
+
+            <p>
+                เลือกปัญหาที่ต้องการดูวิธีแก้ไข
+            </p>
+
+        </div>
+
+
+        <div class="hardware-hero-visual">
+
+            <div class="hardware-computer">
+
+                <div class="hardware-monitor">
+
+                    <div class="hardware-screen">
+                        🔧
+                    </div>
+
+                </div>
+
+                <div class="hardware-monitor-stand"></div>
+
+                <div class="hardware-case">
+
+                    <div class="hardware-power">
+                        ●
+                    </div>
+
+                </div>
+
+                <div class="hardware-part ram-part"></div>
+
+                <div class="hardware-part gpu-part"></div>
+
+                <div class="hardware-fan">
+                    ⚙
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         HARDWARE PROBLEMS
+    ========================== -->
+
+    <section class="hardware-problems">
+
+        <div class="hardware-section-title">
+
+            <h2>
+                ปัญหา Hardware ที่พบบ่อย
+            </h2>
+
+            <p>
+                เลือกปัญหาที่ต้องการดูวิธีแก้ไข
+            </p>
+
+        </div>
+
+
+        <div class="hardware-grid">
+
+
+            <!-- =================================================
+                 01 POWER
+            ================================================== -->
+
+            <article class="hardware-card">
+
+                <div class="hardware-image-slot">
+
+                    <img
+                        src="images/power_thumb.png"
+                        alt="เครื่องคอมพิวเตอร์เปิดไม่ติด"
+                    >
+
+                    <div class="hardware-image-placeholder">
+                        🔌
+                    </div>
+
+                </div>
+
+                <div class="hardware-card-content">
+
+                    <span class="hardware-card-tag">
+                        Hardware
+                    </span>
+
+                    <h3>
+                        เครื่องคอมพิวเตอร์เปิดไม่ติด
+                    </h3>
+
+                    <p>
+                        ตรวจสอบสาเหตุเมื่อคอมพิวเตอร์ไม่สามารถเปิดติดได้
+                    </p>
+
+                    <button onclick="location.href='repair.html?id=power'">
+                        ดูวิธีแก้ไข <span>→</span>
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- =================================================
+                 02 DISPLAY
+            ================================================== -->
+
+            <article class="hardware-card">
+
+                <div class="hardware-image-slot">
+
+                    <img
+                        src="images/display_thumb.png"
+                        alt="เครื่องเปิดติดแต่หน้าจอไม่แสดงผล"
+                    >
+
+                    <div class="hardware-image-placeholder">
+                        🖥️
+                    </div>
+
+                </div>
+
+                <div class="hardware-card-content">
+
+                    <span class="hardware-card-tag">
+                        Hardware
+                    </span>
+
+                    <h3>
+                        เครื่องเปิดติดแต่หน้าจอไม่แสดงผล
+                    </h3>
+
+                    <p>
+                        ตรวจสอบสาเหตุเมื่อเปิดเครื่องแล้วหน้าจอไม่มีภาพ
+                    </p>
+
+                    <button onclick="location.href='repair.html?id=display'">
+                        ดูวิธีแก้ไข <span>→</span>
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- =================================================
+                 03 RAM
+            ================================================== -->
+
+            <article class="hardware-card">
+
+                <div class="hardware-image-slot">
+
+                    <img
+                        src="images/ram_thumb.png"
+                        alt="คอมพิวเตอร์รีสตาร์ตก่อนเข้า Windows"
+                    >
+
+                    <div class="hardware-image-placeholder">
+                        🧠
+                    </div>
+
+                </div>
+
+                <div class="hardware-card-content">
+
+                    <span class="hardware-card-tag">
+                        Hardware
+                    </span>
+
+                    <h3>
+                        คอมพิวเตอร์รีสตาร์ตก่อนเข้า Windows
+                    </h3>
+
+                    <p>
+                        ตรวจสอบ RAM และสาเหตุที่ทำให้เครื่องรีสตาร์ต
+                    </p>
+
+                    <button onclick="location.href='repair.html?id=ram'">
+                        ดูวิธีแก้ไข <span>→</span>
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- =================================================
+                 04 OVERHEAT
+            ================================================== -->
+
+            <article class="hardware-card">
+
+                <div class="hardware-image-slot">
+
+                    <img
+                        src="images/overheat_thumb.png"
+                        alt="คอมพิวเตอร์ร้อนและทำงานช้า"
+                    >
+
+                    <div class="hardware-image-placeholder">
+                        🌡️
+                    </div>
+
+                </div>
+
+                <div class="hardware-card-content">
+
+                    <span class="hardware-card-tag">
+                        Hardware
+                    </span>
+
+                    <h3>
+                        คอมพิวเตอร์ร้อนและทำงานช้า
+                    </h3>
+
+                    <p>
+                        ตรวจสอบปัญหาอุณหภูมิสูงและการระบายความร้อน
+                    </p>
+
+                    <button onclick="location.href='repair.html?id=overheat'">
+                        ดูวิธีแก้ไข <span>→</span>
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- =================================================
+                 05 AUDIO
+            ================================================== -->
+
+            <article class="hardware-card">
+
+                <div class="hardware-image-slot">
+
+                    <img
+                        src="images/audio_thumb.png"
+                        alt="ไม่มีเสียงจากคอมพิวเตอร์"
+                    >
+
+                    <div class="hardware-image-placeholder">
+                        🔊
+                    </div>
+
+                </div>
+
+                <div class="hardware-card-content">
+
+                    <span class="hardware-card-tag">
+                        Hardware
+                    </span>
+
+                    <h3>
+                        ไม่มีเสียงจากคอมพิวเตอร์
+                    </h3>
+
+                    <p>
+                        ตรวจสอบปัญหาเสียงและอุปกรณ์เสียงของคอมพิวเตอร์
+                    </p>
+
+                    <button onclick="location.href='repair.html?id=audio'">
+                        ดูวิธีแก้ไข <span>→</span>
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- =================================================
+                 06 KEYBOARD
+            ================================================== -->
+
+            <article class="hardware-card">
+
+                <div class="hardware-image-slot">
+
+                    <img
+                        src="images/keyboard_thumb.png"
+                        alt="คีย์บอร์ดใช้งานไม่ได้"
+                    >
+
+                    <div class="hardware-image-placeholder">
+                        ⌨️
+                    </div>
+
+                </div>
+
+                <div class="hardware-card-content">
+
+                    <span class="hardware-card-tag">
+                        Hardware
+                    </span>
+
+                    <h3>
+                        คีย์บอร์ดใช้งานไม่ได้
+                    </h3>
+
+                    <p>
+                        ตรวจสอบการเชื่อมต่อและแก้ไขปัญหาคีย์บอร์ด
+                    </p>
+
+                    <button onclick="location.href='repair.html?id=keyboard'">
+                        ดูวิธีแก้ไข <span>→</span>
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- =================================================
+                 07 MOUSE
+            ================================================== -->
+
+            <article class="hardware-card">
+
+                <div class="hardware-image-slot">
+
+                    <img
+                        src="images/mouse_thumb.png"
+                        alt="เมาส์ใช้งานไม่ได้"
+                    >
+
+                    <div class="hardware-image-placeholder">
+                        🖱️
+                    </div>
+
+                </div>
+
+                <div class="hardware-card-content">
+
+                    <span class="hardware-card-tag">
+                        Hardware
+                    </span>
+
+                    <h3>
+                        เมาส์ใช้งานไม่ได้
+                    </h3>
+
+                    <p>
+                        ตรวจสอบการเชื่อมต่อและแก้ไขปัญหาเมาส์
+                    </p>
+
+                    <button onclick="location.href='repair.html?id=mouse'">
+                        ดูวิธีแก้ไข <span>→</span>
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- =================================================
+                 08 STORAGE
+            ================================================== -->
+
+            <article class="hardware-card">
+
+                <div class="hardware-image-slot">
+
+                    <img
+                        src="images/storage_thumb.png"
+                        alt="ฮาร์ดดิสก์และ SSD ไม่ถูกตรวจพบ"
+                    >
+
+                    <div class="hardware-image-placeholder">
+                        💾
+                    </div>
+
+                </div>
+
+                <div class="hardware-card-content">
+
+                    <span class="hardware-card-tag">
+                        Hardware
+                    </span>
+
+                    <h3>
+                        ฮาร์ดดิสก์ / SSD ไม่ถูกตรวจพบ
+                    </h3>
+
+                    <p>
+                        ตรวจสอบปัญหาอุปกรณ์จัดเก็บข้อมูลที่ระบบไม่พบ
+                    </p>
+
+                    <button onclick="location.href='repair.html?id=storage'">
+                        ดูวิธีแก้ไข <span>→</span>
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- =================================================
+                 09 RAM 2
+            ================================================== -->
+
+            <article class="hardware-card">
+
+                <div class="hardware-image-slot">
+
+                    <img
+                        src="images/ram-not-detected-full.jpg"
+                        alt="คอมพิวเตอร์มองเห็น RAM ไม่ครบ"
+                    >
+
+                    <div class="hardware-image-placeholder">
+                        🧠
+                    </div>
+
+                </div>
+
+                <div class="hardware-card-content">
+
+                    <span class="hardware-card-tag">
+                        Hardware
+                    </span>
+
+                    <h3>
+                        คอมพิวเตอร์มองเห็น RAM ไม่ครบ
+                    </h3>
+
+                    <p>
+                        ตรวจสอบสาเหตุที่ระบบตรวจพบ RAM ไม่ครบตามที่ติดตั้ง
+                    </p>
+
+                    <button onclick="location.href='repair.html?id=ram2'">
+                        ดูวิธีแก้ไข <span>→</span>
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- =================================================
+                 10 USB
+            ================================================== -->
+
+            <article class="hardware-card">
+
+                <div class="hardware-image-slot">
+
+                    <img
+                        src="images/usb_thumb.png"
+                        alt="USB ใช้งานไม่ได้"
+                    >
+
+                    <div class="hardware-image-placeholder">
+                        🔌
+                    </div>
+
+                </div>
+
+                <div class="hardware-card-content">
+
+                    <span class="hardware-card-tag">
+                        Hardware
+                    </span>
+
+                    <h3>
+                        USB ใช้งานไม่ได้
+                    </h3>
+
+                    <p>
+                        ตรวจสอบพอร์ต USB และอุปกรณ์ที่เชื่อมต่อ
+                    </p>
+
+                    <button onclick="location.href='repair.html?id=usb'">
+                        ดูวิธีแก้ไข <span>→</span>
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- =================================================
+                 11 NETWORK
+            ================================================== -->
+
+            <article class="hardware-card">
+
+                <div class="hardware-image-slot">
+
+                    <img
+                        src="images/network_thumb.png"
+                        alt="การ์ด Wi-Fi และ LAN ใช้งานไม่ได้"
+                    >
+
+                    <div class="hardware-image-placeholder">
+                        🌐
+                    </div>
+
+                </div>
+
+                <div class="hardware-card-content">
+
+                    <span class="hardware-card-tag">
+                        Hardware
+                    </span>
+
+                    <h3>
+                        การ์ด Wi-Fi / LAN ใช้งานไม่ได้
+                    </h3>
+
+                    <p>
+                        ตรวจสอบอุปกรณ์ Network และการเชื่อมต่อ
+                    </p>
+
+                    <button onclick="location.href='repair.html?id=network'">
+                        ดูวิธีแก้ไข <span>→</span>
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- =================================================
+                 12 MONITOR
+            ================================================== -->
+
+            <article class="hardware-card">
+
+                <div class="hardware-image-slot">
+
+                    <img
+                        src="images/monitor_thumb.png"
+                        alt="จอภาพมีเส้น กระพริบ หรือสีผิดปกติ"
+                    >
+
+                    <div class="hardware-image-placeholder">
+                        🖥️
+                    </div>
+
+                </div>
+
+                <div class="hardware-card-content">
+
+                    <span class="hardware-card-tag">
+                        Hardware
+                    </span>
+
+                    <h3>
+                        จอภาพมีเส้น / กระพริบ / สีผิดปกติ
+                    </h3>
+
+                    <p>
+                        ตรวจสอบปัญหาภาพ เส้นบนจอ และสีที่แสดงผิดปกติ
+                    </p>
+
+                    <button onclick="location.href='repair.html?id=monitor'">
+                        ดูวิธีแก้ไข <span>→</span>
+                    </button>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer class="home-footer">
+
+        <p>
+            © 2026 PC Repair Hub
+        </p>
+
+        <p>
+            คลังวิธีซ่อมคอมพิวเตอร์
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+<script>
+(() => {
+    const toggle = document.getElementById("menuToggle");
+    const menu = document.getElementById("sideMenu");
+    const overlay = document.getElementById("menuOverlay");
+    const close = document.getElementById("menuClose");
+
+    if (!toggle || !menu || !overlay || !close) return;
+
+    function openMenu() {
+        menu.classList.add("open");
+        overlay.classList.add("open");
+        document.body.classList.add("menu-open");
+        menu.inert = false;
+        menu.setAttribute("aria-hidden", "false");
+        toggle.setAttribute("aria-expanded", "true");
+    }
+
+    function closeMenu() {
+        menu.classList.remove("open");
+        overlay.classList.remove("open");
+        document.body.classList.remove("menu-open");
+        menu.inert = true;
+        menu.setAttribute("aria-hidden", "true");
+        toggle.setAttribute("aria-expanded", "false");
+    }
+
+    toggle.addEventListener("click", openMenu);
+    close.addEventListener("click", closeMenu);
+    overlay.addEventListener("click", closeMenu);
+
+    menu.querySelectorAll("a").forEach(link => {
+        link.addEventListener("click", () => {
+            menu.classList.remove("open");
+            overlay.classList.remove("open");
+            document.body.classList.remove("menu-open");
+            menu.inert = true;
+            menu.setAttribute("aria-hidden", "true");
+            toggle.setAttribute("aria-expanded", "false");
+        });
+    });
+
+    document.addEventListener("keydown", event => {
+        if (event.key === "Escape" && menu.classList.contains("open")) {
+            closeMenu();
+        }
+    });
+})();
+</script>
+
+</script>
+    <script src="admin-panel.js" defer></script>
+    <script type="module" src="firebase-auth.js"></script>
+    <script src="satisfaction-popup.js" defer></script>
+</body>
+</html>
+

@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Operating System - PC Repair Hub</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body class="hardware-page" data-public-category="CAT003">
+
+
+    <!-- =========================
+         NAVBAR
+    ========================== -->
+
+    <header class="main-navbar">
+    <a href="index.html" class="main-logo">
+        <img src="images/logo.png" alt="PC Repair Hub Logo">
+        <span>PC Repair Hub</span>
+    </a>
+
+    <button class="menu-toggle" id="menuToggle"
+        type="button"
+        aria-label="เปิดเมนู"
+        aria-expanded="false"
+        aria-controls="sideMenu">
+        ☰
+    </button>
+</header>
+
+<div class="menu-overlay" id="menuOverlay"></div>
+
+<aside class="side-menu" id="sideMenu" aria-hidden="true" inert>
+    <div class="side-menu-header">
+        <strong>เมนูหลัก</strong>
+        <button type="button" id="menuClose" aria-label="ปิดเมนู">✕</button>
+    </div>
+
+    
+<nav class="side-menu-links">
+    <a href="index.html">🏠 หน้าแรก</a>
+    <a href="hardware.html">🔧 Hardware</a>
+    <a href="software.html">💿 Software</a>
+    <a href="os.html">🖥️ Operating System</a>
+    <a href="network.html">🌐 Network</a>
+    <a href="my-library.html">📚 My Library</a>
+    <a href="ask-question.html">❓ ถามคำถาม</a>
+    <a href="technician-editor.html">🧰 Technician Dashboard</a>
+    <a href="admin-dashboard.html">⚙️ Admin Dashboard</a>
+</nav>
+
+
+    <div class="side-menu-account">
+        <a href="login.html" id="loginLink">🔑 เข้าสู่ระบบ</a>
+        <a href="register.html" id="registerLink">👤 สร้างบัญชี</a>
+        <a href="#" id="logoutLink"
+            onclick="logout(); return false;"
+            style="display: none;">
+            🚪 ออกจากระบบ
+        </a>
+    </div>
+</aside>
+
+
+
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <section class="hardware-hero">
+
+        <div class="hardware-hero-content">
+
+            <span class="hardware-tag">
+                🪟 Operating System
+            </span>
+
+            <h1>
+                Operating System
+            </h1>
+
+            <h2>
+                รวมวิธีแก้ไขปัญหาเกี่ยวกับระบบปฏิบัติการ
+            </h2>
+
+            <p>
+                เลือกปัญหาที่ต้องการดูวิธีแก้ไข
+            </p>
+
+        </div>
+
+
+        <div class="hardware-hero-visual">
+
+            <div class="hardware-computer">
+
+
+                <!-- Monitor -->
+
+                <div class="hardware-monitor">
+
+                    <div class="hardware-screen">
+                        🪟
+                    </div>
+
+                </div>
+
+
+                <!-- Monitor Stand -->
+
+                <div class="hardware-monitor-stand"></div>
+
+
+                <!-- Computer Case -->
+
+                <div class="hardware-case">
+
+                    <div class="hardware-power">
+                        ●
+                    </div>
+
+                </div>
+
+
+                <div class="hardware-part ram-part"></div>
+
+                <div class="hardware-part gpu-part"></div>
+
+                <div class="hardware-fan">
+                    ⚙
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         OPERATING SYSTEM PROBLEMS
+    ========================== -->
+
+    <section class="hardware-problems">
+
+
+        <div class="hardware-section-title">
+
+            <h2>
+                ปัญหา Operating System ที่พบบ่อย
+            </h2>
+
+            <p>
+                เลือกปัญหาที่ต้องการดูวิธีแก้ไข
+            </p>
+
+        </div>
+
+
+
+        <div class="hardware-grid">
+
+
+
+            <!-- =================================================
+                 01 WINDOWS เปิดไม่ขึ้น
+            ================================================== -->
+
+            <article class="hardware-card">
+
+               <div class="hardware-image-slot">
+    <img
+        src="images/os01_thumb.png"
+        alt="Windows เปิดไม่ขึ้น"
+    >
+</div>
+
+
+                <div class="hardware-card-content">
+
+                    <span class="hardware-card-tag">
+                        Operating System
+                    </span>
+
+                    <h3>
+                        Windows เปิดไม่ขึ้น
+                    </h3>
+
+                    <p>
+                        เปิดเครื่องแล้วไม่สามารถเข้าสู่ระบบ Windows ได้
+                    </p>
+
+                    <button onclick="location.href='os-repair.html?id=os01'">
+                        ดูวิธีแก้ไข <span>→</span>
+                    </button>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- =================================================
+                 02 WINDOWS บูตช้า
+            ================================================== -->
+
+            <article class="hardware-card">
+
+                <div class="hardware-image-slot">
+    <img
+        src="images/os02_thumb.png"
+        alt="Windows บูตช้า"
+        style="width:100%; height:100%; object-fit:cover;"
+    >
+</div>
+
+
+                <div class="hardware-card-content">
+
+                    <span class="hardware-card-tag">
+                        Operating System
+                    </span>
+
+                    <h3>
+                        Windows บูตช้า
+                    </h3>
+
+                    <p>
+                        Windows ใช้เวลานานกว่าจะเข้าสู่หน้า Desktop
+                    </p>
+
+                    <button onclick="location.href='os-repair.html?id=os02'">
+                        ดูวิธีแก้ไข <span>→</span>
+                    </button>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- =================================================
+                 03 WINDOWS ค้าง
+            ================================================== -->
+
+            <article class="hardware-card">
+
+                <div class="hardware-image-slot">
+    <img
+        src="images/os03_thumb.png"
+        alt="Windows ค้าง"
+        style="width:100%; height:100%; object-fit:cover;"
+        onerror="this.style.display='none';"
+    >
+</div>
+
+
+                <div class="hardware-card-content">
+
+                    <span class="hardware-card-tag">
+                        Operating System
+                    </span>
+
+                    <h3>
+                        Windows ค้าง
+                    </h3>
+
+                    <p>
+                        ระบบปฏิบัติการค้างหรือไม่ตอบสนองระหว่างใช้งาน
+                    </p>
+
+                    <button onclick="location.href='os-repair.html?id=os03'">
+                        ดูวิธีแก้ไข <span>→</span>
+                    </button>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- =================================================
+                 04 BLUE SCREEN
+            ================================================== -->
+
+            <article class="hardware-card">
+
+                <div class="hardware-image-slot">
+    <img src="images/os04_thumb.png"
+         alt="Blue Screen (จอฟ้า)"
+         onerror="this.style.display='none';">
+</div>
+
+
+                <div class="hardware-card-content">
+
+                    <span class="hardware-card-tag">
+                        Operating System
+                    </span>
+
+                    <h3>
+                        Blue Screen (จอฟ้า)
+                    </h3>
+
+                    <p>
+                        Windows แสดงหน้าจอสีฟ้าพร้อมรหัสข้อผิดพลาด
+                    </p>
+
+                    <button onclick="location.href='os-repair.html?id=os04'">
+                        ดูวิธีแก้ไข <span>→</span>
+                    </button>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- =================================================
+                 05 WINDOWS UPDATE
+            ================================================== -->
+
+            <article class="hardware-card">
+
+                <div class="hardware-image-slot">
+    <img src="images/os05_thumb.png"
+         alt="Windows Update ไม่ได้"
+         onerror="this.style.display='none';">
+</div>
+
+
+                <div class="hardware-card-content">
+
+                    <span class="hardware-card-tag">
+                        Operating System
+                    </span>
+
+                    <h3>
+                        Windows Update ไม่ได้
+                    </h3>
+
+                    <p>
+                        ไม่สามารถดาวน์โหลดหรือติดตั้ง Windows Update ได้
+                    </p>
+
+                    <button onclick="location.href='os-repair.html?id=os05'">
+                        ดูวิธีแก้ไข <span>→</span>
+                    </button>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- =================================================
+                 06 BOOT DEVICE
+            ================================================== -->
+
+            <article class="hardware-card">
+
+                <div class="hardware-image-slot">
+    <img src="images/os06_thumb.png"
+         alt="ไม่พบ Boot Device"
+         onerror="this.style.display='none';">
+</div>
+
+                <div class="hardware-card-content">
+
+                    <span class="hardware-card-tag">
+                        Operating System
+                    </span>
+
+                    <h3>
+                        ไม่พบ Boot Device
+                    </h3>
+
+                    <p>
+                        ระบบแจ้งว่าไม่พบอุปกรณ์สำหรับบูตระบบ
+                    </p>
+
+                    <button onclick="location.href='os-repair.html?id=os06'">
+                        ดูวิธีแก้ไข <span>→</span>
+                    </button>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- =================================================
+                 07 เข้า WINDOWS ไม่ได้
+            ================================================== -->
+
+            <article class="hardware-card">
+
+                
+<div class="hardware-image-slot">
+    <img
+        src="images/os07_thumb.png"
+        alt="เข้า Windows ไม่ได้"
+        onerror="this.style.display='none';"
+    >
+</div>
+
+
+                <div class="hardware-card-content">
+
+                    <span class="hardware-card-tag">
+                        Operating System
+                    </span>
+
+                    <h3>
+                        เข้า Windows ไม่ได้
+                    </h3>
+
+                    <p>
+                        เข้าสู่ระบบแล้วไม่สามารถเข้า Desktop ได้ตามปกติ
+                    </p>
+
+                    <button onclick="location.href='os-repair.html?id=os07'">
+                        ดูวิธีแก้ไข <span>→</span>
+                    </button>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- =================================================
+                 08 ลืมรหัสผ่าน WINDOWS
+            ================================================== -->
+
+            <article class="hardware-card">
+
+                
+<div class="hardware-image-slot">
+    <img
+        src="images/os08_thumb.png"
+        alt="ลืมรหัสผ่าน Windows"
+        onerror="this.style.display='none';"
+    >
+</div>
+
+
+
+                <div class="hardware-card-content">
+
+                    <span class="hardware-card-tag">
+                        Operating System
+                    </span>
+
+                    <h3>
+                        ลืมรหัสผ่าน Windows
+                    </h3>
+
+                    <p>
+                        ไม่สามารถเข้าสู่บัญชี Windows เนื่องจากลืมรหัสผ่าน
+                    </p>
+
+                    <button onclick="location.href='os-repair.html?id=os08'">
+                        ดูวิธีแก้ไข <span>→</span>
+                    </button>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- =================================================
+                 09 SYSTEM FILE
+            ================================================== -->
+
+            <article class="hardware-card">
+
+                
+<div class="hardware-image-slot">
+    <img
+        src="images/os09_thumb.png"
+        alt="ไฟล์ระบบ Windows เสียหาย"
+        onerror="this.style.display='none';"
+    >
+</div>
+
+
+
+                <div class="hardware-card-content">
+
+                    <span class="hardware-card-tag">
+                        Operating System
+                    </span>
+
+                    <h3>
+                        ไฟล์ระบบ Windows เสียหาย
+                    </h3>
+
+                    <p>
+                        ไฟล์ระบบเสียหายทำให้ Windows ทำงานผิดปกติ
+                    </p>
+
+                    <button onclick="location.href='os-repair.html?id=os09'">
+                        ดูวิธีแก้ไข <span>→</span>
+                    </button>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- =================================================
+                 10 CPU สูง
+            ================================================== -->
+
+            <article class="hardware-card">
+
+                
+<div class="hardware-image-slot">
+    <img
+        src="images/os10_thumb.png"
+        alt="Windows ใช้ CPU สูง"
+        onerror="this.style.display='none';"
+    >
+</div>
+
+
+
+                <div class="hardware-card-content">
+
+                    <span class="hardware-card-tag">
+                        Operating System
+                    </span>
+
+                    <h3>
+                        Windows ใช้ CPU สูง
+                    </h3>
+
+                    <p>
+                        CPU ทำงานหนักหรือใช้งานสูงผิดปกติ
+                    </p>
+
+                    <button onclick="location.href='os-repair.html?id=os10'">
+                        ดูวิธีแก้ไข <span>→</span>
+                    </button>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- =================================================
+                 11 RAM สูง
+            ================================================== -->
+
+            <article class="hardware-card">
+
+                
+<div class="hardware-image-slot">
+    <img
+        src="images/os11_thumb.png"
+        alt="Windows ใช้ RAM สูง"
+        onerror="this.style.display='none';"
+    >
+</div>
+
+
+
+                <div class="hardware-card-content">
+
+                    <span class="hardware-card-tag">
+                        Operating System
+                    </span>
+
+                    <h3>
+                        Windows ใช้ RAM สูง
+                    </h3>
+
+                    <p>
+                        ระบบใช้หน่วยความจำ RAM สูงจนเครื่องทำงานช้า
+                    </p>
+
+                    <button onclick="location.href='os-repair.html?id=os11'">
+                        ดูวิธีแก้ไข <span>→</span>
+                    </button>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- =================================================
+                 12 STORAGE เต็ม
+            ================================================== -->
+
+            <article class="hardware-card">
+
+                
+<div class="hardware-image-slot">
+    <img
+        src="images/os12_thumb.png"
+        alt="Windows พื้นที่เก็บข้อมูลเต็ม"
+        onerror="this.style.display='none';"
+    >
+</div>
+
+
+
+                <div class="hardware-card-content">
+
+                    <span class="hardware-card-tag">
+                        Operating System
+                    </span>
+
+                    <h3>
+                        Windows พื้นที่เก็บข้อมูลเต็ม
+                    </h3>
+
+                    <p>
+                        ไดรฟ์ระบบมีพื้นที่เหลือน้อยหรือเต็ม
+                    </p>
+
+                    <button onclick="location.href='os-repair.html?id=os12'">
+                        ดูวิธีแก้ไข <span>→</span>
+                    </button>
+
+                </div>
+
+            </article>
+
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer class="home-footer">
+
+        <p>
+            © 2026 PC Repair Hub
+        </p>
+
+        <p>
+            คลังวิธีซ่อมคอมพิวเตอร์
+        </p>
+
+    </footer>
+
+
+
+    <script src="script.js"></script>
+<script>
+(() => {
+    const toggle = document.getElementById("menuToggle");
+    const menu = document.getElementById("sideMenu");
+    const overlay = document.getElementById("menuOverlay");
+    const close = document.getElementById("menuClose");
+
+    if (!toggle || !menu || !overlay || !close) return;
+
+    function openMenu() {
+        menu.classList.add("open");
+        overlay.classList.add("open");
+        menu.inert = false;
+        menu.setAttribute("aria-hidden", "false");
+        toggle.setAttribute("aria-expanded", "true");
+        document.body.classList.add("menu-open");
+    }
+
+    function closeMenu() {
+        menu.classList.remove("open");
+        overlay.classList.remove("open");
+        menu.inert = true;
+        menu.setAttribute("aria-hidden", "true");
+        toggle.setAttribute("aria-expanded", "false");
+        document.body.classList.remove("menu-open");
+    }
+
+    toggle.addEventListener("click", openMenu);
+    close.addEventListener("click", closeMenu);
+    overlay.addEventListener("click", closeMenu);
+
+    menu.querySelectorAll("a").forEach(link => {
+        link.addEventListener("click", closeMenu);
+    });
+
+    document.addEventListener("keydown", event => {
+        if (event.key === "Escape") closeMenu();
+    });
+})();
+</script>
+    <script src="admin-panel.js" defer></script>
+    <script type="module" src="firebase-auth.js"></script>
+    <script src="satisfaction-popup.js" defer></script>
+</body>
+
+</html>

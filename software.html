@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Software - PC Repair Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="software-page" data-public-category="CAT002">
+
+<header class="main-navbar">
+    <a href="index.html" class="main-logo">
+        <img src="images/logo.png" alt="PC Repair Hub Logo">
+        <span>PC Repair Hub</span>
+    </a>
+
+    <button class="menu-toggle" id="menuToggle"
+        type="button"
+        aria-label="เปิดเมนู"
+        aria-expanded="false"
+        aria-controls="sideMenu">☰</button>
+</header>
+
+<div class="menu-overlay" id="menuOverlay"></div>
+
+<aside class="side-menu" id="sideMenu" aria-hidden="true" inert>
+    <div class="side-menu-header">
+        <strong>เมนูหลัก</strong>
+        <button type="button" id="menuClose" aria-label="ปิดเมนู">✕</button>
+    </div>
+
+    <nav class="side-menu-links">
+        <a href="index.html">🏠 หน้าแรก</a>
+        <a href="hardware.html">🔧 Hardware</a>
+        <a href="software.html">💿 Software</a>
+        <a href="os.html">🖥️ Operating System</a>
+        <a href="network.html">🌐 Network</a>
+        <a href="my-library.html">📚 My Library</a>
+        <a href="ask-question.html">❓ ถามคำถาม</a>
+        <a href="technician-editor.html">🧰 Technician Dashboard</a>
+        <a href="admin-dashboard.html">⚙️ Admin Dashboard</a>
+    </nav>
+
+    <div class="side-menu-account">
+        <a href="login.html" id="loginLink">🔑 เข้าสู่ระบบ</a>
+        <a href="register.html" id="registerLink">👤 สร้างบัญชี</a>
+        <a href="#" id="logoutLink"
+           onclick="logout(); return false;"
+           style="display:none;">🚪 ออกจากระบบ</a>
+    </div>
+</aside>
+
+<section class="software-hero">
+    <div class="software-hero-content">
+        <span class="software-tag">💻 Software</span>
+        <h1>Software</h1>
+        <h2>รวมวิธีแก้ไขปัญหาเกี่ยวกับโปรแกรมคอมพิวเตอร์</h2>
+        <p>เลือกปัญหาที่ต้องการดูวิธีแก้ไข</p>
+    </div>
+
+    <div class="software-hero-visual">
+        <div class="software-computer">
+            <div class="software-monitor">
+                <div class="software-screen">💻</div>
+            </div>
+            <div class="software-monitor-stand"></div>
+            <div class="software-base"></div>
+        </div>
+    </div>
+</section>
+
+<section class="software-problems">
+    <div class="software-section-title">
+        <h2>ปัญหา Software ที่พบบ่อย</h2>
+        <p>เลือกปัญหาที่ต้องการดูวิธีแก้ไข</p>
+    </div>
+
+    <div class="software-grid">
+
+        <article class="software-card">
+            <div class="software-image-slot">
+                <img src="images/software01_thumb.png" alt="โปรแกรมเปิดไม่ขึ้น">
+                <div class="software-image-placeholder">💻</div>
+            </div>
+            <div class="software-card-content">
+                <span class="software-card-tag">Software</span>
+                <h3>โปรแกรมเปิดไม่ขึ้น</h3>
+                <p>ตรวจสอบสาเหตุเมื่อโปรแกรมไม่สามารถเปิดใช้งานได้</p>
+                <button onclick="location.href='software-repair.html?id=software01'">ดูวิธีแก้ไข <span>→</span></button>
+            </div>
+        </article>
+
+        <article class="software-card">
+            <div class="software-image-slot">
+                <img src="images/software02_thumb.png" alt="โปรแกรมค้าง">
+                <div class="software-image-placeholder">⏳</div>
+            </div>
+            <div class="software-card-content">
+                <span class="software-card-tag">Software</span>
+                <h3>โปรแกรมค้าง</h3>
+                <p>แก้ไขปัญหาโปรแกรมหยุดทำงานหรือไม่ตอบสนอง</p>
+                <button onclick="location.href='software-repair.html?id=software02'">ดูวิธีแก้ไข <span>→</span></button>
+            </div>
+        </article>
+
+        <article class="software-card">
+            <div class="software-image-slot">
+                <img src="images/software03_thumb.png" alt="โปรแกรมทำงานช้า">
+                <div class="software-image-placeholder">🐌</div>
+            </div>
+            <div class="software-card-content">
+                <span class="software-card-tag">Software</span>
+                <h3>โปรแกรมทำงานช้า</h3>
+                <p>ตรวจสอบสาเหตุที่ทำให้โปรแกรมทำงานช้ากว่าปกติ</p>
+                <button onclick="location.href='software-repair.html?id=software03'">ดูวิธีแก้ไข <span>→</span></button>
+            </div>
+        </article>
+
+        <article class="software-card">
+            <div class="software-image-slot">
+                <img src="images/software04_thumb.png" alt="ติดตั้งโปรแกรมไม่ได้">
+                <div class="software-image-placeholder">📦</div>
+            </div>
+            <div class="software-card-content">
+                <span class="software-card-tag">Software</span>
+                <h3>ติดตั้งโปรแกรมไม่ได้</h3>
+                <p>ตรวจสอบปัญหาที่ทำให้ไม่สามารถติดตั้งโปรแกรมได้</p>
+                <button onclick="location.href='software-repair.html?id=software04'">ดูวิธีแก้ไข <span>→</span></button>
+            </div>
+        </article>
+
+        <article class="software-card">
+            <div class="software-image-slot">
+                <img src="images/software05_thumb.png" alt="โปรแกรมอัปเดตไม่ได้">
+                <div class="software-image-placeholder">🔄</div>
+            </div>
+            <div class="software-card-content">
+                <span class="software-card-tag">Software</span>
+                <h3>โปรแกรมอัปเดตไม่ได้</h3>
+                <p>ตรวจสอบปัญหาการอัปเดตโปรแกรมที่ไม่สำเร็จ</p>
+                <button onclick="location.href='software-repair.html?id=software05'">ดูวิธีแก้ไข <span>→</span></button>
+            </div>
+        </article>
+
+        <article class="software-card">
+            <div class="software-image-slot">
+                <img src="images/software06_thumb.png" alt="โปรแกรมเด้งออกเอง">
+                <div class="software-image-placeholder">⚠️</div>
+            </div>
+            <div class="software-card-content">
+                <span class="software-card-tag">Software</span>
+                <h3>โปรแกรมเด้งออกเอง</h3>
+                <p>แก้ไขปัญหาโปรแกรมปิดตัวเองระหว่างใช้งาน</p>
+                <button onclick="location.href='software-repair.html?id=software06'">ดูวิธีแก้ไข <span>→</span></button>
+            </div>
+        </article>
+
+        <article class="software-card">
+            <div class="software-image-slot">
+                <img src="images/software07_thumb.png" alt="ลืมรหัสผ่านโปรแกรม">
+                <div class="software-image-placeholder">🔑</div>
+            </div>
+            <div class="software-card-content">
+                <span class="software-card-tag">Software</span>
+                <h3>ลืมรหัสผ่านโปรแกรม</h3>
+                <p>แนวทางแก้ไขเมื่อลืมหรือไม่สามารถเข้าสู่โปรแกรมได้</p>
+                <button onclick="location.href='software-repair.html?id=software07'">ดูวิธีแก้ไข <span>→</span></button>
+            </div>
+        </article>
+
+        <article class="software-card">
+            <div class="software-image-slot">
+                <img src="images/software08_thumb.png" alt="ถอนการติดตั้งไม่ได้">
+                <div class="software-image-placeholder">🗑️</div>
+            </div>
+            <div class="software-card-content">
+                <span class="software-card-tag">Software</span>
+                <h3>ถอนการติดตั้งไม่ได้</h3>
+                <p>แก้ไขปัญหาเมื่อไม่สามารถลบหรือถอนโปรแกรมออกได้</p>
+                <button onclick="location.href='software-repair.html?id=software08'">ดูวิธีแก้ไข <span>→</span></button>
+            </div>
+        </article>
+
+        <article class="software-card">
+            <div class="software-image-slot">
+                <img src="images/software09_thumb.png" alt="ไฟล์เปิดไม่ได้">
+                <div class="software-image-placeholder">📄</div>
+            </div>
+            <div class="software-card-content">
+                <span class="software-card-tag">Software</span>
+                <h3>ไฟล์เปิดไม่ได้</h3>
+                <p>ตรวจสอบปัญหาเมื่อไฟล์ไม่สามารถเปิดด้วยโปรแกรมได้</p>
+                <button onclick="location.href='software-repair.html?id=software09'">ดูวิธีแก้ไข <span>→</span></button>
+            </div>
+        </article>
+
+        <article class="software-card">
+            <div class="software-image-slot">
+                <img src="images/software10_thumb.png" alt="โปรแกรมถูก Antivirus บล็อก">
+                <div class="software-image-placeholder">🛡️</div>
+            </div>
+            <div class="software-card-content">
+                <span class="software-card-tag">Software</span>
+                <h3>โปรแกรมถูก Antivirus บล็อก</h3>
+                <p>ตรวจสอบเมื่อโปรแกรมถูกระบบรักษาความปลอดภัยบล็อก</p>
+                <button onclick="location.href='software-repair.html?id=software10'">ดูวิธีแก้ไข <span>→</span></button>
+            </div>
+        </article>
+
+        <article class="software-card">
+            <div class="software-image-slot">
+                <img src="images/software11_thumb.png" alt="โปรแกรมแจ้ง DLL Error">
+                <div class="software-image-placeholder">⚙️</div>
+            </div>
+            <div class="software-card-content">
+                <span class="software-card-tag">Software</span>
+                <h3>โปรแกรมแจ้ง DLL Error</h3>
+                <p>แก้ไขปัญหา DLL ที่ทำให้โปรแกรมไม่สามารถทำงานได้</p>
+                <button onclick="location.href='software-repair.html?id=software11'">ดูวิธีแก้ไข <span>→</span></button>
+            </div>
+        </article>
+
+        <article class="software-card">
+            <div class="software-image-slot">
+                <img src="images/software12_thumb.png" alt="โปรแกรมใช้พื้นที่มากเกินไป">
+                <div class="software-image-placeholder">💾</div>
+            </div>
+            <div class="software-card-content">
+                <span class="software-card-tag">Software</span>
+                <h3>โปรแกรมใช้พื้นที่มากเกินไป</h3>
+                <p>ตรวจสอบการใช้พื้นที่จัดเก็บข้อมูลของโปรแกรม</p>
+                <button onclick="location.href='software-repair.html?id=software12'">ดูวิธีแก้ไข <span>→</span></button>
+            </div>
+        </article>
+
+    </div>
+</section>
+
+<footer class="home-footer">
+    <p>© 2026 PC Repair Hub</p>
+    <p>คลังวิธีซ่อมคอมพิวเตอร์</p>
+</footer>
+
+<script src="script.js"></script>
+
+<script>
+(() => {
+    const toggle = document.getElementById("menuToggle");
+    const menu = document.getElementById("sideMenu");
+    const overlay = document.getElementById("menuOverlay");
+    const close = document.getElementById("menuClose");
+
+    if (!toggle || !menu || !overlay || !close) return;
+
+    function openMenu() {
+        menu.classList.add("open");
+        overlay.classList.add("open");
+        document.body.classList.add("menu-open");
+        menu.inert = false;
+        menu.setAttribute("aria-hidden", "false");
+        toggle.setAttribute("aria-expanded", "true");
+    }
+
+    function closeMenu() {
+        menu.classList.remove("open");
+        overlay.classList.remove("open");
+        document.body.classList.remove("menu-open");
+        menu.inert = true;
+        menu.setAttribute("aria-hidden", "true");
+        toggle.setAttribute("aria-expanded", "false");
+    }
+
+    toggle.addEventListener("click", openMenu);
+    close.addEventListener("click", closeMenu);
+    overlay.addEventListener("click", closeMenu);
+
+    menu.querySelectorAll("a").forEach(link => {
+        link.addEventListener("click", () => {
+            menu.classList.remove("open");
+            overlay.classList.remove("open");
+            document.body.classList.remove("menu-open");
+            menu.inert = true;
+            menu.setAttribute("aria-hidden", "true");
+            toggle.setAttribute("aria-expanded", "false");
+        });
+    });
+
+    document.addEventListener("keydown", event => {
+        if (event.key === "Escape" && menu.classList.contains("open")) {
+            closeMenu();
+        }
+    });
+})();
+</script>
+
+    <script src="admin-panel.js" defer></script>
+    <script type="module" src="firebase-auth.js"></script>
+    <script src="satisfaction-popup.js" defer></script>
+</body>
+</html>

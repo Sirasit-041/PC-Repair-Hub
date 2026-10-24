@@ -1,0 +1,1614 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Software Repair | PC Repair Hub</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body class="repair-page" data-article-detail>
+
+
+    <!-- =========================================
+         NAVBAR
+    ========================================== -->
+
+    <header class="repair-navbar">
+
+        <a href="index.html" class="repair-brand">
+
+            <img src="images/logo.png"
+                 alt="PC Repair Hub Logo">
+
+            <span>
+                PC Repair Hub
+            </span>
+
+        </a>
+
+
+    </header>
+
+
+
+    <!-- =========================================
+         MAIN
+    ========================================== -->
+
+    <main class="repair-main">
+
+
+        <!-- กลับหน้า Software -->
+
+        <a href="software.html"
+           class="repair-back">
+
+            ← กลับไปหน้า Software
+
+        </a>
+
+
+
+        <!-- =========================================
+             HERO
+        ========================================== -->
+
+        <section class="repair-hero">
+
+
+            <!-- ฝั่งข้อมูล -->
+
+            <div class="repair-hero-text">
+
+                <span class="repair-tag">
+                    SOFTWARE
+                </span>
+
+
+                <h1 id="repairTitle">
+                    วิธีแก้ไขปัญหา
+                </h1>
+
+
+                <p id="repairDescription">
+                    วิธีแก้ไขปัญหาเกี่ยวกับซอฟต์แวร์
+                </p>
+
+
+
+                <!-- META -->
+
+                <div class="repair-meta">
+
+
+                    <div class="meta-box">
+
+                        <span class="meta-icon">
+                            💻
+                        </span>
+
+                        <div>
+
+                            <small>
+                                ประเภท
+                            </small>
+
+                            <strong>
+                                Software
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="meta-box">
+
+                        <span class="meta-icon">
+                            🔧
+                        </span>
+
+                        <div>
+
+                            <small>
+                                วิธีแก้ไข
+                            </small>
+
+                            <strong>
+                                ขั้นตอน
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="meta-box">
+
+                        <span class="meta-icon">
+                            ⏱️
+                        </span>
+
+                        <div>
+
+                            <small>
+                                เวลาโดยประมาณ
+                            </small>
+
+                            <strong id="repairTime">
+                                5 - 15 นาที
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+                <div class="library-save-area">
+                    <button
+                        id="saveArticleButton"
+                        class="save-article-button"
+                        onclick="saveCurrentArticle()">
+                        📚 บันทึกบทความ
+                    </button>
+
+                    <a
+                        href="my-library.html"
+                        class="view-library-button">
+                        📖 ดู My Library
+                    </a>
+                </div>
+
+            </div>
+
+
+
+            <!-- =====================================
+                 IMAGE
+            ====================================== -->
+
+            <div class="repair-hero-image"
+                 id="imageContainer">
+
+
+                <!--
+                    ตอนนี้ยังไม่มีรูป
+                    สามารถใส่รูปภายหลังได้ที่
+
+                    images/software01_detail.webp
+                    images/software02_detail.webp
+                    ...
+                -->
+
+                <img id="repairImage"
+                     src=""
+                     alt="Software Repair Image"
+                     style="display: none;">
+
+
+                <!-- กล่องแสดงแทนรูป -->
+
+                <div id="imagePlaceholder"
+                     style="
+                        width:100%;
+                        height:100%;
+                        display:flex;
+                        flex-direction:column;
+                        align-items:center;
+                        justify-content:center;
+                        background:#eef2f7;
+                        color:#94a3b8;
+                        text-align:center;
+                        padding:20px;
+                     ">
+
+                    <div style="
+                        font-size:60px;
+                        margin-bottom:10px;
+                    ">
+                        💻
+                    </div>
+
+                    <strong>
+                        พื้นที่สำหรับรูปภาพ
+                    </strong>
+
+                    <span style="
+                        font-size:13px;
+                        margin-top:6px;
+                    ">
+                        สามารถเพิ่มรูปภาพได้ภายหลัง
+                    </span>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================
+             CONTENT LAYOUT
+        ========================================== -->
+
+        <div class="repair-layout">
+
+
+            <!-- =====================================
+                 LEFT CONTENT
+            ====================================== -->
+
+            <div>
+
+
+                <!-- อาการ -->
+
+                <section class="repair-card-section">
+
+                    <div class="section-title">
+
+                        <div class="section-icon">
+                            🔍
+                        </div>
+
+                        <div>
+
+                            <h2>
+                                อาการที่พบ
+                            </h2>
+
+                            <p>
+                                อาการที่อาจเกิดขึ้น
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="symptom-box">
+
+                        <p id="repairSymptoms">
+                        </p>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- เครื่องมือ -->
+
+                <section class="repair-card-section">
+
+                    <div class="section-title">
+
+                        <div class="section-icon">
+                            🧰
+                        </div>
+
+                        <div>
+
+                            <h2>
+                                สิ่งที่ควรเตรียม
+                            </h2>
+
+                            <p>
+                                เครื่องมือหรือสิ่งที่จำเป็น
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <ul class="tools-list"
+                        id="repairTools">
+
+                    </ul>
+
+                </section>
+
+
+
+                <!-- วิธีแก้ไข -->
+
+                <section class="repair-card-section">
+
+                    <div class="section-title">
+
+                        <div class="section-icon">
+                            🔧
+                        </div>
+
+                        <div>
+
+                            <h2>
+                                วิธีแก้ไข
+                            </h2>
+
+                            <p>
+                                ทำตามขั้นตอนทีละขั้น
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="steps-list"
+                         id="repairSteps">
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- WARNING -->
+
+                <div class="warning-box">
+
+                    <div class="warning-icon">
+                        ⚠️
+                    </div>
+
+                    <div>
+
+                        <h2>
+                            ข้อควรระวัง
+                        </h2>
+
+                        <p id="repairWarning">
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- สรุป -->
+
+                <section class="repair-card-section conclusion-section">
+
+                    <div class="section-title">
+
+                        <div class="section-icon">
+                            ✅
+                        </div>
+
+                        <div>
+
+                            <h2>
+                                สรุป
+                            </h2>
+
+                            <p>
+                                สิ่งที่ควรทำ
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <p class="conclusion-text"
+                       id="repairSummary">
+
+                    </p>
+
+                </section>
+
+
+            </div>
+
+            <section class="repair-guidance">
+                <h2>💡 คำแนะนำเพิ่มเติม</h2>
+                <p>หากวิธีพื้นฐานยังแก้ปัญหาไม่ได้ ให้ตรวจสอบเว็บไซต์ของผู้พัฒนาโปรแกรมหรือขอความช่วยเหลือจากผู้เชี่ยวชาญ ดาวน์โหลดโปรแกรมจากแหล่งที่เชื่อถือได้และหลีกเลี่ยงไฟล์จากเว็บไซต์ที่ไม่รู้จัก</p>
+            </section>
+
+            </div>
+
+    </main>
+
+
+
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
+
+    <footer>
+
+        <p>
+            © 2026 PC Repair Hub
+        </p>
+
+        <p>
+            คลังวิธีซ่อมคอมพิวเตอร์
+        </p>
+
+    </footer>
+
+
+
+    <!-- =========================================
+         JAVASCRIPT
+    ========================================== -->
+
+    <script src="script.js"></script>
+
+
+    <script>
+
+
+        // ==========================================
+        // ข้อมูล Software
+        // ==========================================
+
+        const softwareData = {
+
+
+            software01: {
+
+                title: "โปรแกรมเปิดไม่ขึ้น",
+
+                description:
+                    "วิธีตรวจสอบและแก้ไขเมื่อโปรแกรมไม่สามารถเปิดใช้งานได้",
+
+                image:
+                    "images/software01_thumb.png",
+
+                time:
+                    "5 - 15 นาที",
+
+                symptoms: [
+
+                    "กดเปิดโปรแกรมแล้วไม่มีอะไรเกิดขึ้น",
+
+                    "โปรแกรมเปิดแล้วปิดทันที",
+
+                    "โปรแกรมไม่ตอบสนอง"
+
+                ],
+
+                tools: [
+
+                    "คอมพิวเตอร์ที่พบปัญหา",
+
+                    "Internet",
+
+                    "ไฟล์ติดตั้งโปรแกรม"
+
+                ],
+
+                steps: [
+
+                    {
+                        title: "ลองเปิดโปรแกรมใหม่",
+
+                        text:
+                            "ปิดโปรแกรมให้เรียบร้อย แล้วลองเปิดโปรแกรมอีกครั้ง"
+                    },
+
+                    {
+                        title: "Restart คอมพิวเตอร์",
+
+                        text:
+                            "Restart เครื่องเพื่อเคลียร์กระบวนการที่อาจทำงานผิดปกติ"
+                    },
+
+                    {
+                        title: "Run as administrator",
+
+                        text:
+                            "คลิกขวาที่โปรแกรม แล้วเลือก Run as administrator"
+                    },
+
+                    {
+                        title: "ติดตั้งโปรแกรมใหม่",
+
+                        text:
+                            "หากยังเปิดไม่ได้ ให้ถอนการติดตั้งโปรแกรม แล้วดาวน์โหลดและติดตั้งใหม่จากเว็บไซต์ที่เชื่อถือได้"
+                    }
+
+                ],
+
+                warning:
+                    "ควรดาวน์โหลดโปรแกรมจากเว็บไซต์ทางการหรือแหล่งที่เชื่อถือได้",
+
+                summary:
+                    "เริ่มจาก Restart เครื่องและลองเปิดโปรแกรมใหม่ หากยังไม่สามารถใช้งานได้ ให้ตรวจสอบสิทธิ์การใช้งานและติดตั้งโปรแกรมใหม่"
+
+            },
+
+
+
+            software02: {
+
+                title: "โปรแกรมค้าง",
+
+                description:
+                    "วิธีแก้ไขเมื่อโปรแกรมหยุดทำงานหรือไม่ตอบสนอง",
+
+                image:
+                    "images/software02_thumb.png",
+
+                time:
+                    "5 - 10 นาที",
+
+                symptoms: [
+
+                    "โปรแกรมไม่ตอบสนอง",
+
+                    "หน้าต่างโปรแกรมค้าง",
+
+                    "คลิกเมนูต่าง ๆ ไม่ได้"
+
+                ],
+
+                tools: [
+
+                    "คอมพิวเตอร์",
+
+                    "Task Manager"
+
+                ],
+
+                steps: [
+
+                    {
+                        title: "รอสักครู่",
+
+                        text:
+                            "รอสักครู่เพื่อดูว่าโปรแกรมกลับมาทำงานตามปกติหรือไม่"
+                    },
+
+                    {
+                        title: "เปิด Task Manager",
+
+                        text:
+                            "กด Ctrl + Shift + Esc เพื่อเปิด Task Manager"
+                    },
+
+                    {
+                        title: "End task",
+
+                        text:
+                            "เลือกโปรแกรมที่ค้าง แล้วกด End task เพื่อปิดโปรแกรม"
+                    },
+
+                    {
+                        title: "Restart เครื่อง",
+
+                        text:
+                            "หากยังมีปัญหา ให้ Restart คอมพิวเตอร์แล้วลองเปิดโปรแกรมอีกครั้ง"
+                    }
+
+                ],
+
+                warning:
+                    "การกด End task อาจทำให้ข้อมูลที่ยังไม่ได้บันทึกหาย",
+
+                summary:
+                    "ลองรอให้โปรแกรมตอบสนองก่อน หากยังค้าง ให้ใช้ Task Manager ปิดโปรแกรมและเปิดใหม่"
+
+            },
+
+
+
+            software03: {
+
+                title: "โปรแกรมทำงานช้า",
+
+                description:
+                    "วิธีตรวจสอบและแก้ไขเมื่อโปรแกรมทำงานช้าหรือไม่ราบรื่น",
+
+                image:
+                    "images/software03_thumb.png",
+
+                time:
+                    "5 - 15 นาที",
+
+                symptoms: [
+
+                    "เปิดโปรแกรมใช้เวลานาน",
+
+                    "โปรแกรมตอบสนองช้า",
+
+                    "โปรแกรมทำงานไม่ราบรื่น"
+
+                ],
+
+                tools: [
+
+                    "คอมพิวเตอร์",
+
+                    "Task Manager"
+
+                ],
+
+                steps: [
+
+                    {
+                        title: "ปิดโปรแกรมที่ไม่จำเป็น",
+
+                        text:
+                            "ปิดโปรแกรมที่ไม่ได้ใช้งาน เพื่อลดการใช้ทรัพยากรของเครื่อง"
+                    },
+
+                    {
+                        title: "Restart เครื่อง",
+
+                        text:
+                            "Restart คอมพิวเตอร์เพื่อเริ่มการทำงานของระบบใหม่"
+                    },
+
+                    {
+                        title: "ตรวจสอบพื้นที่ว่าง",
+
+                        text:
+                            "ตรวจสอบพื้นที่ว่างในไดรฟ์ หากพื้นที่ใกล้เต็มควรลบไฟล์ที่ไม่จำเป็น"
+                    },
+
+                    {
+                        title: "อัปเดตโปรแกรม",
+
+                        text:
+                            "ตรวจสอบว่าโปรแกรมมีเวอร์ชันใหม่หรือไม่ และอัปเดตเป็นเวอร์ชันล่าสุด"
+                    }
+
+                ],
+
+                warning:
+                    "ไม่ควรลบไฟล์ระบบหรือไฟล์โปรแกรมโดยไม่ทราบว่าใช้ทำอะไร",
+
+                summary:
+                    "ปิดโปรแกรมที่ไม่จำเป็น ตรวจสอบพื้นที่ว่าง และอัปเดตโปรแกรมให้เป็นเวอร์ชันล่าสุด"
+
+            },
+
+
+
+            software04: {
+
+                title: "ติดตั้งโปรแกรมไม่ได้",
+
+                description:
+                    "วิธีแก้ไขเมื่อไม่สามารถติดตั้งโปรแกรมลงในคอมพิวเตอร์ได้",
+
+                image:
+                    "images/software04_thumb.png",
+
+                time:
+                    "10 - 20 นาที",
+
+                symptoms: [
+
+                    "ติดตั้งโปรแกรมแล้วเกิดข้อผิดพลาด",
+
+                    "ตัวติดตั้งหยุดทำงาน",
+
+                    "ติดตั้งไม่สำเร็จ"
+
+                ],
+
+                tools: [
+
+                    "คอมพิวเตอร์",
+
+                    "Internet",
+
+                    "ไฟล์ติดตั้งโปรแกรม"
+
+                ],
+
+                steps: [
+
+                    {
+                        title: "ตรวจสอบพื้นที่ว่าง",
+
+                        text:
+                            "ตรวจสอบว่าพื้นที่ในไดรฟ์เพียงพอสำหรับติดตั้งโปรแกรมหรือไม่"
+                    },
+
+                    {
+                        title: "ดาวน์โหลดไฟล์ติดตั้งใหม่",
+
+                        text:
+                            "หากไฟล์ติดตั้งเสียหาย ให้ดาวน์โหลดไฟล์ใหม่จากเว็บไซต์ทางการ"
+                    },
+
+                    {
+                        title: "Run as administrator",
+
+                        text:
+                            "คลิกขวาที่ไฟล์ติดตั้ง แล้วเลือก Run as administrator"
+                    }
+
+                ],
+
+                warning:
+                    "ควรดาวน์โหลดโปรแกรมจากเว็บไซต์ทางการ",
+
+                summary:
+                    "ตรวจสอบพื้นที่ว่าง ดาวน์โหลดตัวติดตั้งใหม่ และลองติดตั้งด้วยสิทธิ์ Administrator"
+
+            },
+
+
+
+            software05: {
+
+                title: "โปรแกรมอัปเดตไม่ได้",
+
+                description:
+                    "วิธีแก้ไขเมื่อโปรแกรมไม่สามารถอัปเดตเป็นเวอร์ชันใหม่ได้",
+
+                image:
+                    "images/software05_thumb.png",
+
+                time:
+                    "5 - 15 นาที",
+
+                symptoms: [
+
+                    "กด Update แล้วเกิดข้อผิดพลาด",
+
+                    "การอัปเดตหยุดกลางคัน",
+
+                    "โปรแกรมแจ้งว่าไม่สามารถอัปเดตได้"
+
+                ],
+
+                tools: [
+
+                    "คอมพิวเตอร์",
+
+                    "Internet"
+
+                ],
+
+                steps: [
+
+                    {
+                        title: "ตรวจสอบ Internet",
+
+                        text:
+                            "ตรวจสอบว่าคอมพิวเตอร์เชื่อมต่อ Internet ได้ตามปกติ"
+                    },
+
+                    {
+                        title: "เปิดโปรแกรมใหม่",
+
+                        text:
+                            "ปิดโปรแกรมแล้วเปิดใหม่ จากนั้นลอง Update อีกครั้ง"
+                    },
+
+                    {
+                        title: "ดาวน์โหลดเวอร์ชันใหม่",
+
+                        text:
+                            "หากยังไม่ได้ ให้ดาวน์โหลดโปรแกรมเวอร์ชันล่าสุดจากเว็บไซต์ทางการ"
+                    }
+
+                ],
+
+                warning:
+                    "ไม่ควรดาวน์โหลดไฟล์ Update จากเว็บไซต์ที่ไม่รู้จัก",
+
+                summary:
+                    "ตรวจสอบ Internet และติดตั้งเวอร์ชันล่าสุดจากแหล่งที่เชื่อถือได้"
+
+            },
+
+
+
+            software06: {
+
+                title: "โปรแกรมเด้งออกเอง",
+
+                description:
+                    "วิธีแก้ไขเมื่อโปรแกรมปิดตัวเองระหว่างใช้งาน",
+
+                image:
+                    "images/software06_thumb.png",
+
+                time:
+                    "10 - 20 นาที",
+
+                symptoms: [
+
+                    "โปรแกรมปิดตัวเอง",
+
+                    "โปรแกรม Crash ขณะใช้งาน",
+
+                    "เกิดปัญหาซ้ำเมื่อเปิดโปรแกรม"
+
+                ],
+
+                tools: [
+
+                    "คอมพิวเตอร์",
+
+                    "Internet"
+
+                ],
+
+                steps: [
+
+                    {
+                        title: "Restart โปรแกรม",
+
+                        text:
+                            "ปิดโปรแกรมแล้วเปิดใหม่ และตรวจสอบว่ายังเกิดปัญหาหรือไม่"
+                    },
+
+                    {
+                        title: "Restart คอมพิวเตอร์",
+
+                        text:
+                            "Restart เครื่องเพื่อเริ่มระบบใหม่"
+                    },
+
+                    {
+                        title: "อัปเดตโปรแกรม",
+
+                        text:
+                            "ตรวจสอบและติดตั้งโปรแกรมเวอร์ชันล่าสุด"
+                    },
+
+                    {
+                        title: "ติดตั้งโปรแกรมใหม่",
+
+                        text:
+                            "หากยังเกิดปัญหา ให้ถอนการติดตั้งแล้วติดตั้งโปรแกรมใหม่"
+                    }
+
+                ],
+
+                warning:
+                    "ควรบันทึกงานก่อนถอนการติดตั้งโปรแกรม",
+
+                summary:
+                    "อัปเดตโปรแกรมก่อน หากยังเด้งออกเองให้ติดตั้งโปรแกรมใหม่"
+
+            },
+
+
+
+            software07: {
+
+                title: "ลืมรหัสผ่านโปรแกรม",
+
+                description:
+                    "วิธีแก้ไขเมื่อไม่สามารถเข้าสู่ระบบเนื่องจากลืมรหัสผ่าน",
+
+                image:
+                    "images/software07_thumb.png",
+
+                time:
+                    "5 - 10 นาที",
+
+                symptoms: [
+
+                    "จำรหัสผ่านไม่ได้",
+
+                    "เข้าสู่ระบบไม่สำเร็จ",
+
+                    "ระบบแจ้งว่ารหัสผ่านไม่ถูกต้อง"
+
+                ],
+
+                tools: [
+
+                    "บัญชีผู้ใช้งาน",
+
+                    "Email หรือช่องทางยืนยันตัวตน"
+
+                ],
+
+                steps: [
+
+                    {
+                        title: "เลือก Forgot Password",
+
+                        text:
+                            "กด Forgot Password หรือ ลืมรหัสผ่าน ในหน้าเข้าสู่ระบบ"
+                    },
+
+                    {
+                        title: "ยืนยันตัวตน",
+
+                        text:
+                            "ทำตามขั้นตอนการยืนยันตัวตนของระบบ"
+                    },
+
+                    {
+                        title: "ตั้งรหัสผ่านใหม่",
+
+                        text:
+                            "กำหนดรหัสผ่านใหม่ แล้วลองเข้าสู่ระบบอีกครั้ง"
+                    }
+
+                ],
+
+                warning:
+                    "ไม่ควรส่งรหัสผ่านหรือรหัสยืนยันตัวตนให้ผู้อื่น",
+
+                summary:
+                    "ใช้ระบบ Forgot Password ของโปรแกรมเพื่อกู้คืนบัญชีอย่างปลอดภัย"
+
+            },
+
+
+
+            software08: {
+
+                title: "ถอนการติดตั้งไม่ได้",
+
+                description:
+                    "วิธีแก้ไขเมื่อไม่สามารถลบโปรแกรมออกจากคอมพิวเตอร์ได้",
+
+                image:
+                    "images/software08_thumb.png",
+
+                time:
+                    "5 - 15 นาที",
+
+                symptoms: [
+
+                    "กด Uninstall แล้วเกิดข้อผิดพลาด",
+
+                    "โปรแกรมยังอยู่หลังถอนการติดตั้ง",
+
+                    "ตัวถอนการติดตั้งทำงานไม่สำเร็จ"
+
+                ],
+
+                tools: [
+
+                    "คอมพิวเตอร์",
+
+                    "Windows Settings"
+
+                ],
+
+                steps: [
+
+                    {
+                        title: "เปิด Settings",
+
+                        text:
+                            "ไปที่ Settings > Apps แล้วค้นหาโปรแกรมที่ต้องการลบ"
+                    },
+
+                    {
+                        title: "Uninstall",
+
+                        text:
+                            "เลือกโปรแกรมแล้วกด Uninstall"
+                    },
+
+                    {
+                        title: "Restart เครื่อง",
+
+                        text:
+                            "หากถอนการติดตั้งไม่ได้ ให้ Restart เครื่องแล้วลองใหม่"
+                    },
+
+                    {
+                        title: "ใช้ Uninstaller ของผู้พัฒนา",
+
+                        text:
+                            "ตรวจสอบเว็บไซต์ของผู้พัฒนาว่ามีเครื่องมือสำหรับถอนการติดตั้งหรือไม่"
+                    }
+
+                ],
+
+                warning:
+                    "ไม่ควรลบโฟลเดอร์โปรแกรมโดยตรง เพราะอาจทำให้ไฟล์ตกค้างในระบบ",
+
+                summary:
+                    "ใช้ระบบ Uninstall ของ Windows หรือเครื่องมือจากผู้พัฒนาโปรแกรม"
+
+            },
+
+
+
+            software09: {
+
+                title: "ไฟล์เปิดไม่ได้",
+
+                description:
+                    "วิธีตรวจสอบเมื่อไฟล์ไม่สามารถเปิดด้วยโปรแกรมที่มีอยู่ได้",
+
+                image:
+                    "images/software09_thumb.png",
+
+                time:
+                    "5 - 10 นาที",
+
+                symptoms: [
+
+                    "ดับเบิลคลิกไฟล์แล้วเปิดไม่ได้",
+
+                    "Windows ไม่รู้จักชนิดไฟล์",
+
+                    "ไม่พบโปรแกรมสำหรับเปิดไฟล์"
+
+                ],
+
+                tools: [
+
+                    "คอมพิวเตอร์",
+
+                    "โปรแกรมที่รองรับไฟล์"
+
+                ],
+
+                steps: [
+
+                    {
+                        title: "ตรวจสอบนามสกุลไฟล์",
+
+                        text:
+                            "ตรวจสอบว่าไฟล์เป็นประเภทใด เช่น PDF, JPG, DOCX หรือประเภทอื่น"
+                    },
+
+                    {
+                        title: "ติดตั้งโปรแกรมที่รองรับ",
+
+                        text:
+                            "ติดตั้งโปรแกรมที่สามารถเปิดไฟล์ประเภทนั้นได้"
+                    },
+
+                    {
+                        title: "ลองเปิดไฟล์อีกครั้ง",
+
+                        text:
+                            "หลังติดตั้งโปรแกรมแล้ว ให้ลองเปิดไฟล์อีกครั้ง"
+                    }
+
+                ],
+
+                warning:
+                    "อย่าเปิดไฟล์จากแหล่งที่ไม่รู้จัก เพราะอาจมีความเสี่ยงด้านความปลอดภัย",
+
+                summary:
+                    "ตรวจสอบประเภทไฟล์และใช้โปรแกรมที่รองรับไฟล์นั้น"
+
+            },
+
+
+
+            software10: {
+
+                title: "โปรแกรมถูก Antivirus บล็อก",
+
+                description:
+                    "วิธีตรวจสอบเมื่อโปรแกรมถูกระบบรักษาความปลอดภัยบล็อก",
+
+                image:
+                    "images/software10_thumb.png",
+
+                time:
+                    "5 - 15 นาที",
+
+                symptoms: [
+
+                    "โปรแกรมไม่สามารถเปิดได้",
+
+                    "Antivirus แจ้งเตือน",
+
+                    "ไฟล์โปรแกรมถูกกักกัน"
+
+                ],
+
+                tools: [
+
+                    "Antivirus",
+
+                    "Internet"
+
+                ],
+
+                steps: [
+
+                    {
+                        title: "ตรวจสอบข้อความแจ้งเตือน",
+
+                        text:
+                            "อ่านรายละเอียดที่ Antivirus แจ้งเตือนเพื่อดูสาเหตุ"
+                    },
+
+                    {
+                        title: "ตรวจสอบแหล่งที่มา",
+
+                        text:
+                            "ตรวจสอบว่าโปรแกรมดาวน์โหลดมาจากเว็บไซต์ที่น่าเชื่อถือหรือไม่"
+                    },
+
+                    {
+                        title: "ดาวน์โหลดใหม่",
+
+                        text:
+                            "หากไม่มั่นใจ ให้ดาวน์โหลดโปรแกรมใหม่จากเว็บไซต์ทางการ"
+                    }
+
+                ],
+
+                warning:
+                    "ไม่ควรปิด Antivirus เพียงเพื่อให้โปรแกรมที่ไม่รู้จักทำงาน",
+
+                summary:
+                    "ตรวจสอบความปลอดภัยของโปรแกรมก่อนใช้งาน และดาวน์โหลดจากเว็บไซต์ทางการ"
+
+            },
+
+
+
+            software11: {
+
+                title: "โปรแกรมแจ้ง DLL Error",
+
+                description:
+                    "วิธีแก้ไขเมื่อโปรแกรมแจ้งข้อผิดพลาดเกี่ยวกับไฟล์ DLL",
+
+                image:
+                    "images/software11_thumb.png",
+
+                time:
+                    "10 - 20 นาที",
+
+                symptoms: [
+
+                    "เปิดโปรแกรมแล้วมีข้อความ DLL Error",
+
+                    "ระบบแจ้งว่าไม่พบไฟล์ DLL",
+
+                    "โปรแกรมไม่สามารถเริ่มทำงานได้"
+
+                ],
+
+                tools: [
+
+                    "คอมพิวเตอร์",
+
+                    "Internet",
+
+                    "Windows Update"
+
+                ],
+
+                steps: [
+
+                    {
+                        title: "Restart เครื่อง",
+
+                        text:
+                            "Restart คอมพิวเตอร์แล้วลองเปิดโปรแกรมอีกครั้ง"
+                    },
+
+                    {
+                        title: "ติดตั้งโปรแกรมใหม่",
+
+                        text:
+                            "ถอนการติดตั้งโปรแกรม แล้วติดตั้งใหม่จากเว็บไซต์ทางการ"
+                    },
+
+                    {
+                        title: "ตรวจสอบ Windows Update",
+
+                        text:
+                            "ตรวจสอบ Windows Update และติดตั้งการอัปเดตที่จำเป็น"
+                    }
+
+                ],
+
+                warning:
+                    "ไม่ควรดาวน์โหลดไฟล์ DLL จากเว็บไซต์ที่ไม่รู้จัก",
+
+                summary:
+                    "ลองติดตั้งโปรแกรมใหม่และตรวจสอบ Windows Update ก่อนหากยังพบ DLL Error"
+
+            },
+
+
+
+            software12: {
+
+                title: "โปรแกรมใช้พื้นที่มากเกินไป",
+
+                description:
+                    "วิธีตรวจสอบและจัดการเมื่อโปรแกรมใช้พื้นที่จัดเก็บจำนวนมาก",
+
+                image:
+                    "images/software12_thumb.png",
+
+                time:
+                    "10 - 20 นาที",
+
+                symptoms: [
+
+                    "พื้นที่ไดรฟ์ลดลงอย่างรวดเร็ว",
+
+                    "มีไฟล์ชั่วคราวจำนวนมาก",
+
+                    "พื้นที่จัดเก็บใกล้เต็ม"
+
+                ],
+
+                tools: [
+
+                    "คอมพิวเตอร์",
+
+                    "Windows Storage Settings"
+
+                ],
+
+                steps: [
+
+                    {
+                        title: "ตรวจสอบพื้นที่",
+
+                        text:
+                            "ตรวจสอบว่าโปรแกรมหรือไฟล์ใดใช้พื้นที่จัดเก็บจำนวนมาก"
+                    },
+
+                    {
+                        title: "ลบไฟล์ที่ไม่จำเป็น",
+
+                        text:
+                            "ลบไฟล์ชั่วคราวหรือไฟล์ที่ไม่จำเป็นหลังจากตรวจสอบแล้ว"
+                    },
+
+                    {
+                        title: "ถอนโปรแกรมที่ไม่ได้ใช้",
+
+                        text:
+                            "ถอนการติดตั้งโปรแกรมที่ไม่ได้ใช้งานเพื่อเพิ่มพื้นที่ว่าง"
+                    }
+
+                ],
+
+                warning:
+                    "ตรวจสอบไฟล์ก่อนลบทุกครั้ง และไม่ควรลบไฟล์ระบบโดยไม่ทราบหน้าที่",
+
+                summary:
+                    "ตรวจสอบพื้นที่ ลบไฟล์ที่ไม่จำเป็น และถอนโปรแกรมที่ไม่ได้ใช้งาน"
+
+            }
+
+        };
+
+
+
+        // ==========================================
+        // อ่าน ID จาก URL
+        // ==========================================
+
+        const urlParams =
+            new URLSearchParams(window.location.search);
+
+
+        const problemId =
+            urlParams.get("id");
+
+
+        const data =
+            softwareData[problemId];
+
+
+
+        // ==========================================
+        // แสดงข้อมูล
+        // ==========================================
+
+        if (data) {
+
+
+            // ชื่อ
+
+            document.getElementById("repairTitle").textContent =
+                data.title;
+
+
+            // คำอธิบาย
+
+            document.getElementById("repairDescription").textContent =
+                data.description;
+
+
+            // เวลา
+
+            document.getElementById("repairTime").textContent =
+                data.time;
+
+
+
+            // ======================================
+            // รูปภาพ
+            // ======================================
+
+            const image =
+                document.getElementById("repairImage");
+
+            const placeholder =
+                document.getElementById("imagePlaceholder");
+
+
+            image.src = data.image;
+
+
+            image.onload = function () {
+
+                image.style.display = "block";
+
+                placeholder.style.display = "none";
+
+            };
+
+
+            image.onerror = function () {
+
+                image.style.display = "none";
+
+                placeholder.style.display = "flex";
+
+            };
+
+
+
+            // ======================================
+            // อาการ
+            // ======================================
+
+            const symptoms =
+                document.getElementById("repairSymptoms");
+
+
+            symptoms.innerHTML = "";
+
+
+            data.symptoms.forEach(function(item) {
+
+                const p =
+                    document.createElement("p");
+
+                p.textContent =
+                    "• " + item;
+
+                symptoms.appendChild(p);
+
+            });
+
+
+
+            // ======================================
+            // เครื่องมือ
+            // ======================================
+
+            const tools =
+                document.getElementById("repairTools");
+
+
+            tools.innerHTML = "";
+
+
+            data.tools.forEach(function(item) {
+
+                const li =
+                    document.createElement("li");
+
+
+                li.innerHTML =
+                    "<span>✓</span>" + item;
+
+
+                tools.appendChild(li);
+
+            });
+
+
+
+            // ======================================
+            // ขั้นตอน
+            // ======================================
+
+            const steps =
+                document.getElementById("repairSteps");
+
+
+            steps.innerHTML = "";
+
+
+            data.steps.forEach(function(item, index) {
+
+
+                const step =
+                    document.createElement("div");
+
+
+                step.className =
+                    "repair-step";
+
+
+                step.innerHTML = `
+
+                    <div class="step-number">
+                        ${index + 1}
+                    </div>
+
+                    <div class="step-text">
+
+                        <h3>
+                            ${item.title}
+                        </h3>
+
+                        <p>
+                            ${item.text}
+                        </p>
+
+                    </div>
+
+                `;
+
+
+                steps.appendChild(step);
+
+            });
+
+
+
+            // ======================================
+            // Warning
+            // ======================================
+
+            document.getElementById("repairWarning").textContent =
+                data.warning;
+
+
+
+            // ======================================
+            // Summary
+            // ======================================
+
+            document.getElementById("repairSummary").textContent =
+                data.summary;
+
+        }
+
+
+        else {
+
+
+            document.getElementById("repairTitle").textContent =
+                "ไม่พบข้อมูลปัญหา";
+
+
+            document.getElementById("repairDescription").textContent =
+                "ไม่พบข้อมูลของปัญหาที่เลือก";
+
+
+            document.getElementById("repairSummary").textContent =
+                "กรุณากลับไปหน้า Software แล้วเลือกปัญหาอีกครั้ง";
+
+        }
+
+    
+
+        // ==========================================
+        // MY LIBRARY
+        // ==========================================
+
+        function saveCurrentArticle() {
+
+            const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+
+            if (!isLoggedIn) {
+                window.location.href = "login.html";
+                return;
+            }
+
+            const username = activeUser.uid;
+
+            if (!data || !problemId) {
+                return;
+            }
+
+            const libraryKey =
+                "savedArticles_" + username;
+
+            let savedArticles =
+                JSON.parse(localStorage.getItem(libraryKey)) || [];
+
+            const alreadySaved =
+                savedArticles.some(function(article) {
+                    return article.id === problemId;
+                });
+
+            if (alreadySaved) {
+                updateSaveButton();
+                return;
+            }
+
+            savedArticles.push({
+                id: problemId,
+                title: data.title,
+                summary: data.description,
+                image: data.image,
+                category: "Software",
+                savedDate: new Date().toLocaleDateString("th-TH")
+            });
+
+            localStorage.setItem(
+                libraryKey,
+                JSON.stringify(savedArticles)
+            );
+
+            updateSaveButton();
+        }
+
+        function updateSaveButton() {
+
+            const button =
+                document.getElementById("saveArticleButton");
+
+            if (!button) {
+                return;
+            }
+
+            const username = localStorage.getItem("currentUser");
+
+            if (!username) {
+                button.textContent = "📚 บันทึกบทความ";
+                button.classList.remove("saved");
+                return;
+            }
+
+            const libraryKey =
+                "savedArticles_" + username;
+
+            const savedArticles =
+                JSON.parse(localStorage.getItem(libraryKey)) || [];
+
+            const alreadySaved =
+                savedArticles.some(function(article) {
+                    return article.id === problemId;
+                });
+
+            if (alreadySaved) {
+                button.textContent = "✓ บันทึกแล้ว";
+                button.classList.add("saved");
+            } else {
+                button.textContent = "📚 บันทึกบทความ";
+                button.classList.remove("saved");
+            }
+        }
+
+        updateSaveButton();
+</script>
+
+
+<script src="admin-panel.js" defer></script>
+    <script type="module" src="firebase-auth.js"></script>
+    <script src="satisfaction-popup.js" defer></script>
+</body>
+
+</html>

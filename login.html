@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>เข้าสู่ระบบ | PC Repair Hub</title>
+
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .admin-mode-link {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            z-index: 5;
+            display: inline-flex;
+            align-items: center;
+            gap: .45rem;
+            padding: .65rem .9rem;
+            border: 1px solid #d5deef;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, .96);
+            color: #193d78;
+            font-size: .9rem;
+            font-weight: 700;
+            text-decoration: none;
+            box-shadow: 0 5px 18px rgba(28, 55, 100, .12);
+        }
+        .admin-mode-link:hover { background: #edf4ff; }
+        @media (max-width: 480px) {
+            .admin-mode-link { top: .65rem; right: .65rem; padding: .55rem .72rem; font-size: .8rem; }
+            .auth-container { padding-top: 3.2rem; }
+        }
+    </style>
+
+</head>
+
+
+<body class="auth-page">
+
+    <a class="admin-mode-link" href="admin-login.html" aria-label="เข้าสู่หน้า Admin Portal">
+        <span aria-hidden="true">▣</span> เข้าสู่โหมดแอดมิน
+    </a>
+
+
+    <!-- =================================
+         กล่อง Login
+    ================================== -->
+
+    <div class="auth-container">
+
+
+        <!-- โลโก้ -->
+
+        <img
+            src="images/logo.png"
+            alt="PC Repair Hub Logo"
+            class="auth-logo"
+        >
+
+
+        <!-- หัวข้อ -->
+
+        <h1>
+            เข้าสู่ระบบ
+        </h1>
+
+
+        <!-- คำอธิบาย -->
+
+        <p class="auth-subtitle">
+            เข้าสู่ระบบเพื่อใช้งาน PC Repair Hub
+        </p>
+
+
+        <!-- =================================
+             แบบฟอร์ม Login
+        ================================== -->
+
+        <form
+            id="loginForm"
+            class="auth-form"
+        >
+
+
+            <!-- อีเมล -->
+
+            <label for="email">
+                อีเมล
+            </label>
+
+            <input
+                type="email"
+                id="email"
+                placeholder="กรอกอีเมล"
+                autocomplete="email"
+                required
+            >
+
+
+            <!-- รหัสผ่าน -->
+
+            <label for="password">
+                รหัสผ่าน
+            </label>
+
+            <input
+                type="password"
+                id="password"
+                placeholder="กรอกรหัสผ่าน"
+                autocomplete="current-password"
+                required
+            >
+
+
+            <!-- ปุ่มเข้าสู่ระบบ -->
+
+            <button
+                type="submit"
+                class="auth-button"
+            >
+                เข้าสู่ระบบ
+            </button>
+
+
+        </form>
+
+        <div class="auth-divider" aria-hidden="true"><span>หรือ</span></div>
+        <button type="button" id="googleSignInButton" class="google-auth-button">
+            <span class="google-mark" aria-hidden="true">G</span> เข้าสู่ระบบด้วย Google
+        </button>
+        <p id="googleAuthMessage" class="google-auth-message" role="status" aria-live="polite"></p>
+
+
+        <!-- =================================
+             สร้างบัญชี
+        ================================== -->
+
+        <p class="auth-link">
+
+            ยังไม่มีบัญชี?
+
+            <a href="register.html">
+                สร้างบัญชี
+            </a>
+
+        </p>
+
+
+        <!-- =================================
+             กลับหน้าแรก
+        ================================== -->
+
+        <p class="auth-home">
+
+            <a href="index.html">
+                ← กลับหน้าแรก
+            </a>
+
+        </p>
+
+
+    </div>
+
+
+    <!-- =================================
+         JavaScript
+    ================================== -->
+
+    <script type="module" src="firebase-auth.js"></script>
+
+
+    <script src="satisfaction-popup.js" defer></script>
+</body>
+
+</html>

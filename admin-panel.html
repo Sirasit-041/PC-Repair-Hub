@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Management - PC Repair Hub</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="admin-panel.js" defer></script>
+</head>
+<body class="admin-panel-page" data-admin-panel>
+    <header class="main-navbar admin-panel-navbar">
+        <a class="main-logo" href="index.html">
+            <img src="images/logo.png" alt="PC Repair Hub">
+            <span>PC Repair Hub</span>
+        </a>
+        <a class="admin-back-link" href="admin-dashboard.html">← กลับหน้า Admin Dashboard</a>
+    </header>
+    <main class="admin-panel-container">
+        <div class="admin-panel-heading">
+            <div>
+                <p class="admin-eyebrow">ADMINISTRATION</p>
+                <h1 id="adminPanelTitle">กำลังโหลด...</h1>
+                <p id="adminPanelDescription"></p>
+            </div>
+            <nav class="admin-panel-nav" aria-label="เมนูผู้ดูแลระบบ">
+                <a href="admin-panel.html?view=users">จัดการผู้ใช้งาน</a>
+                <a href="admin-panel.html?view=categories">หมวดหมู่</a>
+                <a href="admin-panel.html?view=articles">บทความ</a>
+                <a href="admin-panel.html?view=article-requests">คำขอเพิ่ม / แก้ไขบทความ</a>
+                <a href="admin-panel.html?view=questions">คำถาม</a>
+                <a href="admin-panel.html?view=reports">รายงาน</a>
+            </nav>
+        </div>
+        <p id="adminNotice" class="admin-notice" role="status" aria-live="polite"></p>
+        <div id="adminPanelContent"></div>
+    </main>
+    <script type="module" src="firebase-auth.js"></script>
+</body>
+</html>

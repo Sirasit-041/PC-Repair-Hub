@@ -1,0 +1,429 @@
+
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="pcrh-page-build" content="technician-editor-api-ready-2026-10-24">
+    <title>Technician Editor - PC Repair Hub</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* Navbar */
+        .main-navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 24px;
+            background: #14213d;
+            color: white;
+            position: relative;
+            z-index: 1001;
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .navbar-brand img {
+            width: 38px;
+            height: 38px;
+            object-fit: contain;
+        }
+
+        .menu-toggle {
+            background: transparent;
+            border: none;
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+            padding: 4px 8px;
+        }
+
+        /* ฉากหลังเมนู */
+        .side-menu-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.45);
+            z-index: 1002;
+            opacity: 0;
+            visibility: hidden;
+            transition: 0.25s;
+        }
+
+        .side-menu-overlay.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* เมนูด้านขวา */
+        .side-menu {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 290px;
+            max-width: 85vw;
+            height: 100vh;
+            background: white;
+            color: #222;
+            z-index: 1003;
+            transform: translateX(100%);
+            transition: transform 0.25s ease;
+            display: flex;
+            flex-direction: column;
+            box-shadow: -5px 0 20px rgba(0, 0, 0, 0.18);
+        }
+
+        .side-menu.open {
+            transform: translateX(0);
+        }
+
+        .side-menu-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+            border-bottom: 1px solid #e5e7eb;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .side-menu-close {
+            background: none;
+            border: none;
+            font-size: 28px;
+            cursor: pointer;
+        }
+
+        .side-menu-links {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            padding: 12px;
+            overflow-y: auto;
+        }
+
+        .side-menu-links a {
+            display: block;
+            padding: 12px;
+            border-radius: 8px;
+            color: #263248;
+            text-decoration: none;
+            transition: background 0.2s;
+        }
+
+        .side-menu-links a:hover {
+            background: #eef2ff;
+        }
+
+        .side-menu-links a.active {
+            background: #dbeafe;
+            color: #1d4ed8;
+            font-weight: bold;
+        }
+
+        .side-menu-account {
+            margin-top: auto;
+            padding: 14px 20px 24px;
+            border-top: 1px solid #e5e7eb;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .side-menu-account a {
+            color: #263248;
+            text-decoration: none;
+        }
+
+        .side-menu-account a:hover {
+            color: #2563eb;
+        }
+
+        body.menu-open {
+            overflow: hidden;
+        }
+
+        @media (max-width: 480px) {
+            .main-navbar {
+                padding: 10px 15px;
+            }
+
+            .navbar-brand {
+                font-size: 17px;
+            }
+        }
+    </style>
+</head>
+
+<body class="technician-editor-page">
+
+    <!-- NAVBAR -->
+    <header class="main-navbar">
+        <a href="index.html" class="navbar-brand">
+            <img src="images/logo.png"
+                 alt="PC Repair Hub"
+                 onerror="this.style.display='none'">
+            <span>PC Repair Hub</span>
+        </a>
+
+        <button
+            type="button"
+            class="menu-toggle"
+            id="menuToggle"
+            aria-label="เปิดเมนู"
+            aria-expanded="false">
+            ☰
+        </button>
+    </header>
+
+    <!-- ฉากหลังเมนู -->
+    <div class="side-menu-overlay" id="sideMenuOverlay"></div>
+
+    <!-- เมนูด้านขวา -->
+    <aside class="side-menu" id="sideMenu">
+        <div class="side-menu-header">
+            <span>เมนูหลัก</span>
+            <button
+                type="button"
+                class="side-menu-close"
+                id="sideMenuClose"
+                aria-label="ปิดเมนู">
+                ×
+            </button>
+        </div>
+
+        <nav class="side-menu-links">
+            <a href="index.html">🏠 หน้าแรก</a>
+            <a href="hardware.html">🔧 Hardware</a>
+            <a href="software.html">💿 Software</a>
+            <a href="os.html">🖥️ Operating System</a>
+            <a href="network.html">🌐 Network</a>
+            <a href="my-library.html">📚 My Library</a>
+            <a href="ask-question.html">❓ ถามคำถาม</a>
+            <a href="technician-editor.html" class="active">
+                🧰 Technician Dashboard
+            </a>
+            <a href="admin-dashboard.html">⚙️ Admin Dashboard</a>
+        </nav>
+
+        <div class="side-menu-account">
+            <a href="login.html" id="loginLink">เข้าสู่ระบบ</a>
+            <a href="register.html" id="registerLink">สมัครสมาชิก</a>
+            <a href="#" id="logoutLink" style="display:none;">
+                ออกจากระบบ
+            </a>
+        </div>
+    </aside>
+
+    <!-- TECHNICIAN EDITOR -->
+    <main class="technician-editor-container">
+        <section class="technician-editor-box">
+            <h1>คำขอเพิ่ม / แก้ไขบทความ</h1>
+            <p>ส่งคำขอให้ผู้ดูแลตรวจสอบก่อนนำไปปรับปรุงบทความจริง</p>
+
+            <form id="articleRequestForm" novalidate>
+                <div class="technician-form-group">
+                    <label for="requestType">ประเภทคำขอ</label>
+                    <select id="requestType" name="requestType" required>
+                        <option value="add">ขอเพิ่มบทความใหม่</option>
+                        <option value="edit">ขอแก้ไขบทความเดิม</option>
+                    </select>
+                </div>
+
+                <div class="technician-form-group" id="existingArticleUrlGroup" hidden>
+                    <label for="existingArticleUrl">ลิงก์บทความเดิม</label>
+                    <input type="url" id="existingArticleUrl" name="existingArticleUrl" maxlength="500" placeholder="https://...">
+                </div>
+
+                <div class="technician-form-group">
+                    <label for="articleTitle">ชื่อบทความ / หัวข้อ</label>
+                    <input type="text" id="articleTitle" name="title" maxlength="160" required placeholder="กรอกชื่อบทความ">
+                </div>
+
+                <div class="technician-form-group">
+                    <label for="articleCategory">หมวดหมู่</label>
+                    <select id="articleCategory" name="categoryId" required>
+                        <option value="CAT001">ฮาร์ดแวร์ (Hardware)</option>
+                        <option value="CAT002">ซอฟต์แวร์ (Software)</option>
+                        <option value="CAT003">ระบบปฏิบัติการ (Operating System)</option>
+                        <option value="CAT004">เครือข่าย (Network)</option>
+                    </select>
+                </div>
+
+                <div class="technician-form-group">
+                    <label for="articleSummary">สรุปสิ่งที่ต้องการเพิ่มหรือแก้ไข</label>
+                    <textarea id="articleSummary" name="summary" rows="4" maxlength="1000" required placeholder="อธิบายสั้น ๆ เกี่ยวกับคำขอ"></textarea>
+                </div>
+
+                <div class="technician-form-group">
+                    <label for="articleContent">รายละเอียด / เนื้อหาที่เสนอ</label>
+                    <textarea id="articleContent" name="content" rows="10" maxlength="12000" required placeholder="กรอกรายละเอียดที่ต้องการให้ Admin พิจารณา"></textarea>
+                </div>
+
+                <div class="technician-form-group">
+                    <label for="articleImage">ชื่อไฟล์ภาพประกอบ (ไม่บังคับ)</label>
+                    <input type="file" id="articleImage" accept="image/*">
+                    <small>คำขอนี้เก็บชื่อไฟล์เป็นข้อมูลประกอบเท่านั้น ยังไม่มีการอัปโหลดไฟล์ภาพ</small>
+                </div>
+
+                <div class="technician-form-button">
+                    <button type="submit" id="submitArticleRequest">ส่งคำขอให้ Admin</button>
+                </div>
+                <p id="articleRequestMessage" class="technician-request-message" role="status" aria-live="polite"></p>
+            </form>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="repair-footer">
+        <p>© 2026 PC Repair Hub</p>
+    </footer>
+
+    <script>
+        // Side menu
+        (function () {
+            const toggle = document.getElementById("menuToggle");
+            const menu = document.getElementById("sideMenu");
+            const overlay = document.getElementById("sideMenuOverlay");
+            const close = document.getElementById("sideMenuClose");
+            if (toggle && menu && overlay && close) {
+                const closeMenu = () => {
+                    menu.classList.remove("open");
+                    overlay.classList.remove("show");
+                    document.body.classList.remove("menu-open");
+                    toggle.setAttribute("aria-expanded", "false");
+                };
+                toggle.addEventListener("click", () => {
+                    menu.classList.add("open");
+                    overlay.classList.add("show");
+                    document.body.classList.add("menu-open");
+                    toggle.setAttribute("aria-expanded", "true");
+                });
+                close.addEventListener("click", closeMenu);
+                overlay.addEventListener("click", closeMenu);
+                document.addEventListener("keydown", event => {
+                    if (event.key === "Escape") closeMenu();
+                });
+            }
+
+            const logout = document.getElementById("logoutLink");
+            logout?.addEventListener("click", event => {
+                event.preventDefault();
+                if (typeof window.logout === "function") window.logout();
+            });
+        })();
+
+        const requestMessage = document.getElementById("articleRequestMessage");
+        const showRequestMessage = (text, kind = "") => {
+            requestMessage.className = "technician-request-message";
+            if (kind) requestMessage.classList.add(`is-${kind}`);
+            requestMessage.textContent = text;
+        };
+
+        // Wait on firebase-auth.js's explicit API-ready event; no script-tag lookup or timing guess.
+        const articleRequestFirebaseAPIReady = new Promise((resolve, reject) => {
+            let settled = false;
+            const finish = (error, api) => {
+                if (settled) return;
+                settled = true;
+                window.removeEventListener("pcrh-shared-api-ready", onAPIReady);
+                window.removeEventListener("error", onRuntimeError, true);
+                delete window.__pcrhRejectArticleRequestModule;
+                if (error) reject(error);
+                else resolve(api);
+            };
+            const onAPIReady = () => {
+                const api = window.PCRHSharedData;
+                if (typeof api?.createArticleRequest === "function" && typeof api?.authReady?.then === "function") finish(null, api);
+                else finish(new Error("Firebase module โหลดแล้ว แต่ไม่มี API createArticleRequest ที่ใช้งานได้"));
+            };
+            window.__pcrhRejectArticleRequestModule = () => finish(new Error("โหลด firebase-auth.js หรือ Firebase SDK ไม่สำเร็จ ตรวจ Network/Console และตรวจว่า Deploy ไฟล์ครบ"));
+            const onRuntimeError = event => {
+                if (event.filename && event.filename.includes("firebase-auth.js")) {
+                    finish(new Error(`firebase-auth.js เริ่มทำงานไม่สำเร็จ${event.message ? `: ${event.message}` : " ตรวจ Console เพิ่มเติม"}`));
+                }
+            };
+            window.addEventListener("pcrh-shared-api-ready", onAPIReady, { once: true });
+            window.addEventListener("error", onRuntimeError, true);
+            if (window.PCRHSharedData?.createArticleRequest && window.PCRHSharedData?.authReady) onAPIReady();
+        });
+
+        // Attach a handler immediately so a module-load failure also appears before the user submits.
+        articleRequestFirebaseAPIReady.then(async api => {
+            const user = await api.authReady;
+            if (user) showRequestMessage("Firebase พร้อมแล้ว ส่งคำขอได้");
+            else showRequestMessage("กรุณาเข้าสู่ระบบก่อนส่งคำขอ");
+        }).catch(error => showRequestMessage(error.message || "โหลดระบบส่งคำขอไม่สำเร็จ", "error"));
+
+        const requestTypeSelect = document.getElementById("requestType");
+        const existingArticleUrl = document.getElementById("existingArticleUrl");
+        const existingArticleUrlGroup = document.getElementById("existingArticleUrlGroup");
+        requestTypeSelect.addEventListener("change", () => {
+            const editing = requestTypeSelect.value === "edit";
+            existingArticleUrlGroup.hidden = !editing;
+            existingArticleUrl.required = editing;
+        });
+
+        let isSubmittingArticleRequest = false;
+        document.getElementById("articleRequestForm").addEventListener("submit", async event => {
+            event.preventDefault();
+            if (isSubmittingArticleRequest) return;
+
+            const form = event.currentTarget;
+            if (!form.reportValidity()) return;
+            if (requestTypeSelect.value === "edit" && !existingArticleUrl.value.trim()) {
+                showRequestMessage("กรุณาระบุลิงก์บทความที่ต้องการแก้ไข", "error");
+                existingArticleUrl.focus();
+                return;
+            }
+
+            const submitButton = document.getElementById("submitArticleRequest");
+            const imageFile = document.getElementById("articleImage").files?.[0];
+            isSubmittingArticleRequest = true;
+            submitButton.disabled = true;
+            showRequestMessage("กำลังส่งคำขอ…");
+            try {
+                const api = await articleRequestFirebaseAPIReady;
+                const user = await api.authReady;
+                if (!user || !api.auth?.currentUser || api.auth.currentUser.uid !== user.uid) {
+                    throw new Error("ยังไม่ได้เข้าสู่ระบบด้วย Firebase กรุณาเข้าสู่ระบบแล้วลองใหม่");
+                }
+                await api.createArticleRequest({
+                    requestType: requestTypeSelect.value,
+                    title: document.getElementById("articleTitle").value.trim(),
+                    categoryId: document.getElementById("articleCategory").value,
+                    summary: document.getElementById("articleSummary").value.trim(),
+                    content: document.getElementById("articleContent").value.trim(),
+                    existingArticleUrl: existingArticleUrl.value.trim(),
+                    imageName: imageFile ? imageFile.name : ""
+                });
+                showRequestMessage("ส่งคำขอสำเร็จ ระบบบันทึกคำขอใน Firebase แล้ว", "success");
+                form.reset();
+                existingArticleUrlGroup.hidden = true;
+                existingArticleUrl.required = false;
+            } catch (error) {
+                const code = typeof error?.code === "string" ? error.code : "";
+                console.error("Article request submission failed", code || error?.name || "unknown");
+                const detail = code === "permission-denied"
+                    ? "Firebase ปฏิเสธการบันทึก กรุณาตรวจสอบสิทธิ์และสถานะการเข้าสู่ระบบ"
+                    : (error?.message || "เกิดข้อผิดพลาดที่ไม่ทราบสาเหตุ");
+                showRequestMessage(`ส่งคำขอไม่สำเร็จ${code ? ` (${code})` : ""}: ${detail}`, "error");
+            } finally {
+                isSubmittingArticleRequest = false;
+                submitButton.disabled = false;
+            }
+        });
+    </script>
+
+    <script src="admin-panel.js" defer></script>
+    <script id="firebaseAuthModule" type="module" src="firebase-auth.js" onerror="window.__pcrhRejectArticleRequestModule?.()"></script>
+    <script src="satisfaction-popup.js" defer></script>
+</body>
+</html>

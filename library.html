@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Library - PC Repair Hub</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* =========================
+           My Library
+        ========================= */
+
+        .library-page {
+            background: #f5f7fb;
+            min-height: 100vh;
+        }
+
+        .library-main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 30px 80px;
+        }
+
+        .library-hero {
+            background: linear-gradient(135deg, #2563eb, #7c3aed);
+            border-radius: 24px;
+            padding: 45px;
+            color: white;
+            margin-bottom: 35px;
+            box-shadow: 0 15px 35px rgba(37, 99, 235, 0.18);
+        }
+
+        .library-hero .library-tag {
+            display: inline-block;
+            background: rgba(255,255,255,0.18);
+            padding: 7px 14px;
+            border-radius: 20px;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .library-hero h1 {
+            margin: 0 0 10px;
+            font-size: 38px;
+        }
+
+        .library-hero p {
+            margin: 0;
+            font-size: 17px;
+            opacity: 0.92;
+        }
+
+        .library-content {
+            background: white;
+            border-radius: 22px;
+            padding: 35px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+        }
+
+        .library-title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+
+        .library-title h2 {
+            margin: 0;
+            font-size: 24px;
+            color: #1f2937;
+        }
+
+        .library-count {
+            background: #eef2ff;
+            color: #4f46e5;
+            padding: 8px 14px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .library-empty {
+            text-align: center;
+            padding: 55px 20px;
+            border: 2px dashed #dbe3f0;
+            border-radius: 18px;
+            background: #fafbff;
+        }
+
+        .library-empty-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            background: #eef2ff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 38px;
+        }
+
+        .library-empty h3 {
+            margin: 0 0 10px;
+            color: #374151;
+            font-size: 21px;
+        }
+
+        .library-empty p {
+            margin: 0 auto 25px;
+            max-width: 500px;
+            color: #6b7280;
+            line-height: 1.7;
+        }
+
+        .library-browse-btn {
+            display: inline-block;
+            text-decoration: none;
+            background: #2563eb;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 10px;
+            font-weight: 600;
+            transition: 0.2s;
+        }
+
+        .library-browse-btn:hover {
+            background: #1d4ed8;
+            transform: translateY(-2px);
+        }
+
+        .library-back {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #4b5563;
+            text-decoration: none;
+            font-size: 15px;
+        }
+
+        .library-back:hover {
+            color: #2563eb;
+        }
+
+        @media (max-width: 700px) {
+
+            .library-main {
+                padding: 35px 15px 50px;
+            }
+
+            .library-hero {
+                padding: 30px 25px;
+            }
+
+            .library-hero h1 {
+                font-size: 30px;
+            }
+
+            .library-content {
+                padding: 25px 18px;
+            }
+
+            .library-title {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body class="library-page">
+
+    <!-- Navbar -->
+    <nav class="navbar">
+
+        <div class="navbar-container">
+
+            <a href="index.html" class="logo">
+                PC Repair Hub
+            </a>
+
+            <div class="nav-links">
+
+                <a href="index.html">หน้าแรก</a>
+
+                <a href="hardware.html">Hardware</a>
+
+                <a href="software.html">Software</a>
+
+                <a href="os.html">Operating System</a>
+
+                <a href="network.html">Network</a>
+
+                <a href="my-library.html">📚 My Library</a>
+                <a href="index.html#articles">บทความ</a>
+                <a href="ask-question.html">ถามคำถาม</a>
+                <a href="login.html" id="loginLink">เข้าสู่ระบบ</a>
+                <a href="register.html" id="registerLink">สมัครสมาชิก</a>
+                <a href="#" id="logoutLink" onclick="logout(); return false;" style="display:none;">ออกจากระบบ</a>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+    <!-- Main -->
+    <main class="library-main">
+
+        <a href="index.html" class="library-back">
+            ← กลับหน้าหลัก
+        </a>
+
+        <!-- Hero -->
+        <section class="library-hero">
+
+            <span class="library-tag">
+                📚 Personal Library
+            </span>
+
+            <h1>My Library</h1>
+
+            <p>
+                รวมบทความที่คุณบันทึกไว้
+                เพื่อกลับมาอ่านวิธีแก้ปัญหาคอมพิวเตอร์ได้ภายหลัง
+            </p>
+
+        </section>
+
+
+        <!-- Content -->
+        <section class="library-content">
+
+            <div class="library-title">
+
+                <h2>บทความที่บันทึกไว้</h2>
+
+                <span class="library-count">
+                    0 บทความ
+                </span>
+
+            </div>
+
+
+            <!-- Empty State -->
+            <div class="library-empty">
+
+                <div class="library-empty-icon">
+                    📚
+                </div>
+
+                <h3>
+                    ยังไม่มีบทความที่บันทึกไว้
+                </h3>
+
+                <p>
+                    เมื่อคุณพบบทความวิธีแก้ปัญหาคอมพิวเตอร์
+                    ที่ต้องการกลับมาอ่านภายหลัง
+                    สามารถกดบันทึกไว้ใน My Library ได้
+                </p>
+
+                <a href="hardware.html" class="library-browse-btn">
+                    🔍 เริ่มค้นหาบทความ
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+
+        <p>
+            © 2026 PC Repair Hub
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+    <script type="module" src="firebase-auth.js"></script>
+    <script src="satisfaction-popup.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - PC Repair Hub</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* ===== NAVBAR ===== */
+        .admin-dashboard-page .main-navbar {
+            position: relative;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 24px;
+            background: #fff;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .admin-dashboard-page .brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #222;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .admin-dashboard-page .brand img {
+            width: 42px;
+            height: 42px;
+            object-fit: contain;
+        }
+
+        .admin-dashboard-page .menu-toggle {
+            display: block;
+            border: none;
+            background: transparent;
+            color: #222;
+            font-size: 32px;
+            line-height: 1;
+            padding: 6px 10px;
+            cursor: pointer;
+        }
+
+        /* ===== OVERLAY ===== */
+        .admin-dashboard-page .side-menu-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 2000;
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        .admin-dashboard-page .side-menu-overlay.active {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+        }
+
+        /* ===== SIDE MENU ===== */
+        .admin-dashboard-page .side-menu {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 300px;
+            max-width: 85vw;
+            height: 100vh;
+            height: 100dvh;
+            box-sizing: border-box;
+            background: #fff;
+            z-index: 2001;
+            display: flex;
+            flex-direction: column;
+            overflow-y: auto;
+            box-shadow: -5px 0 20px rgba(0, 0, 0, 0.2);
+            transform: translateX(105%);
+            transition: transform 0.3s ease;
+            visibility: hidden;
+        }
+
+        .admin-dashboard-page .side-menu.active {
+            transform: translateX(0);
+            visibility: visible;
+        }
+
+        .admin-dashboard-page .side-menu-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+            border-bottom: 1px solid #e5e7eb;
+            flex-shrink: 0;
+        }
+
+        .admin-dashboard-page .side-menu-header h2 {
+            margin: 0;
+            font-size: 20px;
+            color: #222;
+        }
+
+        .admin-dashboard-page .side-menu-close {
+            border: none;
+            background: transparent;
+            color: #333;
+            font-size: 30px;
+            cursor: pointer;
+            line-height: 1;
+        }
+
+        .admin-dashboard-page .side-menu-links {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            padding: 12px;
+        }
+
+        .admin-dashboard-page .side-menu-links a,
+        .admin-dashboard-page .side-menu-account a {
+            display: block;
+            box-sizing: border-box;
+            padding: 12px 14px;
+            border-radius: 8px;
+            color: #222;
+            text-decoration: none;
+            font-size: 15px;
+            transition: background 0.2s ease;
+        }
+
+        .admin-dashboard-page .side-menu-links a:hover,
+        .admin-dashboard-page .side-menu-account a:hover {
+            background: #edf2ff;
+        }
+
+        .admin-dashboard-page .side-menu-links a.current-page {
+            background: #e5edff;
+            color: #174ea6;
+            font-weight: bold;
+        }
+
+        .admin-dashboard-page .side-menu-account {
+            margin-top: auto;
+            padding: 14px 12px 24px;
+            border-top: 1px solid #ddd;
+            flex-shrink: 0;
+        }
+
+        .admin-dashboard-page .side-menu-account a {
+            margin-bottom: 4px;
+        }
+
+        .admin-dashboard-page .side-menu-account .logout-link {
+            color: #c62828;
+        }
+
+        .admin-dashboard-page .side-menu-account [hidden] {
+            display: none !important;
+        }
+
+        .admin-dashboard-page.menu-open {
+            overflow: hidden;
+        }
+
+        /* ===== DASHBOARD RESPONSIVE ===== */
+        @media (max-width: 480px) {
+            .admin-dashboard-page .main-navbar {
+                padding: 10px 14px;
+            }
+
+            .admin-dashboard-page .brand {
+                gap: 7px;
+                font-size: 14px;
+            }
+
+            .admin-dashboard-page .brand img {
+                width: 34px;
+                height: 34px;
+            }
+        }
+    </style>
+</head>
+
+<body class="admin-dashboard-page" data-admin-dashboard>
+
+    <!-- NAVBAR -->
+    <nav class="main-navbar">
+
+        <a href="index.html" class="brand">
+            <img src="images/logo.png" alt="PC Repair Hub">
+            <span>PC Repair Hub - Administrator</span>
+        </a>
+
+        <button
+            type="button"
+            class="menu-toggle"
+            id="menuToggle"
+            aria-label="เปิดเมนู"
+            aria-controls="sideMenu"
+            aria-expanded="false">
+            ☰
+        </button>
+
+    </nav>
+
+
+    <!-- OVERLAY -->
+    <div
+        class="side-menu-overlay"
+        id="sideMenuOverlay">
+    </div>
+
+
+    <!-- RIGHT SIDE MENU -->
+    <aside
+        class="side-menu"
+        id="sideMenu"
+        aria-hidden="true">
+
+        <div class="side-menu-header">
+            <h2>เมนูหลัก</h2>
+
+            <button
+                type="button"
+                class="side-menu-close"
+                id="sideMenuClose"
+                aria-label="ปิดเมนู">
+                ×
+            </button>
+        </div>
+
+        <nav class="side-menu-links">
+            <a href="index.html">🏠 หน้าแรก</a>
+            <a href="hardware.html">🔧 Hardware</a>
+            <a href="software.html">💿 Software</a>
+            <a href="os.html">🖥️ Operating System</a>
+            <a href="network.html">🌐 Network</a>
+            <a href="my-library.html">📚 My Library</a>
+            <a href="ask-question.html">❓ ถามคำถาม</a>
+            <a href="technician-editor.html">🧰 Technician Dashboard</a>
+            <a href="admin-dashboard.html" class="current-page">⚙️ Admin Dashboard</a>
+        </nav>
+
+        <div class="side-menu-account">
+            <a href="login.html" id="loginLink">🔑 เข้าสู่ระบบ</a>
+            <a href="register.html" id="registerLink">📝 สมัครสมาชิก</a>
+            <a href="#" id="logoutLink" class="logout-link" hidden>🚪 ออกจากระบบ</a>
+        </div>
+
+    </aside>
+
+
+    <!-- DASHBOARD -->
+    <main class="admin-dashboard-container">
+
+        <section class="admin-dashboard-box">
+
+            <h1>Dashboard</h1>
+
+            <!-- สถิติ -->
+            <div class="admin-stats-grid">
+
+                <div class="admin-stat-card">
+                    <h3>โปรไฟล์ผู้ใช้ใน Firestore</h3>
+                    <strong data-dashboard-metric="users">0</strong>
+                </div>
+
+                <div class="admin-stat-card">
+                    <h3>บทความ</h3>
+                    <strong data-dashboard-metric="articles">0</strong>
+                </div>
+
+                <div class="admin-stat-card">
+                    <h3>คำถาม</h3>
+                    <strong data-dashboard-metric="questions">0</strong>
+                </div>
+
+                <div class="admin-stat-card">
+                    <h3>รอตรวจสอบ</h3>
+                    <strong data-dashboard-metric="pending">0</strong>
+                </div>
+
+                <div class="admin-stat-card">
+                    <h3>คำขอบทความรอตรวจ</h3>
+                    <strong data-dashboard-metric="articleRequests">—</strong>
+                </div>
+
+            </div>
+
+            <!-- เมนูจัดการ -->
+            <div class="admin-menu">
+
+                <a href="admin-panel.html?view=users" class="admin-menu-button">
+                    จัดการผู้ใช้งาน
+                </a>
+
+                <a href="admin-panel.html?view=categories" class="admin-menu-button">
+                    จัดการหมวดหมู่
+                </a>
+
+                <a href="admin-panel.html?view=articles" class="admin-menu-button">
+                    ตรวจสอบบทความ
+                </a>
+
+                <a href="admin-panel.html?view=article-requests" class="admin-menu-button">
+                    คำขอเพิ่ม / แก้ไขบทความ
+                </a>
+
+                <a href="admin-panel.html?view=questions" class="admin-menu-button">
+                    จัดการคำถาม
+                </a>
+
+                <a href="admin-panel.html?view=reports" class="admin-menu-button">
+                    ดูรายงาน
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="repair-footer">
+        <p>© 2026 PC Repair Hub</p>
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+    <script>
+        document.addEventListener("DOMContentLoaded", async function () {
+            if (window.PCRHSharedData && window.PCRHSharedData.authReady) {
+                await window.PCRHSharedData.authReady;
+                await window.PCRHSharedData.ready;
+            }
+            const isAdmin = Boolean(window.PCRHSharedData && window.PCRHSharedData.isCloudAdmin);
+            if (!isAdmin) {
+                alert("กรุณาเข้าสู่ระบบด้วยบัญชี Firebase ที่ได้รับสิทธิ์ผู้ดูแล");
+                window.location.replace("admin-login.html");
+                return;
+            }
+
+            const menuToggle = document.getElementById("menuToggle");
+            const sideMenu = document.getElementById("sideMenu");
+            const overlay = document.getElementById("sideMenuOverlay");
+            const closeButton = document.getElementById("sideMenuClose");
+
+            function openMenu() {
+                sideMenu.classList.add("active");
+                overlay.classList.add("active");
+                document.body.classList.add("menu-open");
+
+                menuToggle.setAttribute("aria-expanded", "true");
+                sideMenu.setAttribute("aria-hidden", "false");
+            }
+
+            function closeMenu() {
+                sideMenu.classList.remove("active");
+                overlay.classList.remove("active");
+                document.body.classList.remove("menu-open");
+
+                menuToggle.setAttribute("aria-expanded", "false");
+                sideMenu.setAttribute("aria-hidden", "true");
+            }
+
+            menuToggle.addEventListener("click", openMenu);
+            closeButton.addEventListener("click", closeMenu);
+            overlay.addEventListener("click", closeMenu);
+
+            document.addEventListener("keydown", function (event) {
+                if (event.key === "Escape") {
+                    closeMenu();
+                }
+            });
+
+            // แสดงปุ่มบัญชีตามสถานะล็อกอิน
+            const loginLink = document.getElementById("loginLink");
+            const registerLink = document.getElementById("registerLink");
+            const logoutLink = document.getElementById("logoutLink");
+
+            function updateAccountMenu() {
+                const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+
+                loginLink.hidden = isLoggedIn;
+                registerLink.hidden = isLoggedIn;
+                logoutLink.hidden = !isLoggedIn;
+            }
+
+            logoutLink.addEventListener("click", function (event) {
+                event.preventDefault();
+                closeMenu();
+                if (window.logout) window.logout();
+            });
+
+            updateAccountMenu();
+        });
+    </script>
+    <script src="admin-panel.js" defer></script>
+    <script type="module" src="firebase-auth.js"></script>
+</body>
+</html>

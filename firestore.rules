@@ -1,0 +1,139 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() {
+      return request.auth != null;
+    }
+
+    function isOwner(userId) {
+      return signedIn() && request.auth.uid == userId;
+    }
+
+    function isAdmin() {
+      return signedIn() && request.auth.token.admin == true;
+    }
+
+    function profileFieldsAllowed() {
+      return request.resource.data.keys().hasOnly([
+        'uid', 'fullname', 'username', 'email', 'displayName', 'photoURL',
+        'createdAt', 'lastLoginAt', 'updatedAt'
+      ]);
+    }
+
+    function profileDataValid(userId) {
+      let data = request.resource.data;
+      return data.uid is string
+        && data.uid == userId
+        && data.email is string
+        && data.email == request.auth.token.email
+        && data.email.size() <= 254
+        && data.displayName is string
+        && data.displayName.size() <= 200
+        && data.photoURL is string
+        && data.photoURL.size() <= 2048
+        && data.createdAt is timestamp
+        && data.lastLoginAt is timestamp
+        && (!('fullname' in data) || (data.fullname is string && data.fullname.size() <= 100))
+        && (!('username' in data) || (data.username is string && data.username.size() <= 40))
+        && (!('updatedAt' in data) || data.updatedAt is timestamp);
+    }
+
+    match /users/{userId} {
+      // Owners may get only their own document. Collection queries are Admin-only.
+      allow get: if isOwner(userId) || isAdmin();
+      allow list: if isAdmin();
+
+      allow create: if isOwner(userId)
+        && profileFieldsAllowed()
+        && profileDataValid(userId)
+        && request.resource.data.createdAt == request.time
+        && request.resource.data.lastLoginAt == request.time
+        && request.resource.data.updatedAt == request.time;
+
+      allow update: if isOwner(userId)
+        && (!('uid' in resource.data) || resource.data.uid == userId)
+        && profileDataValid(userId)
+        // Keep legacy fields in place, but clients cannot add/change/remove
+        // authorization fields or any other field outside this profile schema.
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly([
+          'uid', 'fullname', 'username', 'email', 'displayName', 'photoURL',
+          'lastLoginAt', 'updatedAt', 'createdAt'
+        ])
+        && (((resource.data.get('createdAt', null) is timestamp)
+              && request.resource.data.createdAt == resource.data.createdAt)
+            || (!(resource.data.get('createdAt', null) is timestamp)
+              && request.resource.data.createdAt == request.time))
+        && request.resource.data.lastLoginAt == request.time
+        && request.resource.data.updatedAt == request.time;
+
+      allow delete: if false;
+    }
+
+    match /articleRequests/{requestId} {
+      function validStatus(status) {
+        return status == 'pending'
+          || status == 'approved'
+          || status == 'rejected'
+          || status == 'completed';
+      }
+
+      function requestDataValid() {
+        let data = request.resource.data;
+        return data.requestType is string
+          && (data.requestType == 'add' || data.requestType == 'edit')
+          && data.title is string
+          && data.title.size() > 0
+          && data.title.size() <= 160
+          && data.categoryId is string
+          && data.categoryId.size() > 0
+          && data.categoryId.size() <= 40
+          && data.summary is string
+          && data.summary.size() > 0
+          && data.summary.size() <= 1000
+          && data.content is string
+          && data.content.size() > 0
+          && data.content.size() <= 12000
+          && data.uid is string
+          && data.uid == request.auth.uid
+          && data.email is string
+          && data.email == request.auth.token.email
+          && data.email.size() <= 254
+          && data.displayName is string
+          && data.displayName.size() <= 200
+          && data.status == 'pending'
+          && (!('existingArticleUrl' in data)
+            || (data.existingArticleUrl is string && data.existingArticleUrl.size() <= 500))
+          && (!('imageName' in data)
+            || (data.imageName is string && data.imageName.size() <= 255));
+      }
+
+      allow get: if (request.auth != null && resource.data.uid == request.auth.uid) || isAdmin();
+      allow list: if isAdmin();
+
+      allow create: if request.auth != null
+        && request.resource.data.keys().hasOnly([
+          'requestType', 'title', 'categoryId', 'summary', 'content',
+          'existingArticleUrl', 'imageName', 'uid', 'email', 'displayName',
+          'status', 'createdAt', 'updatedAt'
+        ])
+        && request.resource.data.keys().hasAll([
+          'requestType', 'title', 'categoryId', 'summary', 'content',
+          'uid', 'email', 'displayName', 'status', 'createdAt', 'updatedAt'
+        ])
+        && requestDataValid()
+        && request.resource.data.createdAt == request.time
+        && request.resource.data.updatedAt == request.time;
+
+      allow update: if isAdmin()
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly([
+          'status', 'adminNote', 'updatedAt'
+        ])
+        && validStatus(request.resource.data.status)
+        && request.resource.data.adminNote is string
+        && request.resource.data.adminNote.size() <= 2000
+        && request.resource.data.updatedAt == request.time;
+
+      allow delete: if false;
+    }
+  }
+}

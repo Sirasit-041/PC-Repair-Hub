@@ -1,0 +1,12 @@
+{
+  "name": "pc-repair-hub-admin-tools",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "grant-admin": "node manage-admin-claim.mjs grant",
+    "revoke-admin": "node manage-admin-claim.mjs revoke"
+  },
+  "dependencies": {
+    "firebase-admin": "^13.0.0"
+  }
+}

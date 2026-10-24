@@ -1,0 +1,373 @@
+
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PC Repair Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body data-public-home>
+
+    <!-- NAVBAR -->
+    <header class="main-navbar">
+
+        <a href="index.html" class="main-logo">
+            <img src="images/logo.png" alt="PC Repair Hub Logo">
+            <span>PC Repair Hub</span>
+        </a>
+        <button
+            class="menu-toggle"
+            id="menuToggle"
+            type="button"
+            aria-label="เปิดเมนู"
+            aria-expanded="false"
+            aria-controls="sideMenu"
+        >
+            ☰
+        </button>
+
+    </header>
+
+    <!-- พื้นหลังมืด -->
+    <div class="menu-overlay" id="menuOverlay"></div>
+
+    <!-- เมนูด้านขวา -->
+    <aside
+        class="side-menu"
+        id="sideMenu"
+        aria-hidden="true"
+        inert
+    >
+
+        <div class="side-menu-header">
+            <strong data-i18n="mainMenu">เมนูหลัก</strong>
+            <button type="button" id="menuClose" aria-label="ปิดเมนู">
+                ✕
+            </button>
+        </div>
+
+        <div class="side-menu-links">
+            <a href="index.html" class="side-menu-link" data-i18n="home">
+                🏠 หน้าแรก
+            </a>
+
+            <a href="hardware.html" class="side-menu-link" data-i18n="hardware">
+                🔧 Hardware
+            </a>
+
+            <a href="software.html" class="side-menu-link" data-i18n="software">
+                💿 Software
+            </a>
+
+            <a href="os.html" class="side-menu-link" data-i18n="os">
+                🖥️ Operating System
+            </a>
+
+            <a href="network.html" class="side-menu-link" data-i18n="network">
+                🌐 Network
+            </a>
+
+            <a href="my-library.html" class="side-menu-link" data-i18n="library">
+                📚 My Library
+            </a>
+
+            <a href="ask-question.html" class="side-menu-link" data-i18n="ask">
+                ❓ ถามคำถาม
+            </a>
+
+            <a href="technician-editor.html" class="side-menu-link" data-i18n="technician">
+                🧰 Technician Dashboard
+            </a>
+
+            <a href="admin-dashboard.html" class="side-menu-link" data-i18n="admin">
+                ⚙️ Admin Dashboard
+            </a>
+        </div>
+
+        <!-- บัญชีผู้ใช้ -->
+        <div class="side-menu-account">
+
+            <a href="login.html" id="loginLink" data-i18n="login">
+                🔑 เข้าสู่ระบบ
+            </a>
+
+            <a href="register.html" id="registerLink" data-i18n="register">
+                👤 สร้างบัญชี
+            </a>
+
+            <a
+                href="#"
+                id="logoutLink"
+                onclick="logout(); return false;"
+                style="display: none;"
+                data-i18n="logout"
+            >
+                🚪 ออกจากระบบ
+            </a>
+
+        </div>
+
+    </aside>
+
+    <!-- HERO -->
+    <section class="home-hero">
+
+        <div class="home-hero-content">
+
+            <h1><span>PC</span> Repair Hub</h1>
+
+            <h2 data-i18n="heroTitle">
+                คลังวิธีซ่อมคอมพิวเตอร์
+            </h2>
+
+            <p data-i18n="heroDescription">
+                รวมวิธีแก้ไขปัญหาเกี่ยวกับอุปกรณ์คอมพิวเตอร์
+            </p>
+
+        </div>
+
+        <div class="home-hero-image">
+
+            <div class="computer-illustration">
+
+                <div class="monitor">
+                    <div class="monitor-screen">🔧</div>
+                </div>
+
+                <div class="computer-base"></div>
+
+                <div class="computer-case">
+                    <div class="power-light"></div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- CATEGORY -->
+    <section class="home-categories">
+
+        <div class="home-category-grid">
+
+            <div
+                class="home-category-card hardware-card"
+                data-category-id="CAT001"
+                onclick="requireLogin(event, 'CAT001')"
+            >
+                <div class="home-category-icon">🔧</div>
+
+                <div class="home-category-text">
+                    <h3>Hardware</h3>
+                    <p data-i18n="hardwareDescription">
+                        ปัญหาด้านอุปกรณ์คอมพิวเตอร์
+                    </p>
+                </div>
+
+                <div class="home-arrow">→</div>
+            </div>
+
+            <div
+                class="home-category-card software-card"
+                data-category-id="CAT002"
+                onclick="requireLogin(event, 'CAT002')"
+            >
+                <div class="home-category-icon">▦</div>
+
+                <div class="home-category-text">
+                    <h3>Software</h3>
+                    <p data-i18n="softwareDescription">
+                        ปัญหาด้านโปรแกรมคอมพิวเตอร์
+                    </p>
+                </div>
+
+                <div class="home-arrow">→</div>
+            </div>
+
+            <div
+                class="home-category-card os-card"
+                data-category-id="CAT003"
+                onclick="requireLogin(event, 'CAT003')"
+            >
+                <div class="home-category-icon">⊞</div>
+
+                <div class="home-category-text">
+                    <h3>Operating System</h3>
+                    <p data-i18n="osDescription">
+                        ปัญหาด้านระบบปฏิบัติการ
+                    </p>
+                </div>
+
+                <div class="home-arrow">→</div>
+            </div>
+
+            <div
+                class="home-category-card network-card"
+                data-category-id="CAT004"
+                onclick="requireLogin(event, 'CAT004')"
+            >
+                <div class="home-category-icon">◉</div>
+
+                <div class="home-category-text">
+                    <h3>Network</h3>
+                    <p data-i18n="networkDescription">
+                        ปัญหาด้านระบบเครือข่าย
+                    </p>
+                </div>
+
+                <div class="home-arrow">→</div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="home-footer">
+        <p>© 2026 PC Repair Hub</p>
+        <p data-i18n="footerDescription">คลังวิธีซ่อมคอมพิวเตอร์</p>
+    </footer>
+
+    <!-- JavaScript หลัก -->
+    <script src="script.js"></script>
+
+    <!-- ระบบแปลข้อความของหน้าแรก -->
+    <script>
+    (() => {
+        const translations = {
+            th: {
+                mainMenu: "เมนูหลัก",
+                home: "🏠 หน้าแรก",
+                hardware: "🔧 Hardware",
+                software: "💿 Software",
+                os: "🖥️ Operating System",
+                network: "🌐 Network",
+                library: "📚 My Library",
+                ask: "❓ ถามคำถาม",
+                technician: "🧰 Technician Dashboard",
+                admin: "⚙️ Admin Dashboard",
+                login: "🔑 เข้าสู่ระบบ",
+                register: "👤 สร้างบัญชี",
+                logout: "🚪 ออกจากระบบ",
+                heroTitle: "คลังวิธีซ่อมคอมพิวเตอร์",
+                heroDescription: "รวมวิธีแก้ไขปัญหาเกี่ยวกับอุปกรณ์คอมพิวเตอร์",
+                hardwareDescription: "ปัญหาด้านอุปกรณ์คอมพิวเตอร์",
+                softwareDescription: "ปัญหาด้านโปรแกรมคอมพิวเตอร์",
+                osDescription: "ปัญหาด้านระบบปฏิบัติการ",
+                networkDescription: "ปัญหาด้านระบบเครือข่าย",
+                footerDescription: "คลังวิธีซ่อมคอมพิวเตอร์"
+            },
+
+            en: {
+                mainMenu: "Main Menu",
+                home: "🏠 Home",
+                hardware: "🔧 Hardware",
+                software: "💿 Software",
+                os: "🖥️ Operating System",
+                network: "🌐 Network",
+                library: "📚 My Library",
+                ask: "❓ Ask a Question",
+                technician: "🧰 Technician Dashboard",
+                admin: "⚙️ Admin Dashboard",
+                login: "🔑 Log In",
+                register: "👤 Create Account",
+                logout: "🚪 Log Out",
+                heroTitle: "Computer Repair Knowledge Hub",
+                heroDescription: "Solutions to common computer hardware problems",
+                hardwareDescription: "Computer hardware problems",
+                softwareDescription: "Computer software problems",
+                osDescription: "Operating system problems",
+                networkDescription: "Computer network problems",
+                footerDescription: "Computer Repair Knowledge Hub"
+            }
+        };
+
+        function applyHomeLanguage(language) {
+            const dictionary = translations[language] || translations.th;
+
+            document.documentElement.lang = language;
+
+            document.querySelectorAll("[data-i18n]").forEach(element => {
+                const key = element.dataset.i18n;
+
+                if (Object.prototype.hasOwnProperty.call(dictionary, key)) {
+                    element.textContent = dictionary[key];
+                }
+            });
+        }
+
+        window.addEventListener("storage", event => {
+            if (event.key === "siteLanguage") {
+                applyHomeLanguage(event.newValue || "th");
+            }
+        });
+
+        // ใช้ภาษาที่บันทึกไว้
+        applyHomeLanguage(localStorage.getItem("siteLanguage") || "th");
+    })();
+    </script>
+
+    <!-- ระบบเปิดและปิดเมนู -->
+    <script>
+    (() => {
+        const toggle = document.getElementById("menuToggle");
+        const menu = document.getElementById("sideMenu");
+        const overlay = document.getElementById("menuOverlay");
+        const close = document.getElementById("menuClose");
+
+        if (!toggle || !menu || !overlay || !close) return;
+
+        function openMenu() {
+            menu.classList.add("open");
+            overlay.classList.add("open");
+            document.body.classList.add("menu-open");
+
+            menu.inert = false;
+            menu.setAttribute("aria-hidden", "false");
+            toggle.setAttribute("aria-expanded", "true");
+
+            close.focus();
+        }
+
+        function closeMenu(returnFocus = true) {
+            menu.classList.remove("open");
+            overlay.classList.remove("open");
+            document.body.classList.remove("menu-open");
+
+            menu.inert = true;
+            menu.setAttribute("aria-hidden", "true");
+            toggle.setAttribute("aria-expanded", "false");
+
+            if (returnFocus) {
+                toggle.focus();
+            }
+        }
+
+        toggle.addEventListener("click", openMenu);
+        close.addEventListener("click", () => closeMenu());
+        overlay.addEventListener("click", () => closeMenu());
+
+        menu.querySelectorAll("a").forEach(link => {
+            link.addEventListener("click", () => closeMenu(false));
+        });
+
+        document.addEventListener("keydown", event => {
+            if (
+                event.key === "Escape" &&
+                menu.classList.contains("open")
+            ) {
+                closeMenu();
+            }
+        });
+    })();
+    </script>
+
+    <script src="admin-panel.js" defer></script>
+    <script type="module" src="firebase-auth.js"></script>
+    <script src="satisfaction-popup.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+{
+  "rules": {
+    "admins": {
+      "$uid": {
+        ".read": "auth != null && auth.uid === $uid",
+        ".write": false
+      }
+    },
+    "questions": {
+      ".read": "auth != null && auth.token.admin === true",
+      "$uid": {
+        ".read": "auth != null && (auth.uid === $uid || auth.token.admin === true)",
+        "$questionId": {
+          ".write": "auth != null && newData.exists() && (auth.token.admin === true || (auth.uid === $uid && !data.exists()))",
+          ".validate": "newData.hasChildren(['id', 'ownerUid', 'title', 'detail', 'categoryId', 'username', 'status', 'createdAt', 'updatedAt']) && newData.child('id').isString() && newData.child('id').val() === $questionId && newData.child('ownerUid').isString() && newData.child('ownerUid').val() === $uid && newData.child('title').isString() && newData.child('title').val().length > 0 && newData.child('title').val().length <= 120 && newData.child('detail').isString() && newData.child('detail').val().length > 0 && newData.child('detail').val().length <= 5000 && newData.child('categoryId').isString() && (newData.child('categoryId').val() === 'CAT001' || newData.child('categoryId').val() === 'CAT002' || newData.child('categoryId').val() === 'CAT003' || newData.child('categoryId').val() === 'CAT004') && newData.child('username').isString() && newData.child('username').val().length <= 254 && newData.child('status').isString() && (newData.child('status').val() === 'open' || newData.child('status').val() === 'in_progress' || newData.child('status').val() === 'answered') && newData.child('createdAt').isString() && newData.child('createdAt').val().length > 0 && newData.child('createdAt').val().length <= 40 && newData.child('updatedAt').isString() && newData.child('updatedAt').val().length > 0 && newData.child('updatedAt').val().length <= 40 && (!newData.child('reply').exists() || (newData.child('reply').isString() && newData.child('reply').val().length <= 5000)) && (!newData.child('createdDate').exists() || (newData.child('createdDate').isString() && newData.child('createdDate').val().length <= 40)) && (!newData.child('replies').exists() || (auth.token.admin === true && newData.child('replies').hasChildren())) && (auth.token.admin === true || (!data.exists() && newData.child('status').val() === 'open' && !newData.child('reply').exists() && !newData.child('createdDate').exists() && !newData.child('replies').exists()))",
+          "id": { ".validate": true },
+          "ownerUid": { ".validate": true },
+          "title": { ".validate": true },
+          "detail": { ".validate": true },
+          "categoryId": { ".validate": true },
+          "username": { ".validate": true },
+          "status": { ".validate": true },
+          "createdAt": { ".validate": true },
+          "updatedAt": { ".validate": true },
+          "reply": { ".validate": "auth != null && auth.token.admin === true" },
+          "createdDate": { ".validate": "auth != null && auth.token.admin === true" },
+          "replies": {
+            ".validate": true,
+            "$replyId": {
+              ".validate": "auth != null && auth.token.admin === true && newData.hasChildren(['content', 'author', 'updatedAt']) && newData.child('content').isString() && newData.child('content').val().length > 0 && newData.child('content').val().length <= 5000 && newData.child('author').isString() && newData.child('author').val().length > 0 && newData.child('author').val().length <= 254 && newData.child('updatedAt').isString() && newData.child('updatedAt').val().length > 0 && newData.child('updatedAt').val().length <= 40 && (!newData.child('createdAt').exists() || (newData.child('createdAt').isString() && newData.child('createdAt').val().length <= 40))",
+              "content": { ".validate": true },
+              "author": { ".validate": true },
+              "updatedAt": { ".validate": true },
+              "createdAt": { ".validate": true },
+              "$other": {
+                ".validate": false
+              }
+            }
+          },
+          "$other": {
+            ".validate": false
+          }
+        }
+      }
+    },
+    "articles": {
+      ".read": "auth != null && auth.token.admin === true",
+      ".write": "auth != null && auth.token.admin === true"
+    },
+    "publicArticles": {
+      ".read": true,
+      ".write": "auth != null && auth.token.admin === true"
+    },
+    "articleOverrides": {
+      ".read": "auth != null && auth.token.admin === true",
+      ".write": "auth != null && auth.token.admin === true"
+    },
+    "publicArticleOverrides": {
+      ".read": true,
+      ".write": "auth != null && auth.token.admin === true"
+    }
+  }
+}

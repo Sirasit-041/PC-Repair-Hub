@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Operating System Repair - PC Repair Hub</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body class="repair-page" data-article-detail>
+
+
+    <!-- Navbar -->
+    <header class="repair-navbar">
+
+        <div class="repair-brand">
+            <img src="images/logo.png" alt="PC Repair Hub">
+            <span>PC Repair Hub</span>
+        </div>
+
+    </header>
+
+
+
+    <main class="repair-main">
+
+
+        <!-- Back -->
+        <a href="os.html" class="repair-back">
+            ← กลับไปหน้า Operating System
+        </a>
+
+
+
+        <!-- Hero -->
+        <section class="repair-hero">
+
+
+            <div class="repair-hero-text">
+
+                <span class="repair-tag">
+                    OPERATING SYSTEM
+                </span>
+
+                <h1 id="repairTitle">
+                    กำลังโหลด...
+                </h1>
+
+                <p id="repairDescription">
+                    กำลังโหลดข้อมูล...
+                </p>
+
+
+                <div class="repair-meta">
+
+                    <div class="meta-box">
+                        <div class="meta-icon">💻</div>
+                        <div>
+                            <small>ประเภท</small>
+                            <strong id="repairType">
+                                Operating System
+                            </strong>
+                        </div>
+                    </div>
+
+
+                    <div class="meta-box">
+                        <div class="meta-icon">🪟</div>
+                        <div>
+                            <small>ระบบ</small>
+                            <strong id="repairOS">
+                                Windows
+                            </strong>
+                        </div>
+                    </div>
+
+
+                    <div class="meta-box">
+                        <div class="meta-icon">⏱️</div>
+                        <div>
+                            <small>เวลาโดยประมาณ</small>
+                            <strong id="repairTime">
+                                -
+                            </strong>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <!-- My Library Buttons -->
+                <div class="library-save-area">
+
+                    <button
+                        id="saveArticleButton"
+                        class="save-article-button"
+                        onclick="saveCurrentArticle()">
+                        📚 บันทึกบทความ
+                    </button>
+
+                    <a
+                        href="my-library.html"
+                        class="view-library-button">
+                        📖 ดู My Library
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Image -->
+            <div class="repair-hero-image">
+
+                <img
+                    id="repairImage"
+                    src=""
+                    alt="Operating System Repair"
+                    style="display: none;"
+                >
+
+                <div id="imagePlaceholder">
+                    <div style="font-size: 70px;">🖥️</div>
+                    <h3>พื้นที่สำหรับรูปภาพ</h3>
+                    <p>
+                        สามารถเพิ่มรูปภาพประกอบวิธีแก้ไขได้ภายหลัง
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- Content -->
+        <div class="repair-layout">
+
+
+            <!-- Main Content -->
+            <div class="repair-card-section">
+
+
+                <!-- Symptoms -->
+                <section>
+
+                    <h2 class="section-title">
+                        <span class="section-icon">🔍</span>
+                        อาการที่พบ
+                    </h2>
+
+                    <div class="symptom-box">
+
+                        <ul id="symptomList">
+                        </ul>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- Tools -->
+                <section>
+
+                    <h2 class="section-title">
+                        <span class="section-icon">🧰</span>
+                        สิ่งที่ต้องเตรียม
+                    </h2>
+
+                    <ul class="tools-list" id="toolsList">
+                    </ul>
+
+                </section>
+
+
+
+                <!-- Steps -->
+                <section>
+
+                    <h2 class="section-title">
+                        <span class="section-icon">🔧</span>
+                        ขั้นตอนการแก้ไข
+                    </h2>
+
+                    <div class="steps-list" id="stepsList">
+                    </div>
+
+                </section>
+
+
+
+                <!-- Warning -->
+                <section class="warning-box">
+
+                    <div class="warning-icon">
+                        ⚠️
+                    </div>
+
+                    <div>
+                        <h3>ข้อควรระวัง</h3>
+
+                        <p id="warningText">
+                        </p>
+                    </div>
+
+                </section>
+
+
+
+                <!-- Conclusion -->
+                <section class="conclusion-section">
+
+                    <h2 class="section-title">
+                        <span class="section-icon">✅</span>
+                        สรุป
+                    </h2>
+
+                    <p
+                        id="summaryText"
+                        class="conclusion-text"
+                    >
+                    </p>
+
+                </section>
+
+            </div>
+
+            <section class="repair-guidance">
+                <h2>💡 คำแนะนำเพิ่มเติม</h2>
+                <p>ก่อนแก้ไขปัญหา ควรสำรองข้อมูลสำคัญและจดจำข้อความ Error ที่แสดงบนหน้าจอ เพื่อช่วยในการวิเคราะห์ปัญหา</p>
+                <nav class="repair-category-links" aria-label="ไปยังหมวดอื่น">
+                    <a href="hardware.html">🔧 Hardware</a>
+                    <a href="software.html">💿 Software</a>
+                </nav>
+            </section>
+
+
+            </div>
+
+    </main>
+
+
+
+    <!-- Footer -->
+    <footer>
+
+        <p>
+            © 2026 PC Repair Hub | คลังวิธีซ่อมคอมพิวเตอร์
+        </p>
+
+    </footer>
+
+
+
+<script>
+
+const osData = {
+
+    os01: {
+        title: "Windows เปิดไม่ขึ้น",
+        description: "เปิดเครื่องแล้วไม่สามารถเข้าสู่ระบบ Windows ได้ หรือระบบหยุดอยู่ระหว่างการเริ่มต้นระบบ",
+        time: "10–30 นาที",
+
+        symptoms: [
+            "เปิดเครื่องแล้วไม่เข้าสู่หน้า Windows",
+            "เครื่องค้างอยู่ที่โลโก้ Windows",
+            "หน้าจอแสดงข้อความเกี่ยวกับการ Boot"
+        ],
+
+        tools: [
+            "คอมพิวเตอร์ที่มีปัญหา",
+            "อุปกรณ์ติดตั้ง Windows หรือ Recovery Drive หากจำเป็น"
+        ],
+
+        steps: [
+            {
+                title: "ตรวจสอบการเชื่อมต่อไฟ",
+                text: "ตรวจสอบสายไฟและตรวจสอบว่าเครื่องสามารถเปิดทำงานได้ตามปกติ"
+            },
+            {
+                title: "ลองเข้าสู่ Windows Recovery",
+                text: "เข้าสู่ระบบ Recovery Environment เพื่อใช้เครื่องมือซ่อมแซมระบบ"
+            },
+            {
+                title: "ใช้ Startup Repair",
+                text: "เลือก Startup Repair เพื่อให้ Windows ตรวจสอบและแก้ไขปัญหาการเริ่มระบบอัตโนมัติ"
+            }
+        ],
+
+        warning: "ไม่ควรติดตั้ง Windows ใหม่ทันที เพราะอาจทำให้ข้อมูลเดิมสูญหาย",
+
+        summary: "ตรวจสอบไฟและอุปกรณ์ก่อน จากนั้นใช้ Windows Recovery และ Startup Repair เพื่อแก้ไขปัญหาการเปิดระบบ"
+    },
+
+
+    os02: {
+        title: "Windows บูตช้า",
+        description: "Windows ใช้เวลานานผิดปกติในการเริ่มต้นระบบและเข้าสู่หน้า Desktop",
+        time: "10–20 นาที",
+
+        symptoms: [
+            "เปิดเครื่องแล้วรอนานกว่าจะเข้าสู่ Desktop",
+            "Windows โหลดเป็นเวลานาน",
+            "หลังเข้าสู่ระบบเครื่องยังทำงานช้า"
+        ],
+
+        tools: [
+            "Task Manager",
+            "Windows Settings"
+        ],
+
+        steps: [
+            {
+                title: "เปิด Task Manager",
+                text: "กด Ctrl + Shift + Esc เพื่อเปิด Task Manager"
+            },
+            {
+                title: "ตรวจสอบ Startup Apps",
+                text: "ปิดโปรแกรมที่ไม่จำเป็นไม่ให้เปิดพร้อมกับ Windows"
+            },
+            {
+                title: "ลบโปรแกรมที่ไม่จำเป็น",
+                text: "ถอนการติดตั้งโปรแกรมที่ไม่ได้ใช้งานเพื่อลดภาระของระบบ"
+            }
+        ],
+
+        warning: "ไม่ควรปิด Startup ของโปรแกรมระบบที่ไม่ทราบหน้าที่",
+
+        summary: "ลดจำนวนโปรแกรมที่เปิดพร้อม Windows และลบโปรแกรมที่ไม่จำเป็นเพื่อช่วยให้ระบบเริ่มต้นเร็วขึ้น"
+    },
+
+
+    os03: {
+        title: "Windows ค้าง",
+        description: "Windows ไม่ตอบสนองหรือค้างระหว่างใช้งาน",
+        time: "10–30 นาที",
+
+        symptoms: [
+            "เมาส์หรือคีย์บอร์ดตอบสนองช้า",
+            "โปรแกรมไม่ตอบสนอง",
+            "หน้าจอค้างและไม่สามารถใช้งานได้"
+        ],
+
+        tools: [
+            "Task Manager",
+            "Windows Event Viewer"
+        ],
+
+        steps: [
+            {
+                title: "เปิด Task Manager",
+                text: "กด Ctrl + Shift + Esc และตรวจสอบโปรแกรมที่ใช้ CPU หรือ RAM สูง"
+            },
+            {
+                title: "ปิดโปรแกรมที่ค้าง",
+                text: "เลือกโปรแกรมที่ไม่ตอบสนองแล้วกด End Task"
+            },
+            {
+                title: "รีสตาร์ตเครื่อง",
+                text: "หากระบบกลับมาตอบสนอง ให้บันทึกงานและรีสตาร์ตเครื่อง"
+            }
+        ],
+
+        warning: "การกดปุ่ม Power ค้างเพื่อบังคับปิดเครื่องอาจทำให้ข้อมูลที่ยังไม่ได้บันทึกสูญหาย",
+
+        summary: "ตรวจสอบโปรแกรมที่ใช้ทรัพยากรสูงและปิดโปรแกรมที่ค้างก่อนพิจารณารีสตาร์ตเครื่อง"
+    },
+
+
+    os04: {
+        title: "Blue Screen (จอฟ้า)",
+        description: "Windows แสดงหน้าจอสีน้ำเงินพร้อมข้อความหรือรหัสข้อผิดพลาด",
+        time: "20–40 นาที",
+
+        symptoms: [
+            "หน้าจอเปลี่ยนเป็นสีน้ำเงิน",
+            "เครื่องรีสตาร์ตเอง",
+            "มี Stop Code แสดงบนหน้าจอ"
+        ],
+
+        tools: [
+            "Windows",
+            "Device Manager",
+            "ข้อมูล Stop Code"
+        ],
+
+        steps: [
+            {
+                title: "จด Stop Code",
+                text: "จดรหัสข้อผิดพลาดที่แสดงบนหน้าจอเพื่อนำไปวิเคราะห์สาเหตุ"
+            },
+            {
+                title: "ตรวจสอบ Driver",
+                text: "ตรวจสอบ Driver ที่เพิ่งติดตั้งหรืออัปเดต และย้อนกลับหากพบปัญหา"
+            },
+            {
+                title: "ตรวจสอบ Windows Update",
+                text: "ติดตั้งการอัปเดตที่เกี่ยวข้องกับระบบและ Driver"
+            }
+        ],
+
+        warning: "อย่าลบหรือเปลี่ยน Driver ระบบโดยไม่ทราบหน้าที่ เพราะอาจทำให้ Windows ทำงานผิดปกติ",
+
+        summary: "Blue Screen มักเกี่ยวข้องกับ Driver ฮาร์ดแวร์ หรือไฟล์ระบบ ควรใช้ Stop Code เพื่อช่วยวิเคราะห์ปัญหา"
+    },
+
+
+    os05: {
+        title: "Windows Update ไม่ได้",
+        description: "Windows ไม่สามารถดาวน์โหลดหรือติดตั้งการอัปเดตได้",
+        time: "15–30 นาที",
+
+        symptoms: [
+            "Windows Update แสดง Error",
+            "การอัปเดตค้างอยู่ที่เปอร์เซ็นต์เดิม",
+            "Windows ไม่สามารถดาวน์โหลด Update ได้"
+        ],
+
+        tools: [
+            "Internet",
+            "Windows Settings",
+            "Windows Update Troubleshooter"
+        ],
+
+        steps: [
+            {
+                title: "ตรวจสอบ Internet",
+                text: "ตรวจสอบว่าเครื่องเชื่อมต่ออินเทอร์เน็ตได้ตามปกติ"
+            },
+            {
+                title: "Restart Windows Update",
+                text: "รีสตาร์ตเครื่องแล้วลองตรวจสอบ Windows Update อีกครั้ง"
+            },
+            {
+                title: "ใช้ Troubleshooter",
+                text: "เปิดเครื่องมือแก้ไขปัญหา Windows Update และทำตามคำแนะนำ"
+            }
+        ],
+
+        warning: "ไม่ควรปิดเครื่องระหว่างที่ Windows กำลังติดตั้ง Update",
+
+        summary: "ตรวจสอบอินเทอร์เน็ต รีสตาร์ตเครื่อง และใช้ Windows Update Troubleshooter เพื่อแก้ไขปัญหา"
+    },
+
+
+    os06: {
+        title: "ไม่พบ Boot Device",
+        description: "ระบบแจ้งว่าไม่พบอุปกรณ์สำหรับใช้เริ่มต้นระบบปฏิบัติการ",
+        time: "20–40 นาที",
+
+        symptoms: [
+            "แสดงข้อความ No Boot Device",
+            "ไม่สามารถเข้าสู่ Windows",
+            "BIOS ไม่พบ SSD หรือ HDD"
+        ],
+
+        tools: [
+            "BIOS/UEFI",
+            "SSD หรือ HDD",
+            "Windows Recovery Media"
+        ],
+
+        steps: [
+            {
+                title: "ตรวจสอบ BIOS/UEFI",
+                text: "เข้า BIOS/UEFI และตรวจสอบว่า SSD หรือ HDD ถูกตรวจพบหรือไม่"
+            },
+            {
+                title: "ตรวจสอบ Boot Order",
+                text: "ตรวจสอบว่าไดรฟ์ที่ติดตั้ง Windows ถูกตั้งเป็นอุปกรณ์ Boot หลัก"
+            },
+            {
+                title: "ตรวจสอบอุปกรณ์เก็บข้อมูล",
+                text: "หาก BIOS ไม่พบไดรฟ์ อาจต้องตรวจสอบการเชื่อมต่อของ SSD หรือ HDD"
+            }
+        ],
+
+        warning: "หากไดรฟ์มีข้อมูลสำคัญ ไม่ควรฟอร์แมตหรือแบ่งพาร์ทิชันใหม่โดยไม่สำรองข้อมูล",
+
+        summary: "ตรวจสอบ BIOS, Boot Order และการตรวจพบ SSD/HDD ก่อนดำเนินการซ่อมระบบ"
+    },
+
+
+    os07: {
+        title: "เข้า Windows ไม่ได้",
+        description: "เครื่องสามารถเริ่ม Windows ได้ แต่ไม่สามารถเข้าสู่ Desktop ตามปกติ",
+        time: "15–30 นาที",
+
+        symptoms: [
+            "ติดอยู่ที่หน้า Login",
+            "Login แล้วกลับมาหน้าเดิม",
+            "Windows เข้าสู่ระบบแล้วออกทันที"
+        ],
+
+        tools: [
+            "Windows Recovery Environment",
+            "Safe Mode"
+        ],
+
+        steps: [
+            {
+                title: "ลอง Restart",
+                text: "รีสตาร์ตเครื่องและลองเข้าสู่ระบบอีกครั้ง"
+            },
+            {
+                title: "เข้าสู่ Safe Mode",
+                text: "ใช้ Windows Recovery เพื่อเข้าสู่ Safe Mode"
+            },
+            {
+                title: "ตรวจสอบโปรแกรมล่าสุด",
+                text: "ถอนการติดตั้งโปรแกรมหรือ Driver ที่เพิ่งติดตั้งก่อนเริ่มเกิดปัญหา"
+            }
+        ],
+
+        warning: "ไม่ควรลบไฟล์ระบบ Windows ด้วยตนเอง",
+
+        summary: "ใช้ Safe Mode เพื่อแยกสาเหตุจากโปรแกรมหรือ Driver ที่ทำให้ Windows Login ผิดปกติ"
+    },
+
+
+    os08: {
+        title: "ลืมรหัสผ่าน Windows",
+        description: "ไม่สามารถเข้าสู่บัญชี Windows เนื่องจากจำรหัสผ่านไม่ได้",
+        time: "10–30 นาที",
+
+        symptoms: [
+            "ไม่สามารถ Login ได้",
+            "จำรหัสผ่านบัญชีไม่ได้",
+            "ระบบแจ้งว่ารหัสผ่านไม่ถูกต้อง"
+        ],
+
+        tools: [
+            "บัญชี Microsoft หากใช้ Microsoft Account",
+            "ข้อมูลสำหรับยืนยันบัญชี"
+        ],
+
+        steps: [
+            {
+                title: "ตรวจสอบประเภทบัญชี",
+                text: "ตรวจสอบว่าเป็น Microsoft Account หรือ Local Account"
+            },
+            {
+                title: "ใช้ตัวเลือก Reset Password",
+                text: "หากเป็น Microsoft Account ให้ใช้กระบวนการกู้คืนบัญชีของ Microsoft"
+            },
+            {
+                title: "ตั้งรหัสผ่านใหม่",
+                text: "กำหนดรหัสผ่านใหม่และทดลองเข้าสู่ระบบอีกครั้ง"
+            }
+        ],
+
+        warning: "ควรใช้วิธีกู้คืนบัญชีอย่างเป็นทางการ และไม่ควรใช้โปรแกรมจากแหล่งที่ไม่น่าเชื่อถือ",
+
+        summary: "ตรวจสอบประเภทบัญชีและใช้กระบวนการกู้คืนรหัสผ่านที่เหมาะสมเพื่อรักษาความปลอดภัยของบัญชี"
+    },
+
+
+    os09: {
+        title: "ไฟล์ระบบ Windows เสียหาย",
+        description: "ไฟล์ระบบบางส่วนเสียหายหรือหายไป ทำให้ Windows ทำงานผิดปกติ",
+        time: "15–40 นาที",
+
+        symptoms: [
+            "Windows แสดง Error บ่อย",
+            "โปรแกรมระบบเปิดไม่ได้",
+            "ระบบทำงานผิดปกติหลังจากไฟดับหรือปิดเครื่องผิดวิธี"
+        ],
+
+        tools: [
+            "Command Prompt",
+            "Windows",
+            "สิทธิ์ Administrator"
+        ],
+
+        steps: [
+            {
+                title: "เปิด Command Prompt",
+                text: "เปิด Command Prompt ด้วยสิทธิ์ Administrator"
+            },
+            {
+                title: "ตรวจสอบ System File",
+                text: "ใช้ System File Checker เพื่อตรวจสอบไฟล์ระบบ Windows"
+            },
+            {
+                title: "รีสตาร์ตเครื่อง",
+                text: "หลังจากการซ่อมแซมเสร็จ ให้รีสตาร์ตเครื่องและตรวจสอบการทำงาน"
+            }
+        ],
+
+        warning: "ควรตรวจสอบคำสั่งก่อนใช้งาน Command Prompt และไม่ควรใช้คำสั่งที่ไม่ทราบผลกระทบ",
+
+        summary: "ใช้เครื่องมือของ Windows เพื่อตรวจสอบและซ่อมแซมไฟล์ระบบที่เสียหาย"
+    },
+
+
+    os10: {
+        title: "Windows ใช้ CPU สูง",
+        description: "CPU ทำงานหนักหรือมีการใช้งานสูงผิดปกติแม้ไม่ได้เปิดโปรแกรมจำนวนมาก",
+        time: "10–30 นาที",
+
+        symptoms: [
+            "CPU Usage สูง",
+            "เครื่องร้อนและพัดลมหมุนเร็ว",
+            "Windows ทำงานช้าลง"
+        ],
+
+        tools: [
+            "Task Manager",
+            "Windows"
+        ],
+
+        steps: [
+            {
+                title: "เปิด Task Manager",
+                text: "กด Ctrl + Shift + Esc และดูโปรแกรมที่ใช้ CPU สูง"
+            },
+            {
+                title: "ตรวจสอบโปรแกรม",
+                text: "ปิดโปรแกรมที่ไม่จำเป็นและตรวจสอบว่า CPU ลดลงหรือไม่"
+            },
+            {
+                title: "ตรวจสอบ Background Process",
+                text: "ตรวจสอบ Process ที่ทำงานเบื้องหลังและหาสาเหตุของการใช้ CPU สูง"
+            }
+        ],
+
+        warning: "ไม่ควร End Task ของ Process ระบบที่ไม่ทราบหน้าที่",
+
+        summary: "ใช้ Task Manager เพื่อค้นหาโปรแกรมหรือ Process ที่ใช้ CPU สูงและจัดการอย่างเหมาะสม"
+    },
+
+
+    os11: {
+        title: "Windows ใช้ RAM สูง",
+        description: "Windows ใช้หน่วยความจำ RAM สูงจนทำให้เครื่องทำงานช้าหรือโปรแกรมค้าง",
+        time: "10–30 นาที",
+
+        symptoms: [
+            "Memory Usage สูง",
+            "เครื่องทำงานช้า",
+            "โปรแกรมเปิดช้าหรือค้าง"
+        ],
+
+        tools: [
+            "Task Manager",
+            "Windows Settings"
+        ],
+
+        steps: [
+            {
+                title: "ตรวจสอบ Memory",
+                text: "เปิด Task Manager และตรวจสอบโปรแกรมที่ใช้ RAM สูง"
+            },
+            {
+                title: "ปิดโปรแกรมที่ไม่จำเป็น",
+                text: "ปิดโปรแกรมที่ไม่ได้ใช้งานเพื่อเพิ่มพื้นที่ RAM"
+            },
+            {
+                title: "ตรวจสอบ Startup Apps",
+                text: "ลดจำนวนโปรแกรมที่เปิดพร้อม Windows"
+            }
+        ],
+
+        warning: "ไม่ควรปิด Process ระบบโดยไม่ทราบหน้าที่",
+
+        summary: "ตรวจสอบโปรแกรมที่ใช้ RAM สูงและลดโปรแกรมที่ไม่จำเป็นเพื่อให้ระบบทำงานได้ดีขึ้น"
+    },
+
+
+    os12: {
+        title: "Windows พื้นที่เก็บข้อมูลเต็ม",
+        description: "ไดรฟ์ที่ติดตั้ง Windows มีพื้นที่เหลือน้อยหรือเต็มจนส่งผลต่อการทำงานของระบบ",
+        time: "15–30 นาที",
+
+        symptoms: [
+            "ไดรฟ์ C: มีพื้นที่เหลือน้อย",
+            "Windows แจ้งเตือนพื้นที่เก็บข้อมูล",
+            "ไม่สามารถติดตั้งโปรแกรมหรือ Update ได้"
+        ],
+
+        tools: [
+            "Windows Storage Settings",
+            "Disk Cleanup"
+        ],
+
+        steps: [
+            {
+                title: "ตรวจสอบพื้นที่ว่าง",
+                text: "เปิด Settings และตรวจสอบพื้นที่ของไดรฟ์ระบบ"
+            },
+            {
+                title: "ลบไฟล์ที่ไม่จำเป็น",
+                text: "ใช้ Storage หรือ Disk Cleanup เพื่อลบไฟล์ชั่วคราว"
+            },
+            {
+                title: "ย้ายไฟล์ส่วนตัว",
+                text: "ย้ายรูปภาพ วิดีโอ หรือไฟล์ขนาดใหญ่ไปยังไดรฟ์อื่นหรืออุปกรณ์เก็บข้อมูลภายนอก"
+            }
+        ],
+
+        warning: "ตรวจสอบไฟล์ก่อนลบทุกครั้ง และไม่ควรลบไฟล์ระบบที่ไม่ทราบหน้าที่",
+
+        summary: "ลบไฟล์ชั่วคราวและไฟล์ที่ไม่จำเป็น พร้อมย้ายไฟล์ขนาดใหญ่เพื่อเพิ่มพื้นที่ให้ Windows"
+    }
+
+};
+
+
+
+/* =========================
+   อ่าน ID จาก URL
+========================= */
+
+const params = new URLSearchParams(window.location.search);
+
+const id = params.get("id");
+
+const data = osData[id];
+
+
+
+/* =========================
+   แสดงข้อมูล
+========================= */
+
+if (data) {
+
+    document.getElementById("repairTitle").textContent =
+        data.title;
+
+    document.getElementById("repairDescription").textContent =
+        data.description;
+
+    document.getElementById("repairTime").textContent =
+        data.time;
+
+
+
+    /* Symptoms */
+
+    const symptomList =
+        document.getElementById("symptomList");
+
+    symptomList.innerHTML = "";
+
+    data.symptoms.forEach(function (item) {
+
+        const li = document.createElement("li");
+
+        li.textContent = item;
+
+        symptomList.appendChild(li);
+
+    });
+
+
+
+    /* Tools */
+
+    const toolsList =
+        document.getElementById("toolsList");
+
+    toolsList.innerHTML = "";
+
+    data.tools.forEach(function (item) {
+
+        const li = document.createElement("li");
+
+        li.textContent = item;
+
+        toolsList.appendChild(li);
+
+    });
+
+
+
+    /* Steps */
+
+    const stepsList =
+        document.getElementById("stepsList");
+
+    stepsList.innerHTML = "";
+
+    data.steps.forEach(function (step, index) {
+
+        const stepBox =
+            document.createElement("div");
+
+        stepBox.className = "repair-step";
+
+
+        stepBox.innerHTML = `
+
+            <div class="step-number">
+                ${index + 1}
+            </div>
+
+            <div class="step-text">
+
+                <h3>${step.title}</h3>
+
+                <p>${step.text}</p>
+
+            </div>
+
+        `;
+
+
+        stepsList.appendChild(stepBox);
+
+    });
+
+
+
+    /* Warning */
+
+    document.getElementById("warningText").textContent =
+        data.warning;
+
+
+
+    /* Summary */
+
+    document.getElementById("summaryText").textContent =
+        data.summary;
+
+
+
+    
+    /* Image */
+
+    const image = document.getElementById("repairImage");
+    const placeholder = document.getElementById("imagePlaceholder");
+
+    // เริ่มต้นด้วยภาพสำรอง
+    image.style.display = "none";
+    placeholder.style.display = "block";
+
+    // ถ้ารูปโหลดสำเร็จ ให้แสดงรูป
+    image.onload = function () {
+        image.style.display = "block";
+        placeholder.style.display = "none";
+    };
+
+    // ถ้ารูป detail ไม่มี ให้ลองใช้รูป thumbnail แทน
+    image.onerror = function () {
+        if (image.dataset.fallback !== "used") {
+            image.dataset.fallback = "used";
+            image.src = "images/" + id + "_thumb.png";
+        } else {
+            image.style.display = "none";
+            placeholder.style.display = "block";
+            console.error("ไม่พบรูปของบทความ:", id);
+        }
+    };
+
+    // ลองโหลดรูปหน้ารายละเอียดก่อน
+    image.dataset.fallback = "unused";
+    image.src = "images/" + id + "_detail.png";
+
+
+
+
+    /* =========================
+       My Library
+    ========================= */
+
+    updateSaveButton();
+
+}
+
+else {
+
+    document.getElementById("repairTitle").textContent =
+        "ไม่พบข้อมูล";
+
+    document.getElementById("repairDescription").textContent =
+        "ไม่พบข้อมูลปัญหาที่ต้องการ";
+
+}
+
+
+
+/* =========================
+   บันทึกบทความลง My Library
+========================= */
+
+function saveCurrentArticle() {
+
+    const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+
+
+    /* ถ้ายังไม่ได้ Login */
+
+    if (!isLoggedIn) {
+
+        window.location.href = "login.html";
+
+        return;
+
+    }
+
+
+    const username = activeUser.uid;
+
+
+    /* ถ้าไม่มี Username */
+
+    if (!username) {
+
+        window.location.href = "login.html";
+
+        return;
+
+    }
+
+
+    /* ตรวจสอบข้อมูลบทความ */
+
+    if (!data || !id) {
+
+        return;
+
+    }
+
+
+    const libraryKey =
+        "savedArticles_" + username;
+
+
+    let savedArticles =
+        JSON.parse(localStorage.getItem(libraryKey)) || [];
+
+
+    /* ตรวจสอบว่าบันทึกไปแล้วหรือยัง */
+
+    const alreadySaved =
+        savedArticles.some(function (article) {
+
+            return article.id === id;
+
+        });
+
+
+    if (alreadySaved) {
+
+        updateSaveButton();
+
+        return;
+
+    }
+
+
+    /* เพิ่มบทความ */
+
+    savedArticles.push({
+
+        id: id,
+
+        title: data.title,
+
+        summary: data.description,
+
+        image: "images/" + id + "_thumb.png",
+
+        category: "Operating System",
+
+        savedDate: new Date().toLocaleDateString("th-TH")
+
+    });
+
+
+    /* บันทึกลง LocalStorage */
+
+    localStorage.setItem(
+
+        libraryKey,
+
+        JSON.stringify(savedArticles)
+
+    );
+
+
+    /* เปลี่ยนปุ่มเป็นบันทึกแล้ว */
+
+    updateSaveButton();
+
+}
+
+
+
+/* =========================
+   ตรวจสอบสถานะปุ่ม
+========================= */
+
+function updateSaveButton() {
+
+    const button =
+        document.getElementById("saveArticleButton");
+
+
+    if (!button) {
+
+        return;
+
+    }
+
+
+    const username = localStorage.getItem("currentUser");
+
+
+    /* ยังไม่ได้ Login */
+
+    if (!username) {
+
+        button.textContent =
+            "📚 บันทึกบทความ";
+
+        button.classList.remove("saved");
+
+        return;
+
+    }
+
+
+    const libraryKey =
+        "savedArticles_" + username;
+
+
+    const savedArticles =
+        JSON.parse(localStorage.getItem(libraryKey)) || [];
+
+
+    const alreadySaved =
+        savedArticles.some(function (article) {
+
+            return article.id === id;
+
+        });
+
+
+    if (alreadySaved) {
+
+        button.textContent =
+            "✓ บันทึกแล้ว";
+
+        button.classList.add("saved");
+
+    }
+
+    else {
+
+        button.textContent =
+            "📚 บันทึกบทความ";
+
+        button.classList.remove("saved");
+
+    }
+
+}
+
+</script>
+
+
+<script src="admin-panel.js" defer></script>
+    <script type="module" src="firebase-auth.js"></script>
+    <script src="satisfaction-popup.js" defer></script>
+</body>
+</html>

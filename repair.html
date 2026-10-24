@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>วิธีแก้ไข | PC Repair Hub</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="repair-page" data-article-detail>
+<header class="repair-navbar">
+<a href="index.html" class="repair-brand"><img src="images/logo.png" alt="PC Repair Hub"><span>PC Repair Hub</span></a>
+</header>
+<main class="repair-main">
+<a href="hardware.html" class="repair-back">← กลับหน้าฮาร์ดแวร์</a>
+<section class="repair-hero">
+<div class="repair-hero-text">
+<div class="repair-tag">🔧 ฮาร์ดแวร์</div>
+<h1 id="articleTitle">กำลังโหลด...</h1>
+<p id="articleSummary">กำลังโหลดข้อมูล...</p>
+<div class="repair-meta">
+<div class="meta-box"><span class="meta-icon">📊</span><div><small>ระดับ</small><strong id="articleDifficulty">-</strong></div></div>
+<div class="meta-box"><span class="meta-icon">⏱️</span><div><small>เวลา</small><strong id="articleTime">-</strong></div></div>
+<div class="meta-box"><span class="meta-icon">⭐</span><div><small>คะแนน</small><strong id="articleRating">-</strong></div></div>
+</div>
+<div class="library-save-area">
+<button id="saveArticleButton" class="save-article-button" onclick="saveCurrentArticle()">📚 บันทึกบทความ</button>
+<a href="my-library.html" class="view-library-button">ดู My Library</a>
+</div>
+</div>
+<div class="repair-hero-image"><img id="articleImage" src="" alt="ภาพประกอบ"></div>
+</section>
+<div class="repair-layout">
+<div class="repair-left">
+<section class="repair-card-section">
+<div class="section-title"><div class="section-icon">🔍</div><div><h2>อาการที่พบ</h2><p>ตรวจสอบว่าอาการตรงกับปัญหานี้หรือไม่</p></div></div>
+<div class="symptom-box"><p id="articleSymptoms">-</p></div>
+</section>
+<section class="repair-card-section">
+<div class="section-title"><div class="section-icon">🧰</div><div><h2>สิ่งที่ต้องเตรียม</h2><p>อุปกรณ์ที่อาจจำเป็นก่อนเริ่มตรวจสอบ</p></div></div>
+<ul id="articleTools" class="tools-list"></ul>
+</section>
+<section class="repair-card-section">
+<div class="section-title"><div class="section-icon">🛠️</div><div><h2>วิธีแก้ไขทีละขั้นตอน</h2><p>ทำตามขั้นตอนด้านล่างจากง่ายไปยาก</p></div></div>
+<div id="articleSteps" class="steps-list"></div>
+</section>
+<section class="warning-box">
+<div class="warning-icon">⚠️</div><div><h2>ข้อควรระวัง</h2><p id="articleSafety">-</p></div>
+</section>
+<section class="repair-card-section conclusion-section">
+<div class="section-title"><div class="section-icon">✅</div><div><h2>สรุป</h2><p>สิ่งที่ควรทำหลังจากตรวจสอบปัญหา</p></div></div>
+<p id="articleConclusion" class="conclusion-text">-</p>
+</section>
+</div>
+<section class="repair-guidance">
+<h2>💡 คำแนะนำเพิ่มเติม</h2>
+<p>เริ่มจากขั้นตอนที่ง่ายและปลอดภัยก่อน ทำตามลำดับ และหยุดหากไม่มั่นใจในการถอดหรือซ่อมอุปกรณ์</p>
+</section>
+</div>
+</main>
+<script>
+const articles = {
+power: {
+title: "เครื่องคอมพิวเตอร์เปิดไม่ติด",
+summary: "ตรวจสอบระบบไฟ สายไฟ สวิตช์ PSU และอุปกรณ์ภายใน เมื่อกดปุ่มเปิดเครื่องแล้วไม่มีการตอบสนอง",
+image: "images/power_thumb.png", difficulty: "เบื้องต้น", time: "10 นาที", rating: "4.5 / 5",
+symptoms: "กดปุ่ม Power แล้วเครื่องไม่เปิด ไม่มีไฟแสดงสถานะ พัดลมไม่หมุน หรือเครื่องไม่มีการตอบสนองใด ๆ",
+tools: ["สายไฟที่สามารถใช้งานได้", "ปลั๊กไฟที่สามารถใช้งานได้", "ไฟฉายสำหรับตรวจสอบภายในเครื่อง", "PSU สำรองสำหรับทดสอบ หากมี"],
+steps: [
+{title:"ตรวจสอบปลั๊กไฟ",content:"ลองนำอุปกรณ์อื่น เช่น ที่ชาร์จโทรศัพท์หรือโคมไฟ มาเสียบกับปลั๊กเดียวกัน เพื่อดูว่าปลั๊กสามารถจ่ายไฟได้หรือไม่ หากไม่มีไฟ ให้เปลี่ยนไปใช้ปลั๊กช่องอื่น"},
+{title:"ตรวจสอบสายไฟ",content:"ตรวจสอบสายไฟที่ต่อจากปลั๊กเข้ากับ PSU ด้านหลังเครื่อง ตรวจสอบว่าสายเสียบแน่น ไม่มีรอยขาดหรือความเสียหาย หากมีสายสำรองที่ใช้งานได้ สามารถทดลองเปลี่ยนสายได้"},
+{title:"ตรวจสอบสวิตช์ PSU",content:"ตรวจสอบสวิตช์บริเวณด้านหลัง Power Supply ว่าอยู่ในตำแหน่งเปิด หรือ I ไม่ใช่ตำแหน่งปิด หรือ O"},
+{title:"ทดลองเปิดเครื่องอีกครั้ง",content:"หลังจากตรวจสอบสายไฟและสวิตช์แล้ว ให้เสียบสายไฟกลับเข้าที่ จากนั้นกดปุ่ม Power หนึ่งครั้ง และสังเกตว่าไฟสถานะหรือพัดลมเริ่มทำงานหรือไม่"},
+{title:"ตรวจสอบสายไฟภายใน",content:"หากเครื่องยังไม่ทำงาน ให้ปิดสวิตช์ PSU และถอดสายไฟออกก่อน จากนั้นตรวจสอบสายไฟหลักของเมนบอร์ดและสายไฟ CPU ว่าเสียบแน่นหรือไม่ หากไม่มั่นใจไม่ควรถอดอุปกรณ์เอง"},
+{title:"ตรวจสอบ Power Supply",content:"หากตรวจสอบทุกอย่างแล้วเครื่องยังไม่มีการตอบสนอง PSU อาจมีปัญหา ควรให้ช่างที่มีความรู้ด้านฮาร์ดแวร์ตรวจสอบหรือทดสอบด้วย PSU ที่ทราบว่าใช้งานได้"}
+],
+safety:"ก่อนเปิดเคสหรือถอดอุปกรณ์ภายใน ต้องปิดเครื่อง ถอดสายไฟ และปิดสวิตช์ PSU ก่อนเสมอ ห้ามแกะตัว PSU เอง เพราะภายในอาจมีประจุไฟฟ้าที่เป็นอันตราย",
+conclusion:"เริ่มจากตรวจสอบปลั๊กไฟ สายไฟ และสวิตช์ PSU ก่อน หากยังเปิดไม่ได้จึงค่อยตรวจสอบอุปกรณ์ภายในหรือส่งให้ช่างตรวจสอบ"
+},
+display: {
+title:"เครื่องเปิดติดแต่หน้าจอไม่แสดงผล",
+summary:"ตรวจสอบสายจอ Input ของจอ RAM และการ์ดจอ เมื่อคอมพิวเตอร์เปิดติดแต่ไม่มีภาพ",
+image:"images/display_thumb.png",difficulty:"เบื้องต้น",time:"10 นาที",rating:"4.0 / 5",
+symptoms:"คอมพิวเตอร์เปิดติด พัดลมหมุน หรือมีไฟแสดงสถานะ แต่หน้าจอไม่แสดงภาพ หรือแสดงข้อความว่า No Signal",
+tools:["สาย HDMI / DisplayPort / VGA","จอภาพที่สามารถทดสอบได้","ไฟฉาย"],
+steps:[
+{title:"ตรวจสอบว่าจอเปิดอยู่",content:"ตรวจสอบปุ่ม Power ของจอและดูไฟสถานะ หากจอไม่ติด ให้ตรวจสอบสายไฟและปลั๊กไฟของจอ"},
+{title:"ตรวจสอบสายสัญญาณ",content:"ตรวจสอบสาย HDMI, DisplayPort หรือ VGA ว่าเสียบแน่นทั้งฝั่งคอมพิวเตอร์และจอภาพ ลองถอดแล้วเสียบกลับใหม่"},
+{title:"ตรวจสอบ Input ของจอ",content:"กดปุ่ม Input หรือ Source บนจอ แล้วเลือกช่องสัญญาณให้ตรงกับสายที่ใช้งาน เช่น HDMI หรือ DisplayPort"},
+{title:"ตรวจสอบ RAM",content:"ปิดเครื่องและถอดสายไฟก่อน หากมีความรู้ในการเปิดเคส ให้ตรวจสอบว่า RAM เสียบแน่นหรือไม่ หากมีหลายแผง สามารถทดสอบทีละแผงได้"},
+{title:"ตรวจสอบการ์ดจอ",content:"หากมีการ์ดจอแยก ให้ตรวจสอบว่าการ์ดจอเสียบแน่นและมีสายไฟเลี้ยงต่ออยู่ หากไม่มั่นใจควรให้ช่างดำเนินการ"},
+{title:"ทดลองเปลี่ยนสายหรือจอ",content:"ลองใช้สายสัญญาณหรือจอภาพที่ทราบว่าใช้งานได้ เพื่อแยกว่าปัญหาเกิดจากสาย จอ หรือคอมพิวเตอร์"}
+],
+safety:"ก่อนถอด RAM หรือการ์ดจอ ต้องปิดเครื่อง ถอดสายไฟ และปิดสวิตช์ PSU ก่อนทุกครั้ง",
+conclusion:"เริ่มจากตรวจสอบจอ สายสัญญาณ และ Input ก่อน จากนั้นจึงตรวจสอบ RAM และการ์ดจอ"
+},
+ram: {
+title:"คอมพิวเตอร์รีสตาร์ตก่อนเข้า Windows",
+summary:"ตรวจสอบ RAM และอุปกรณ์ภายในเมื่อคอมพิวเตอร์เปิดติดแต่รีสตาร์ตก่อนเข้าสู่ Windows",
+image:"images/ram_thumb.png",difficulty:"เบื้องต้น",time:"10 นาที",rating:"4.7 / 5",
+symptoms:"เครื่องเปิดติดแต่รีสตาร์ตเองซ้ำ ๆ ก่อนเข้าสู่ Windows หรือไม่สามารถเข้าสู่ระบบปฏิบัติการได้ตามปกติ",
+tools:["ไขควงสำหรับเปิดเคส","ไฟฉาย","RAM ที่ทราบว่าใช้งานได้ สำหรับทดสอบ"],
+steps:[
+{title:"ปิดเครื่องและถอดปลั๊ก",content:"ปิดเครื่องให้สนิท จากนั้นปิดสวิตช์ PSU และถอดสายไฟออกก่อนเริ่มตรวจสอบ"},
+{title:"ตรวจสอบ RAM",content:"เปิดฝาเคสและตรวจสอบว่า RAM เสียบอยู่ในสล็อตอย่างแน่นหนา ไม่มีการเอียงหรือหลุดออกจากตำแหน่ง"},
+{title:"ถอดและใส่ RAM ใหม่",content:"หากมีความรู้ในการถอด RAM ให้ถอดออกอย่างระมัดระวัง แล้วใส่กลับเข้าไปจนตัวล็อกของสล็อตเข้าที่"},
+{title:"ทดลอง RAM ทีละแผง",content:"หากมี RAM หลายแผง ให้ทดสอบทีละแผง เพื่อดูว่าเครื่องสามารถบูตได้หรือไม่"},
+{title:"ตรวจสอบอุปกรณ์ที่เพิ่งติดตั้ง",content:"หากปัญหาเกิดขึ้นหลังจากเพิ่ม RAM หรืออุปกรณ์ใหม่ ให้ตรวจสอบความเข้ากันได้และการติดตั้งของอุปกรณ์ดังกล่าว"}
+],
+safety:"ห้ามถอดหรือเสียบ RAM ขณะที่เครื่องยังมีไฟอยู่ ต้องปิดเครื่องและถอดสายไฟก่อนทุกครั้ง",
+conclusion:"ควรเริ่มตรวจสอบ RAM และอุปกรณ์ที่เพิ่งติดตั้งก่อน หากยังพบปัญหาควรให้ช่างตรวจสอบเพิ่มเติม"
+},
+overheat: {
+title:"คอมพิวเตอร์ร้อนและทำงานช้า",
+summary:"ตรวจสอบฝุ่น พัดลม และการระบายอากาศ เมื่อคอมพิวเตอร์มีความร้อนสูงและทำงานช้าลง",
+image:"images/overheat_thumb.png",difficulty:"เบื้องต้น",time:"10 นาที",rating:"4.2 / 5",
+symptoms:"เครื่องมีความร้อนสูง พัดลมหมุนเสียงดัง เครื่องทำงานช้าลง หรือมีอาการค้างเมื่อใช้งานเป็นเวลานาน",
+tools:["แปรงทำความสะอาดฝุ่น","ผ้าแห้ง","ลมเป่าสำหรับทำความสะอาด","ไฟฉาย"],
+steps:[
+{title:"ตรวจสอบตำแหน่งวางคอมพิวเตอร์",content:"ตรวจสอบว่าเครื่องไม่ได้ถูกวางในพื้นที่อับหรือมีสิ่งของปิดช่องระบายอากาศ ควรจัดพื้นที่รอบเครื่องให้มีอากาศถ่ายเท"},
+{title:"ตรวจสอบพัดลม",content:"ตรวจสอบว่าพัดลมของเครื่องและระบบระบายความร้อนหมุนตามปกติหรือไม่ หากมีพัดลมที่ไม่หมุน อาจทำให้ความร้อนสะสม"},
+{title:"ทำความสะอาดฝุ่น",content:"ปิดเครื่อง ถอดสายไฟ และทำความสะอาดฝุ่นบริเวณช่องระบายอากาศ พัดลม และตัวกรองฝุ่นอย่างระมัดระวัง"},
+{title:"ตรวจสอบการระบายอากาศ",content:"ตรวจสอบว่าช่องดูดอากาศและช่องระบายอากาศไม่ได้ถูกปิดกั้น และจัดสายภายในเคสไม่ให้ขวางทางลม"},
+{title:"ทดลองใช้งานอีกครั้ง",content:"หลังจากทำความสะอาดและจัดพื้นที่เรียบร้อยแล้ว ให้เปิดเครื่องและสังเกตเสียงพัดลมและอาการทำงาน หากยังร้อนผิดปกติควรให้ช่างตรวจสอบ"}
+],
+safety:"ต้องปิดเครื่องและถอดสายไฟก่อนทำความสะอาด หลีกเลี่ยงการทำให้ชิ้นส่วนอิเล็กทรอนิกส์เปียก",
+conclusion:"ควรเริ่มจากตรวจสอบการระบายอากาศและทำความสะอาดฝุ่น หากยังมีความร้อนสูงควรให้ช่างตรวจสอบระบบระบายความร้อน"
+},
+audio: {
+title:"ไม่มีเสียงจากคอมพิวเตอร์",summary:"ตรวจสอบลำโพง หูฟัง สายสัญญาณ และการตั้งค่าเสียง",image:"images/audio_thumb.png",difficulty:"เบื้องต้น",time:"10 นาที",rating:"4.5 / 5",
+symptoms:"เปิดวิดีโอหรือเพลงแล้วไม่มีเสียง ทั้งที่คอมพิวเตอร์ทำงานปกติ",
+tools:["ลำโพงหรือหูฟังที่ใช้งานได้","สายเสียงหรือสาย USB"],
+steps:[
+{title:"ตรวจสอบระดับเสียง",content:"คลิกไอคอนลำโพงที่ Taskbar ตรวจสอบว่าไม่ได้ปิดเสียงและปรับระดับเสียงให้เหมาะสม"},
+{title:"ตรวจสอบลำโพงหรือหูฟัง",content:"ตรวจสอบสวิตช์เปิดเครื่องและระดับเสียงของลำโพง ลองเปลี่ยนหูฟังหรืออุปกรณ์เสียงที่ทราบว่าใช้งานได้"},
+{title:"เลือกอุปกรณ์เสียง",content:"เปิด Settings > System > Sound แล้วเลือก Output Device ให้ตรงกับลำโพงหรือหูฟังที่ใช้งาน"},
+{title:"ตรวจสอบสายเชื่อมต่อ",content:"ตรวจสอบสาย 3.5 มม. หรือ USB ว่าเสียบแน่นและเสียบในช่องที่ถูกต้อง"},
+{title:"ตรวจสอบไดรเวอร์",content:"เปิด Device Manager ตรวจสอบอุปกรณ์เสียง หากมีปัญหาให้ลองอัปเดตไดรเวอร์หรือรีสตาร์ตเครื่อง"}
+],
+safety:"ลดระดับเสียงก่อนทดสอบ และอย่าถอดหรือเสียบสายภายในเครื่องขณะที่เครื่องยังมีไฟ",
+conclusion:"เริ่มจากตรวจสอบระดับเสียง อุปกรณ์ Output และสายเชื่อมต่อ หากยังไม่มีเสียงให้ตรวจสอบไดรเวอร์"
+},
+keyboard: {
+title:"คีย์บอร์ดใช้งานไม่ได้",summary:"ตรวจสอบสาย USB แบตเตอรี่ การเชื่อมต่อ และการตั้งค่าคีย์บอร์ด",image:"images/keyboard_thumb.png",difficulty:"เบื้องต้น",time:"10 นาที",rating:"4.3 / 5",
+symptoms:"กดปุ่มแล้วไม่มีตัวอักษร บางปุ่มไม่ทำงาน หรือคีย์บอร์ดไม่ถูกตรวจพบ",
+tools:["คีย์บอร์ดสำรอง","ถ่านหรือสาย USB สำรอง หากจำเป็น"],
+steps:[
+{title:"ตรวจสอบการเชื่อมต่อ",content:"ถอดและเสียบสาย USB ใหม่ แล้วทดลองเปลี่ยนพอร์ต USB"},
+{title:"ตรวจสอบคีย์บอร์ดไร้สาย",content:"ตรวจสอบแบตเตอรี่ สวิตช์เปิดเครื่อง และตัวรับสัญญาณ USB หากเป็น Bluetooth ให้ตรวจสอบการจับคู่"},
+{title:"ทดสอบกับเครื่องอื่น",content:"นำคีย์บอร์ดไปทดลองกับคอมพิวเตอร์อีกเครื่อง เพื่อแยกว่าปัญหาเกิดจากตัวคีย์บอร์ดหรือเครื่องเดิม"},
+{title:"ตรวจสอบการตั้งค่า",content:"ตรวจสอบภาษาและการตั้งค่าคีย์บอร์ดใน Windows รวมถึง Filter Keys หากพิมพ์ผิดปกติ"}
+],
+safety:"หากมีของเหลวหกใส่ ให้หยุดใช้งานและถอดการเชื่อมต่อทันที อย่าฝืนเปิดใช้งาน",
+conclusion:"ตรวจสอบสายหรือแบตเตอรี่ก่อน จากนั้นทดลองเปลี่ยนพอร์ตและทดสอบกับเครื่องอื่น"
+},
+mouse: {
+title:"เมาส์ใช้งานไม่ได้",summary:"แก้ปัญหาเมาส์ไม่ตอบสนอง เคอร์เซอร์ไม่ขยับ หรือคลิกไม่ได้",image:"images/mouse_thumb.png",difficulty:"เบื้องต้น",time:"10 นาที",rating:"4.2 / 5",
+symptoms:"เคอร์เซอร์ไม่เคลื่อนที่ คลิกไม่ได้ หรือเมาส์เชื่อมต่อแล้วไม่ทำงาน",
+tools:["เมาส์สำรอง","ถ่านหรือสาย USB สำรอง หากจำเป็น"],
+steps:[
+{title:"ตรวจสอบสายและพอร์ต",content:"ถอดเมาส์ USB แล้วเสียบใหม่ หรือทดลองใช้พอร์ต USB อื่น"},
+{title:"ตรวจสอบเซนเซอร์",content:"ทำความสะอาดบริเวณเซนเซอร์ด้านล่าง และทดลองใช้บนแผ่นรองเมาส์หรือพื้นผิวที่เหมาะสม"},
+{title:"ตรวจสอบเมาส์ไร้สาย",content:"เปลี่ยนถ่านหรือชาร์จแบตเตอรี่ ตรวจสอบสวิตช์และตัวรับสัญญาณ"},
+{title:"ทดลองเมาส์ตัวอื่น",content:"เชื่อมต่อเมาส์ที่ใช้งานได้กับเครื่องเดิม เพื่อแยกสาเหตุของปัญหา"}
+],
+safety:"ทำความสะอาดเมาส์ด้วยผ้าแห้ง และอย่าเทน้ำยาลงบนอุปกรณ์โดยตรง",
+conclusion:"ตรวจสอบพอร์ต แบตเตอรี่ และพื้นผิวก่อน หากยังไม่ทำงานให้ทดลองใช้เมาส์ตัวอื่น"
+},
+storage: {
+title:"ฮาร์ดดิสก์ / SSD ไม่ถูกตรวจพบ",summary:"ตรวจสอบสายเชื่อมต่อ พอร์ต และสถานะไดรฟ์เมื่อ Windows ไม่พบพื้นที่จัดเก็บข้อมูล",image:"images/storage_thumb.png",difficulty:"ปานกลาง",time:"15 นาที",rating:"4.4 / 5",
+symptoms:"ไดรฟ์ไม่แสดงใน This PC มีข้อความแจ้งเตือน หรือคอมพิวเตอร์บูตไม่พบไดรฟ์",
+tools:["คู่มือเมนบอร์ดหรือเครื่อง","สาย SATA สำรอง หากมี"],
+steps:[
+{title:"รีสตาร์ตและตรวจสอบไดรฟ์",content:"รีสตาร์ตเครื่องและตรวจสอบว่าไดรฟ์ปรากฏใน BIOS/UEFI หรือไม่"},
+{title:"ตรวจสอบสายเชื่อมต่อ",content:"หากเป็นไดรฟ์ SATA ให้ตรวจสอบสายข้อมูลและสายไฟ ส่วน M.2 ควรตรวจสอบการติดตั้งตามคู่มือเมนบอร์ด"},
+{title:"ตรวจสอบ Disk Management",content:"เปิด Disk Management เพื่อตรวจสอบสถานะไดรฟ์ อย่ากด Initialize หรือ Format หากยังต้องการกู้ข้อมูล"},
+{title:"ตรวจสอบสุขภาพไดรฟ์",content:"หากไดรฟ์มีเสียงผิดปกติ หลุดบ่อย หรืออ่านข้อมูลไม่ได้ ให้หยุดใช้งานและปรึกษาผู้เชี่ยวชาญด้านกู้ข้อมูล"}
+],
+safety:"ห้ามฟอร์แมต ลบพาร์ทิชัน หรือเขียนข้อมูลใหม่ลงไดรฟ์ที่มีข้อมูลสำคัญและยังไม่สามารถเข้าถึงได้",
+conclusion:"ตรวจสอบการเชื่อมต่อและสถานะไดรฟ์ก่อน หากสงสัยว่าไดรฟ์เสียควรให้ผู้เชี่ยวชาญตรวจสอบ"
+},
+ram2: {
+    title: "คอมพิวเตอร์มองเห็น RAM ไม่ครบ",
+    summary: "ตรวจสอบสาเหตุที่ Windows หรือ BIOS ตรวจพบ RAM น้อยกว่าความจุที่ติดตั้ง",
+    image: "images/ram-not-detected-full.jpg",
+    difficulty: "ปานกลาง",
+    time: "15 นาที",
+    rating: "4.3 / 5",
+
+    symptoms: "คอมพิวเตอร์มี RAM หลายแผง แต่ Windows หรือ BIOS แสดงหน่วยความจำไม่ครบตามที่ติดตั้งไว้",
+
+    tools: [
+        "คู่มือเมนบอร์ดหรือคอมพิวเตอร์",
+        "Windows Task Manager",
+        "Windows System Information"
+    ],
+
+    steps: [
+        {
+            title: "ตรวจสอบ RAM ใน Windows",
+            content: "กด Ctrl + Shift + Esc เพื่อเปิด Task Manager เลือก Performance > Memory แล้วดูขนาด RAM ที่ระบบตรวจพบและปริมาณ Hardware reserved"
+        },
+        {
+            title: "ตรวจสอบใน BIOS/UEFI",
+            content: "รีสตาร์ตเครื่องและเข้า BIOS/UEFI เพื่อตรวจสอบว่าระบบตรวจพบ RAM ครบหรือไม่ หาก BIOS เห็นครบแต่ Windows เห็นไม่ครบ ปัญหาอาจอยู่ที่การตั้งค่าหรือระบบปฏิบัติการ"
+        },
+        {
+            title: "ตรวจสอบความเข้ากันได้",
+            content: "ตรวจสอบคู่มือเมนบอร์ดว่ารองรับ RAM ความจุต่อแผงและความจุรวมเท่าใด รวมถึงตำแหน่งสล็อต RAM ที่แนะนำ"
+        },
+        {
+            title: "ตรวจสอบ RAM และสล็อต",
+            content: "ปิดเครื่อง ถอดปลั๊กไฟ และปิดสวิตช์ PSU ก่อนสัมผัสอุปกรณ์ หากมีความรู้ในการติดตั้ง RAM ให้ตรวจสอบว่าเสียบแน่นและทดลองทีละแผงได้ หากไม่มั่นใจควรให้ช่างช่วย"
+        },
+        {
+            title: "ตรวจสอบข้อมูลระบบ",
+            content: "เปิด System Information เพื่อตรวจสอบหน่วยความจำที่ติดตั้ง หากยังตรวจพบ RAM ไม่ครบ ควรให้ช่างตรวจสอบ RAM สล็อต เมนบอร์ด และ BIOS"
+        }
+    ],
+
+    safety: "ปิดเครื่อง ถอดสายไฟ และปิดสวิตช์ PSU ก่อนถอดหรือใส่ RAM ห้ามฝืนใส่ RAM หากร่องไม่ตรง และควรระวังไฟฟ้าสถิต",
+
+    conclusion: "เปรียบเทียบ RAM ที่ BIOS และ Windows ตรวจพบ จากนั้นตรวจสอบสล็อต ความเข้ากันได้ และการตั้งค่าระบบ หากยังพบปัญหาให้ช่างตรวจสอบ"
+},
+
+usb: {
+    title: "USB ใช้งานไม่ได้",
+    summary: "ตรวจสอบพอร์ต USB สายเชื่อมต่อ และไดรเวอร์ เมื่อคอมพิวเตอร์ไม่พบอุปกรณ์ USB",
+    image: "images/usb_thumb.png",
+    difficulty: "เบื้องต้น",
+    time: "10 นาที",
+    rating: "4.3 / 5",
+
+    symptoms: "เสียบแฟลชไดรฟ์ เมาส์ คีย์บอร์ด หรืออุปกรณ์ USB แล้วคอมพิวเตอร์ไม่ตอบสนอง ไม่พบอุปกรณ์ หรืออุปกรณ์เชื่อมต่อแล้วใช้งานไม่ได้",
+
+    tools: [
+        "อุปกรณ์ USB ที่มีปัญหา",
+        "พอร์ต USB อื่นสำหรับทดสอบ",
+        "อุปกรณ์ USB สำรองที่ใช้งานได้"
+    ],
+
+    steps: [
+        {
+            title: "ลองเปลี่ยนพอร์ต USB",
+            content: "ถอดอุปกรณ์ USB แล้วเสียบเข้าพอร์ตอื่นของคอมพิวเตอร์ หากเป็นคอมพิวเตอร์ตั้งโต๊ะ ให้ลองพอร์ตด้านหลังเครื่องด้วย"
+        },
+        {
+            title: "ตรวจสอบอุปกรณ์ USB",
+            content: "ลองนำอุปกรณ์ USB ไปเสียบกับคอมพิวเตอร์เครื่องอื่น หากยังใช้งานไม่ได้ อาจเป็นปัญหาที่ตัวอุปกรณ์หรือสายเชื่อมต่อ"
+        },
+        {
+            title: "รีสตาร์ตคอมพิวเตอร์",
+            content: "บันทึกงานที่เปิดอยู่ จากนั้นรีสตาร์ตคอมพิวเตอร์ แล้วเสียบอุปกรณ์ USB อีกครั้ง"
+        },
+        {
+            title: "ตรวจสอบใน Device Manager",
+            content: "คลิกขวาที่ปุ่ม Start แล้วเลือก Device Manager จากนั้นตรวจสอบหัวข้อ Universal Serial Bus controllers และดูว่ามีอุปกรณ์แสดงเครื่องหมายแจ้งเตือนหรือไม่"
+        },
+        {
+            title: "ตรวจสอบไดรเวอร์",
+            content: "หากพบอุปกรณ์ที่มีปัญหา ให้ตรวจสอบไดรเวอร์ผ่าน Device Manager หรือเว็บไซต์ทางการของผู้ผลิตคอมพิวเตอร์และเมนบอร์ด หลีกเลี่ยงการดาวน์โหลดไดรเวอร์จากเว็บไซต์ที่ไม่น่าเชื่อถือ"
+        },
+        {
+            title: "ตรวจสอบพอร์ต USB",
+            content: "หากอุปกรณ์หลายชิ้นไม่ทำงานกับพอร์ตเดียวกัน แต่ทำงานได้กับพอร์ตอื่น พอร์ต USB นั้นอาจมีปัญหา ควรให้ช่างตรวจสอบหากพอร์ตหลวม เสียหาย หรือมีร่องรอยไหม้"
+        }
+    ],
+
+    safety: "ห้ามฝืนเสียบอุปกรณ์หากพอร์ตเสียหายหรือมีสิ่งผิดปกติ หากพบกลิ่นไหม้ ความร้อนสูง หรือประกายไฟ ให้หยุดใช้งานทันที และห้ามถอดอุปกรณ์ภายในขณะที่เครื่องยังจ่ายไฟ",
+
+    conclusion: "เริ่มจากเปลี่ยนพอร์ต USB ทดสอบอุปกรณ์กับคอมพิวเตอร์เครื่องอื่น และรีสตาร์ตเครื่อง หากยังใช้งานไม่ได้ให้ตรวจสอบ Device Manager ไดรเวอร์ และสภาพของพอร์ต"
+},
+
+network: {
+title:"การ์ดเครือข่ายหรือพอร์ต LAN ใช้งานไม่ได้",summary:"ตรวจสอบสาย LAN การเชื่อมต่อ และไดรเวอร์เครือข่ายของคอมพิวเตอร์",image:"images/network_thumb.png",difficulty:"ปานกลาง",time:"15 นาที",rating:"4.1 / 5",
+symptoms:"เสียบสาย LAN แล้วไม่เชื่อมต่อ ไม่มีไฟสถานะที่พอร์ต หรือ Windows ไม่พบ Network Adapter",
+tools:["สาย LAN ที่ใช้งานได้","เราเตอร์หรือสวิตช์ที่ใช้งานได้"],
+steps:[
+{title:"ตรวจสอบสาย LAN",content:"ตรวจสอบว่าหัวสายเสียบแน่นทั้งคอมพิวเตอร์และเราเตอร์ ลองเปลี่ยนสายที่ใช้งานได้"},
+{title:"ตรวจสอบเราเตอร์",content:"ทดลองพอร์ต LAN อื่นบนเราเตอร์ และตรวจสอบว่าอุปกรณ์เครือข่ายเปิดทำงานอยู่"},
+{title:"ตรวจสอบสถานะเครือข่าย",content:"เปิด Settings > Network & Internet ตรวจสอบว่า Ethernet หรือ Network Adapter แสดงอยู่หรือไม่"},
+{title:"ตรวจสอบไดรเวอร์",content:"เปิด Device Manager > Network adapters ตรวจสอบสถานะอุปกรณ์และติดตั้งไดรเวอร์ที่ตรงกับรุ่นจากผู้ผลิต"}
+],
+safety:"อย่าแก้ไขสายไฟหรือเปิดอุปกรณ์เครือข่ายขณะจ่ายไฟ หากพบความเสียหายให้หยุดใช้งาน",
+conclusion:"ตรวจสอบสายและพอร์ตเราเตอร์ก่อน จากนั้นตรวจสอบ Network Adapter และไดรเวอร์"
+},
+monitor: {
+title:"จอภาพมีเส้น / กระพริบ / สีผิดปกติ",summary:"ตรวจสอบสายสัญญาณ การตั้งค่าจอ และการ์ดจอเมื่อภาพมีเส้นหรือสีเพี้ยน",image:"images/monitor_thumb.png",difficulty:"ปานกลาง",time:"15 นาที",rating:"4.4 / 5",
+symptoms:"หน้าจอมีเส้นแนวตั้งหรือแนวนอน ภาพกระพริบ สีผิดเพี้ยน หรือภาพขาดหายเป็นช่วง ๆ",
+tools:["สาย HDMI หรือ DisplayPort สำรอง","จอภาพอื่นสำหรับทดสอบ หากมี"],
+steps:[
+{title:"ตรวจสอบสายสัญญาณ",content:"ถอดและเสียบสาย HDMI หรือ DisplayPort ใหม่ ตรวจสอบหัวต่อและทดลองใช้สายเส้นอื่น"},
+{title:"ตรวจสอบการตั้งค่าจอ",content:"ตั้งค่า Resolution และ Refresh Rate ให้เหมาะสมกับจอภาพจาก Settings > System > Display > Advanced display"},
+{title:"ทดสอบจอภาพอื่น",content:"เชื่อมต่อคอมพิวเตอร์กับจออื่น หรือเชื่อมต่อจอเดิมกับอุปกรณ์อื่น เพื่อแยกสาเหตุ"},
+{title:"ตรวจสอบไดรเวอร์การ์ดจอ",content:"หากปัญหาเริ่มหลังอัปเดตไดรเวอร์ ให้ตรวจสอบเวอร์ชันไดรเวอร์และอัปเดตหรือย้อนกลับตามความเหมาะสม"},
+{title:"ตรวจสอบฮาร์ดแวร์",content:"หากเส้นยังปรากฏแม้เปลี่ยนสายและอุปกรณ์แล้ว อาจเป็นปัญหาที่จอหรือการ์ดจอ ควรให้ช่างตรวจสอบ"}
+],
+safety:"อย่ากดหน้าจอแรง ๆ และปิดอุปกรณ์ก่อนถอดสาย หากจอมีรอยแตกหรือมีกลิ่นไหม้ให้หยุดใช้งาน",
+conclusion:"เริ่มจากเปลี่ยนสายและตรวจสอบการตั้งค่าภาพ หากยังผิดปกติให้ทดสอบกับจออื่นและให้ช่างตรวจสอบ"
+}
+};
+
+const params = new URLSearchParams(window.location.search);
+const articleId = params.get("id");
+const article = articles[articleId];
+
+if (article) {
+document.getElementById("articleTitle").textContent = article.title;
+document.getElementById("articleSummary").textContent = article.summary;
+document.getElementById("articleImage").src = article.image;
+document.getElementById("articleDifficulty").textContent = article.difficulty;
+document.getElementById("articleTime").textContent = article.time;
+document.getElementById("articleRating").textContent = article.rating;
+document.getElementById("articleSymptoms").textContent = article.symptoms;
+document.getElementById("articleSafety").textContent = article.safety;
+document.getElementById("articleConclusion").textContent = article.conclusion;
+
+const toolsBox = document.getElementById("articleTools");
+toolsBox.innerHTML = "";
+article.tools.forEach(function(tool) {
+const li = document.createElement("li");
+li.innerHTML = `<span>✓</span> ${tool}`;
+toolsBox.appendChild(li);
+});
+
+const stepsBox = document.getElementById("articleSteps");
+stepsBox.innerHTML = "";
+article.steps.forEach(function(step, index) {
+const stepBox = document.createElement("div");
+stepBox.className = "repair-step";
+stepBox.innerHTML = `
+<div class="step-number">${index + 1}</div>
+<div class="step-text">
+<h3>${step.title}</h3>
+<p>${step.content}</p>
+</div>
+`;
+stepsBox.appendChild(stepBox);
+});
+
+updateSaveButton();
+} else {
+document.getElementById("articleTitle").textContent = "ไม่พบบทความ";
+document.getElementById("articleSummary").textContent = "ไม่พบข้อมูลบทความที่ต้องการ";
+const saveButton = document.getElementById("saveArticleButton");
+if (saveButton) {
+saveButton.style.display = "none";
+}
+}
+
+function saveCurrentArticle() {
+const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+if (!isLoggedIn) {
+window.location.href = "login.html";
+return;
+}
+
+const username = localStorage.getItem("currentUser");
+
+if (!article || !articleId) return;
+
+const libraryKey = "savedArticles_" + username;
+let savedArticles = JSON.parse(localStorage.getItem(libraryKey)) || [];
+
+const alreadySaved = savedArticles.some(function(saved) {
+return saved.id === articleId;
+});
+
+if (alreadySaved) {
+updateSaveButton();
+return;
+}
+
+const savedDate = new Date().toLocaleDateString("th-TH");
+savedArticles.push({
+id: articleId,
+title: article.title,
+summary: article.summary,
+image: article.image,
+category: "Hardware",
+savedDate: savedDate
+});
+
+localStorage.setItem(libraryKey, JSON.stringify(savedArticles));
+updateSaveButton();
+}
+
+function updateSaveButton() {
+const button = document.getElementById("saveArticleButton");
+if (!button) return;
+
+const username = localStorage.getItem("currentUser");
+if (!username) {
+button.textContent = "📚 บันทึกบทความ";
+button.classList.remove("saved");
+return;
+}
+
+const libraryKey = "savedArticles_" + username;
+const savedArticles = JSON.parse(localStorage.getItem(libraryKey)) || [];
+const alreadySaved = savedArticles.some(function(saved) {
+return saved.id === articleId;
+});
+
+if (alreadySaved) {
+button.textContent = "✓ บันทึกแล้ว";
+button.classList.add("saved");
+} else {
+button.textContent = "📚 บันทึกบทความ";
+button.classList.remove("saved");
+}
+}
+</script>
+<script>
+
+</script>
+<script src="admin-panel.js" defer></script>
+    <script type="module" src="firebase-auth.js"></script>
+    <script src="satisfaction-popup.js" defer></script>
+</body>
+</html>

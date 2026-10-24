@@ -1,0 +1,365 @@
+
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Network - PC Repair Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="hardware-page" data-public-category="CAT004">
+
+    <!-- NAVBAR -->
+    <header class="main-navbar">
+        <a href="index.html" class="main-logo">
+            <img src="images/logo.png" alt="PC Repair Hub Logo">
+            <span>PC Repair Hub</span>
+        </a>
+
+        <button class="menu-toggle" id="menuToggle"
+                type="button"
+                aria-label="เปิดเมนู"
+                aria-expanded="false"
+                aria-controls="sideMenu">
+            ☰
+        </button>
+    </header>
+
+    <!-- MENU OVERLAY -->
+    <div class="menu-overlay" id="menuOverlay"></div>
+
+    <!-- RIGHT SIDE MENU -->
+    <aside class="side-menu" id="sideMenu" aria-hidden="true" inert>
+        <div class="side-menu-header">
+            <strong>เมนูหลัก</strong>
+            <button type="button" id="menuClose" aria-label="ปิดเมนู">✕</button>
+        </div>
+
+        
+<nav class="side-menu-links">
+    <a href="index.html">🏠 หน้าแรก</a>
+    <a href="hardware.html">🔧 Hardware</a>
+    <a href="software.html">💿 Software</a>
+    <a href="os.html">🖥️ Operating System</a>
+    <a href="network.html">🌐 Network</a>
+    <a href="my-library.html">📚 My Library</a>
+    <a href="ask-question.html">❓ ถามคำถาม</a>
+    <a href="technician-editor.html">🧰 Technician Dashboard</a>
+    <a href="admin-dashboard.html">⚙️ Admin Dashboard</a>
+</nav>
+
+
+        <div class="side-menu-account">
+            <a href="login.html" id="loginLink">🔑 เข้าสู่ระบบ</a>
+            <a href="register.html" id="registerLink">👤 สร้างบัญชี</a>
+            <a href="#" id="logoutLink"
+               onclick="logout(); return false;"
+               style="display: none;">🚪 ออกจากระบบ</a>
+        </div>
+    </aside>
+
+    <!-- HERO -->
+    <section class="hardware-hero">
+        <div class="hardware-hero-content">
+            <span class="hardware-tag">🌐 Network</span>
+            <h1>Network</h1>
+            <h2>รวมวิธีแก้ไขปัญหาเกี่ยวกับเครือข่าย</h2>
+            <p>เลือกปัญหา Network ที่ต้องการดูวิธีแก้ไข</p>
+        </div>
+
+        <div class="hardware-hero-visual">
+            <div class="hardware-computer">
+                <div class="hardware-monitor">
+                    <div class="hardware-screen">🌐</div>
+                </div>
+                <div class="hardware-monitor-stand"></div>
+                <div class="hardware-case">
+                    <div class="hardware-power">●</div>
+                </div>
+                <div class="hardware-part ram-part"></div>
+                <div class="hardware-part gpu-part"></div>
+                <div class="hardware-fan">⚙</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NETWORK PROBLEMS -->
+    <section class="hardware-problems">
+        <div class="hardware-section-title">
+            <h2>ปัญหา Network ที่พบบ่อย</h2>
+            <p>เลือกปัญหาที่ต้องการดูวิธีแก้ไข</p>
+        </div>
+
+        <div class="hardware-grid">
+
+            <article class="hardware-card">
+                <div class="hardware-image-slot">
+    <img
+        src="./images/network01_thumb.png"
+        alt="เชื่อมต่ออินเทอร์เน็ตไม่ได้"
+        onerror="console.error('โหลดรูปไม่สำเร็จ:', this.src)"
+    >
+</div>
+                <div class="hardware-card-content">
+                    <span class="hardware-card-tag">Network</span>
+                    <h3>เชื่อมต่ออินเทอร์เน็ตไม่ได้</h3>
+                    <p>ตรวจสอบสาเหตุเมื่อคอมพิวเตอร์ไม่สามารถเชื่อมต่ออินเทอร์เน็ตได้</p>
+                    <button onclick="location.href='network-repair.html?id=network01'">ดูวิธีแก้ไข <span>→</span></button>
+                </div>
+            </article>
+
+            <article class="hardware-card">
+                <div class="hardware-image-slot">
+    <img
+        src="./images/network02_thumb.png"
+        alt="Wi-Fi ไม่พบเครือข่าย"
+        onerror="console.error('โหลดรูปไม่สำเร็จ:', this.src)"
+    >
+</div>
+                <div class="hardware-card-content">
+                    <span class="hardware-card-tag">Network</span>
+                    <h3>Wi-Fi ไม่พบเครือข่าย</h3>
+                    <p>คอมพิวเตอร์ไม่พบชื่อ Wi-Fi หรือไม่สามารถค้นหาเครือข่ายได้</p>
+                    <button onclick="location.href='network-repair.html?id=network02'">ดูวิธีแก้ไข <span>→</span></button>
+                </div>
+            </article>
+
+            <article class="hardware-card">
+                <div class="hardware-image-slot">
+    <img
+        src="./images/network03_thumb.png"
+        alt="Wi-Fi หลุดบ่อย"
+        onerror="console.error('โหลดรูปไม่สำเร็จ:', this.src)"
+    >
+</div>
+                <div class="hardware-card-content">
+                    <span class="hardware-card-tag">Network</span>
+                    <h3>Wi-Fi หลุดบ่อย</h3>
+                    <p>การเชื่อมต่อ Wi-Fi ขาดหายหรือหลุดระหว่างใช้งาน</p>
+                    <button onclick="location.href='network-repair.html?id=network03'">ดูวิธีแก้ไข <span>→</span></button>
+                </div>
+            </article>
+
+            <article class="hardware-card">
+                
+<div class="hardware-image-slot">
+    <img
+        src="./images/network04_thumb.png"
+        alt="อินเทอร์เน็ตช้า"
+        onerror="console.error('โหลดรูปไม่สำเร็จ:', this.src)"
+    >
+</div>
+
+                <div class="hardware-card-content">
+                    <span class="hardware-card-tag">Network</span>
+                    <h3>อินเทอร์เน็ตช้า</h3>
+                    <p>ความเร็วอินเทอร์เน็ตต่ำกว่าปกติหรือเว็บไซต์โหลดช้า</p>
+                    <button onclick="location.href='network-repair.html?id=network04'">ดูวิธีแก้ไข <span>→</span></button>
+                </div>
+            </article>
+
+            <article class="hardware-card">
+                
+<div class="hardware-image-slot">
+    <img
+        src="./images/network05_thumb.png"
+        alt="LAN ใช้งานไม่ได้"
+        onerror="console.error('โหลดรูปไม่สำเร็จ:', this.src)"
+    >
+</div>
+
+                <div class="hardware-card-content">
+                    <span class="hardware-card-tag">Network</span>
+                    <h3>LAN ใช้งานไม่ได้</h3>
+                    <p>เชื่อมต่อสาย LAN แล้วไม่สามารถใช้งานเครือข่ายได้</p>
+                    <button onclick="location.href='network-repair.html?id=network05'">ดูวิธีแก้ไข <span>→</span></button>
+                </div>
+            </article>
+
+            <article class="hardware-card">
+                
+<div class="hardware-image-slot">
+    <img
+        src="./images/network06_thumb.png"
+        alt="Network Adapter ไม่ทำงาน"
+        onerror="console.error('โหลดรูปไม่สำเร็จ:', this.src)"
+    >
+</div>
+
+                <div class="hardware-card-content">
+                    <span class="hardware-card-tag">Network</span>
+                    <h3>Network Adapter ไม่ทำงาน</h3>
+                    <p>Network Adapter ของคอมพิวเตอร์ไม่สามารถเชื่อมต่อเครือข่ายได้</p>
+                    <button onclick="location.href='network-repair.html?id=network06'">ดูวิธีแก้ไข <span>→</span></button>
+                </div>
+            </article>
+
+            <article class="hardware-card">
+                
+<div class="hardware-image-slot">
+    <img
+        src="./images/network07_thumb.png"
+        alt="DNS ทำงานผิดปกติ"
+        onerror="console.error('โหลดรูปไม่สำเร็จ:', this.src)"
+    >
+</div>
+
+                <div class="hardware-card-content">
+                    <span class="hardware-card-tag">Network</span>
+                    <h3>DNS ทำงานผิดปกติ</h3>
+                    <p>ไม่สามารถเข้าถึงเว็บไซต์หรือระบบแจ้งปัญหา DNS</p>
+                    <button onclick="location.href='network-repair.html?id=network07'">ดูวิธีแก้ไข <span>→</span></button>
+                </div>
+            </article>
+
+            <article class="hardware-card">
+                
+<div class="hardware-image-slot">
+    <img
+        src="./images/network08_thumb.png"
+        alt="IP Address ผิดปกติ"
+        onerror="console.error('โหลดรูปไม่สำเร็จ:', this.src)"
+    >
+</div>
+
+                <div class="hardware-card-content">
+                    <span class="hardware-card-tag">Network</span>
+                    <h3>IP Address ผิดปกติ</h3>
+                    <p>คอมพิวเตอร์ได้รับ IP Address ไม่ถูกต้องหรือไม่สามารถเชื่อมต่อได้</p>
+                    <button onclick="location.href='network-repair.html?id=network08'">ดูวิธีแก้ไข <span>→</span></button>
+                </div>
+            </article>
+
+            <article class="hardware-card">
+                
+<div class="hardware-image-slot">
+    <img
+        src="./images/network09_thumb.png"
+        alt="Firewall บล็อกอินเทอร์เน็ต"
+        onerror="console.error('โหลดรูปไม่สำเร็จ:', this.src)"
+    >
+</div>
+
+                <div class="hardware-card-content">
+                    <span class="hardware-card-tag">Network</span>
+                    <h3>Firewall บล็อกอินเทอร์เน็ต</h3>
+                    <p>Firewall อาจบล็อกโปรแกรมหรือการเชื่อมต่ออินเทอร์เน็ต</p>
+                    <button onclick="location.href='network-repair.html?id=network09'">ดูวิธีแก้ไข <span>→</span></button>
+                </div>
+            </article>
+
+            <article class="hardware-card">
+                
+<div class="hardware-image-slot">
+    <img
+        src="./images/network10_thumb.png"
+        alt="แชร์ไฟล์ใน Network ไม่ได้"
+        onerror="console.error('โหลดรูปไม่สำเร็จ:', this.src)"
+    >
+</div>
+
+                <div class="hardware-card-content">
+                    <span class="hardware-card-tag">Network</span>
+                    <h3>แชร์ไฟล์ใน Network ไม่ได้</h3>
+                    <p>ไม่สามารถแชร์หรือเข้าถึงไฟล์จากคอมพิวเตอร์ในเครือข่ายได้</p>
+                    <button onclick="location.href='network-repair.html?id=network10'">ดูวิธีแก้ไข <span>→</span></button>
+                </div>
+            </article>
+
+            <article class="hardware-card">
+                
+<div class="hardware-image-slot">
+    <img
+        src="./images/network11_thumb.png"
+        alt="มองไม่เห็นคอมพิวเตอร์ใน Network"
+        onerror="console.error('โหลดรูปไม่สำเร็จ:', this.src)"
+    >
+</div>
+
+                <div class="hardware-card-content">
+                    <span class="hardware-card-tag">Network</span>
+                    <h3>มองไม่เห็นคอมพิวเตอร์ใน Network</h3>
+                    <p>คอมพิวเตอร์ในเครือข่ายไม่แสดงหรือไม่สามารถค้นหาเครื่องอื่นได้</p>
+                    <button onclick="location.href='network-repair.html?id=network11'">ดูวิธีแก้ไข <span>→</span></button>
+                </div>
+            </article>
+
+            <article class="hardware-card">
+                
+<div class="hardware-image-slot">
+    <img
+        src="./images/network12_thumb.png"
+        alt="Network เชื่อมต่อแล้วแต่ใช้งานไม่ได้"
+        onerror="console.error('โหลดรูปไม่สำเร็จ:', this.src)"
+    >
+</div>
+
+                <div class="hardware-card-content">
+                    <span class="hardware-card-tag">Network</span>
+                    <h3>Network เชื่อมต่อแล้วแต่ใช้งานไม่ได้</h3>
+                    <p>แสดงสถานะเชื่อมต่อแล้วแต่ไม่สามารถใช้งานอินเทอร์เน็ตได้</p>
+                    <button onclick="location.href='network-repair.html?id=network12'">ดูวิธีแก้ไข <span>→</span></button>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="home-footer">
+        <p>© 2026 PC Repair Hub</p>
+        <p>คลังวิธีซ่อมคอมพิวเตอร์</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+    <!-- SIDE MENU SCRIPT -->
+    <script>
+    (() => {
+        const toggle = document.getElementById("menuToggle");
+        const menu = document.getElementById("sideMenu");
+        const overlay = document.getElementById("menuOverlay");
+        const close = document.getElementById("menuClose");
+
+        if (!toggle || !menu || !overlay || !close) return;
+
+        function openMenu() {
+            menu.classList.add("open");
+            overlay.classList.add("open");
+            menu.inert = false;
+            menu.setAttribute("aria-hidden", "false");
+            toggle.setAttribute("aria-expanded", "true");
+            document.body.classList.add("menu-open");
+        }
+
+        function closeMenu() {
+            menu.classList.remove("open");
+            overlay.classList.remove("open");
+            menu.inert = true;
+            menu.setAttribute("aria-hidden", "true");
+            toggle.setAttribute("aria-expanded", "false");
+            document.body.classList.remove("menu-open");
+        }
+
+        toggle.addEventListener("click", openMenu);
+        close.addEventListener("click", closeMenu);
+        overlay.addEventListener("click", closeMenu);
+
+        menu.querySelectorAll("a").forEach(link => {
+            link.addEventListener("click", closeMenu);
+        });
+
+        document.addEventListener("keydown", event => {
+            if (event.key === "Escape" && menu.classList.contains("open")) {
+                closeMenu();
+            }
+        });
+    })();
+    </script>
+
+    <script src="admin-panel.js" defer></script>
+    <script type="module" src="firebase-auth.js"></script>
+    <script src="satisfaction-popup.js" defer></script>
+</body>
+</html>

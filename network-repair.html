@@ -1,0 +1,1617 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Network Repair - PC Repair Hub
+    </title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body class="repair-page" data-article-detail>
+
+
+    <!-- Navbar -->
+    <header class="repair-navbar">
+
+        <div class="repair-brand">
+
+            <img
+                src="images/logo.png"
+                alt="PC Repair Hub">
+
+            <span>
+                PC Repair Hub
+            </span>
+
+        </div>
+
+
+    </header>
+
+
+
+    <main class="repair-main">
+
+
+        <!-- Back -->
+        <a
+            href="network.html"
+            class="repair-back">
+
+            ← กลับไปหน้า Network
+
+        </a>
+
+
+
+        <!-- Hero -->
+        <section class="repair-hero">
+
+
+            <div class="repair-hero-text">
+
+
+                <span class="repair-tag">
+                    NETWORK
+                </span>
+
+
+                <h1 id="repairTitle">
+                    กำลังโหลด...
+                </h1>
+
+
+                <p id="repairDescription">
+                    กำลังโหลดข้อมูล...
+                </p>
+
+
+
+                <div class="repair-meta">
+
+
+                    <div class="meta-box">
+
+                        <div class="meta-icon">
+                            🌐
+                        </div>
+
+                        <div>
+
+                            <small>
+                                ประเภท
+                            </small>
+
+                            <strong>
+                                Network
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="meta-box">
+
+                        <div class="meta-icon">
+                            💻
+                        </div>
+
+                        <div>
+
+                            <small>
+                                ระบบ
+                            </small>
+
+                            <strong>
+                                Windows
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="meta-box">
+
+                        <div class="meta-icon">
+                            ⏱️
+                        </div>
+
+                        <div>
+
+                            <small>
+                                เวลาโดยประมาณ
+                            </small>
+
+                            <strong id="repairTime">
+                                -
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- My Library -->
+                <div class="library-save-area">
+
+                    <button
+                        id="saveArticleButton"
+                        class="save-article-button"
+                        onclick="saveCurrentArticle()">
+
+                        📚 บันทึกบทความ
+
+                    </button>
+
+
+                    <a
+                        href="my-library.html"
+                        class="view-library-button">
+
+                        📖 ดู My Library
+
+                    </a>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- Image -->
+
+            <div class="repair-hero-image">
+
+
+                <img
+                    id="repairImage"
+                    src=""
+                    alt="Network Repair"
+                    style="display:none;"
+                >
+
+
+                <div id="imagePlaceholder">
+
+                    <div
+                        style="font-size:70px;">
+
+                        🌐
+
+                    </div>
+
+
+                    <h3>
+                        พื้นที่สำหรับรูปภาพ
+                    </h3>
+
+
+                    <p>
+                        สามารถเพิ่มรูปภาพประกอบ
+                        วิธีแก้ไขได้ภายหลัง
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- Content -->
+
+        <div class="repair-layout">
+
+
+            <!-- Main -->
+
+            <div class="repair-card-section">
+
+
+                <!-- Symptoms -->
+
+                <section>
+
+                    <h2 class="section-title">
+
+                        <span class="section-icon">
+                            🔍
+                        </span>
+
+                        อาการที่พบ
+
+                    </h2>
+
+
+                    <div class="symptom-box">
+
+                        <ul id="symptomList">
+                        </ul>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- Tools -->
+
+                <section>
+
+                    <h2 class="section-title">
+
+                        <span class="section-icon">
+                            🧰
+                        </span>
+
+                        สิ่งที่ต้องเตรียม
+
+                    </h2>
+
+
+                    <ul
+                        class="tools-list"
+                        id="toolsList">
+
+                    </ul>
+
+                </section>
+
+
+
+                <!-- Steps -->
+
+                <section>
+
+                    <h2 class="section-title">
+
+                        <span class="section-icon">
+                            🔧
+                        </span>
+
+                        ขั้นตอนการแก้ไข
+
+                    </h2>
+
+
+                    <div
+                        class="steps-list"
+                        id="stepsList">
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- Warning -->
+
+                <section class="warning-box">
+
+
+                    <div class="warning-icon">
+                        ⚠️
+                    </div>
+
+
+                    <div>
+
+                        <h3>
+                            ข้อควรระวัง
+                        </h3>
+
+
+                        <p id="warningText">
+                        </p>
+
+                    </div>
+
+
+                </section>
+
+
+
+                <!-- Summary -->
+
+                <section class="conclusion-section">
+
+
+                    <h2 class="section-title">
+
+                        <span class="section-icon">
+                            ✅
+                        </span>
+
+                        สรุป
+
+                    </h2>
+
+
+                    <p
+                        id="summaryText"
+                        class="conclusion-text">
+
+                    </p>
+
+
+                </section>
+
+
+            </div>
+
+            <section class="repair-guidance">
+                <h2>💡 คำแนะนำเพิ่มเติม</h2>
+                <p>ก่อนแก้ไขปัญหา Network ควรตรวจสอบสาย LAN, Wi-Fi และอุปกรณ์ Router ก่อนดำเนินการขั้นตอนอื่น</p>
+                <nav class="repair-category-links" aria-label="ไปยังหมวดอื่น">
+                    <a href="hardware.html">🔧 Hardware</a>
+                    <a href="software.html">💿 Software</a>
+                    <a href="os.html">🖥️ Operating System</a>
+                </nav>
+            </section>
+
+
+            </div>
+
+
+    </main>
+
+
+
+    <!-- Footer -->
+
+    <footer>
+
+        <p>
+            © 2026 PC Repair Hub |
+            คลังวิธีซ่อมคอมพิวเตอร์
+        </p>
+
+    </footer>
+
+
+
+<script>
+
+
+const networkData = {
+
+
+    network01: {
+
+        title: "เชื่อมต่ออินเทอร์เน็ตไม่ได้",
+
+        description:
+            "คอมพิวเตอร์ไม่สามารถเชื่อมต่ออินเทอร์เน็ตได้ แม้จะเปิด Wi-Fi หรือเชื่อมต่อสาย LAN แล้ว",
+
+        time: "10–20 นาที",
+
+        symptoms: [
+
+            "ไม่สามารถเปิดเว็บไซต์ได้",
+
+            "แสดงข้อความ No Internet",
+
+            "ไอคอน Network แสดงสถานะผิดปกติ"
+
+        ],
+
+        tools: [
+
+            "Router หรือ Modem",
+
+            "สาย LAN หากใช้งานแบบมีสาย",
+
+            "Windows Network Settings"
+
+        ],
+
+        steps: [
+
+            {
+                title: "ตรวจสอบ Router",
+
+                text:
+                    "ตรวจสอบว่า Router เปิดทำงานอยู่และไฟสถานะทำงานตามปกติ"
+            },
+
+            {
+                title: "ตรวจสอบการเชื่อมต่อ",
+
+                text:
+                    "ตรวจสอบ Wi-Fi หรือสาย LAN ว่าเชื่อมต่อกับคอมพิวเตอร์เรียบร้อย"
+            },
+
+            {
+                title: "Restart Network",
+
+                text:
+                    "ปิดและเปิด Wi-Fi หรือรีสตาร์ต Router แล้วทดลองเชื่อมต่ออีกครั้ง"
+            }
+
+        ],
+
+        warning:
+            "ไม่ควรกด Reset Router ทันที เพราะอาจทำให้การตั้งค่าเครือข่ายเดิมถูกลบ",
+
+        summary:
+            "ตรวจสอบ Router การเชื่อมต่อ และ Network Settings ก่อนดำเนินการแก้ไขขั้นตอนอื่น"
+
+
+    },
+
+
+
+    network02: {
+
+        title: "Wi-Fi ไม่พบเครือข่าย",
+
+        description:
+            "คอมพิวเตอร์ไม่พบชื่อเครือข่าย Wi-Fi ที่ต้องการเชื่อมต่อ",
+
+        time: "10–20 นาที",
+
+        symptoms: [
+
+            "ไม่พบชื่อ Wi-Fi",
+
+            "รายการ Wi-Fi ว่าง",
+
+            "คอมพิวเตอร์ไม่สามารถค้นหาเครือข่ายได้"
+
+        ],
+
+        tools: [
+
+            "Router",
+
+            "Windows Wi-Fi Settings",
+
+            "Network Adapter"
+
+        ],
+
+        steps: [
+
+            {
+                title: "ตรวจสอบ Wi-Fi",
+
+                text:
+                    "ตรวจสอบว่าเปิด Wi-Fi บนคอมพิวเตอร์แล้ว"
+            },
+
+            {
+                title: "ตรวจสอบ Router",
+
+                text:
+                    "ตรวจสอบว่า Router กำลังปล่อยสัญญาณ Wi-Fi"
+            },
+
+            {
+                title: "เปิด Network Adapter",
+
+                text:
+                    "ตรวจสอบ Network Adapter ใน Windows ว่าถูก Disable หรือไม่"
+            }
+
+        ],
+
+        warning:
+            "หากเป็นโน้ตบุ๊ก ควรตรวจสอบปุ่มหรือสวิตช์สำหรับเปิด Wi-Fi ด้วย",
+
+        summary:
+            "ตรวจสอบ Wi-Fi, Router และ Network Adapter เพื่อหาสาเหตุที่ไม่พบเครือข่าย"
+
+
+    },
+
+
+
+    network03: {
+
+        title: "Wi-Fi หลุดบ่อย",
+
+        description:
+            "การเชื่อมต่อ Wi-Fi ขาดหายหรือหลุดเป็นระยะระหว่างใช้งาน",
+
+        time: "15–30 นาที",
+
+        symptoms: [
+
+            "Wi-Fi หลุดระหว่างใช้งาน",
+
+            "ต้องเชื่อมต่อ Wi-Fi ใหม่บ่อยครั้ง",
+
+            "สัญญาณ Wi-Fi ไม่เสถียร"
+
+        ],
+
+        tools: [
+
+            "Router",
+
+            "Windows Network Settings",
+
+            "Wi-Fi Adapter"
+
+        ],
+
+        steps: [
+
+            {
+                title: "ตรวจสอบระยะห่าง",
+
+                text:
+                    "ตรวจสอบว่าคอมพิวเตอร์อยู่ห่างจาก Router มากเกินไปหรือไม่"
+            },
+
+            {
+                title: "Restart Router",
+
+                text:
+                    "ปิด Router รอสักครู่แล้วเปิดใหม่"
+            },
+
+            {
+                title: "อัปเดต Network Driver",
+
+                text:
+                    "ตรวจสอบและอัปเดต Driver ของ Wi-Fi Adapter"
+            }
+
+        ],
+
+        warning:
+            "ไม่ควรเปลี่ยนการตั้งค่า Router ขั้นสูงโดยไม่ทราบผลกระทบ",
+
+        summary:
+            "ตรวจสอบสัญญาณ Router และ Driver ของ Wi-Fi Adapter เพื่อเพิ่มความเสถียร"
+
+
+    },
+
+
+
+    network04: {
+
+        title: "อินเทอร์เน็ตช้า",
+
+        description:
+            "ความเร็วอินเทอร์เน็ตต่ำกว่าปกติหรือใช้งานเว็บไซต์และบริการออนไลน์ได้ช้า",
+
+        time: "10–20 นาที",
+
+        symptoms: [
+
+            "เว็บไซต์โหลดช้า",
+
+            "ดาวน์โหลดไฟล์ช้า",
+
+            "วิดีโอออนไลน์กระตุก"
+
+        ],
+
+        tools: [
+
+            "Speed Test",
+
+            "Router",
+
+            "Task Manager"
+
+        ],
+
+        steps: [
+
+            {
+                title: "ตรวจสอบความเร็ว",
+
+                text:
+                    "ทดสอบความเร็วอินเทอร์เน็ตและเปรียบเทียบกับแพ็กเกจที่ใช้งาน"
+            },
+
+            {
+                title: "ตรวจสอบอุปกรณ์ที่ใช้งาน",
+
+                text:
+                    "ตรวจสอบว่ามีอุปกรณ์จำนวนมากกำลังใช้งานเครือข่ายหรือไม่"
+            },
+
+            {
+                title: "Restart Router",
+
+                text:
+                    "รีสตาร์ต Router และทดสอบความเร็วอีกครั้ง"
+            }
+
+        ],
+
+        warning:
+            "ความเร็วอินเทอร์เน็ตอาจขึ้นอยู่กับช่วงเวลาและจำนวนผู้ใช้งานในเครือข่าย",
+
+        summary:
+            "ตรวจสอบความเร็วและจำนวนอุปกรณ์ที่ใช้งาน Network ก่อนพิจารณาปัญหาอื่น"
+
+
+    },
+
+
+
+    network05: {
+
+        title: "LAN ใช้งานไม่ได้",
+
+        description:
+            "ไม่สามารถเชื่อมต่อเครือข่ายผ่านสาย LAN ได้",
+
+        time: "10–20 นาที",
+
+        symptoms: [
+
+            "เสียบสาย LAN แล้วไม่มีอินเทอร์เน็ต",
+
+            "Network ขึ้นสถานะ Disconnected",
+
+            "ไฟที่พอร์ต LAN ไม่ติด"
+
+        ],
+
+        tools: [
+
+            "สาย LAN",
+
+            "Router หรือ Switch",
+
+            "Network Adapter"
+
+        ],
+
+        steps: [
+
+            {
+                title: "ตรวจสอบสาย LAN",
+
+                text:
+                    "ตรวจสอบว่าสาย LAN เสียบเข้าพอร์ตทั้งสองด้านแน่นดี"
+            },
+
+            {
+                title: "เปลี่ยนพอร์ต",
+
+                text:
+                    "ลองเปลี่ยนพอร์ต LAN บน Router หรือ Switch"
+            },
+
+            {
+                title: "ตรวจสอบ Adapter",
+
+                text:
+                    "ตรวจสอบ Network Adapter ใน Windows ว่าทำงานอยู่หรือไม่"
+            }
+
+        ],
+
+        warning:
+            "หากสาย LAN ชำรุดควรเปลี่ยนสายใหม่แทนการดัดแปลงสาย",
+
+        summary:
+            "ตรวจสอบสาย LAN พอร์ต และ Network Adapter เพื่อหาสาเหตุ"
+
+
+    },
+
+
+
+    network06: {
+
+        title: "Network Adapter ไม่ทำงาน",
+
+        description:
+            "Network Adapter ของคอมพิวเตอร์ไม่สามารถเชื่อมต่อเครือข่ายได้",
+
+        time: "15–30 นาที",
+
+        symptoms: [
+
+            "ไม่พบ Wi-Fi หรือ LAN",
+
+            "Network Adapter แสดง Error",
+
+            "ไม่สามารถเปิดใช้งาน Network Adapter ได้"
+
+        ],
+
+        tools: [
+
+            "Device Manager",
+
+            "Network Driver",
+
+            "Windows"
+
+        ],
+
+        steps: [
+
+            {
+                title: "เปิด Device Manager",
+
+                text:
+                    "เปิด Device Manager และตรวจสอบ Network adapters"
+            },
+
+            {
+                title: "ตรวจสอบสถานะ Adapter",
+
+                text:
+                    "ตรวจสอบว่า Adapter ถูก Disable หรือมีเครื่องหมายเตือนหรือไม่"
+            },
+
+            {
+                title: "อัปเดต Driver",
+
+                text:
+                    "ติดตั้งหรืออัปเดต Network Driver ที่เหมาะสม"
+            }
+
+        ],
+
+        warning:
+            "ควรติดตั้ง Driver จากแหล่งที่เชื่อถือได้และตรงกับอุปกรณ์",
+
+        summary:
+            "ตรวจสอบ Network Adapter และ Driver ผ่าน Device Manager"
+
+
+    },
+
+
+
+    network07: {
+
+        title: "DNS ทำงานผิดปกติ",
+
+        description:
+            "คอมพิวเตอร์เชื่อมต่ออินเทอร์เน็ตแล้ว แต่ไม่สามารถเปิดเว็บไซต์บางเว็บไซต์ได้",
+
+        time: "10–20 นาที",
+
+        symptoms: [
+
+            "เปิดเว็บไซต์ไม่ได้",
+
+            "บางโปรแกรมใช้อินเทอร์เน็ตไม่ได้",
+
+            "แสดง DNS Error"
+
+        ],
+
+        tools: [
+
+            "Command Prompt",
+
+            "Windows Network Settings"
+
+        ],
+
+        steps: [
+
+            {
+                title: "ตรวจสอบ Internet",
+
+                text:
+                    "ตรวจสอบก่อนว่าเครื่องเชื่อมต่ออินเทอร์เน็ตจริง"
+            },
+
+            {
+                title: "ตรวจสอบ DNS",
+
+                text:
+                    "ตรวจสอบการตั้งค่า DNS ของ Network Connection"
+            },
+
+            {
+                title: "ล้าง DNS Cache",
+
+                text:
+                    "ใช้คำสั่งของ Windows สำหรับล้าง DNS Cache แล้วทดลองเปิดเว็บไซต์อีกครั้ง"
+            }
+
+        ],
+
+        warning:
+            "ควรตรวจสอบคำสั่งก่อนใช้งาน Command Prompt",
+
+        summary:
+            "ตรวจสอบการเชื่อมต่อและ DNS Configuration เพื่อแก้ปัญหาการค้นหาชื่อเว็บไซต์"
+
+
+    },
+
+
+
+    network08: {
+
+        title: "IP Address ผิดปกติ",
+
+        description:
+            "คอมพิวเตอร์ไม่ได้รับ IP Address ที่ถูกต้องจากเครือข่าย",
+
+        time: "10–20 นาที",
+
+        symptoms: [
+
+            "ไม่สามารถเชื่อมต่ออินเทอร์เน็ต",
+
+            "IP Address แสดงผิดปกติ",
+
+            "ไม่สามารถสื่อสารกับอุปกรณ์ใน Network"
+
+        ],
+
+        tools: [
+
+            "Command Prompt",
+
+            "Windows Network Settings",
+
+            "Router"
+
+        ],
+
+        steps: [
+
+            {
+                title: "ตรวจสอบ IP Address",
+
+                text:
+                    "ตรวจสอบ IP Address ของเครื่องผ่าน Network Settings หรือ Command Prompt"
+            },
+
+            {
+                title: "ตรวจสอบ DHCP",
+
+                text:
+                    "ตรวจสอบว่า Router สามารถแจก IP Address ให้เครื่องได้"
+            },
+
+            {
+                title: "Reconnect Network",
+
+                text:
+                    "ตัดการเชื่อมต่อแล้วเชื่อมต่อ Network ใหม่"
+            }
+
+        ],
+
+        warning:
+            "ไม่ควรกำหนด Static IP โดยไม่ทราบช่วง IP ของเครือข่าย",
+
+        summary:
+            "ตรวจสอบ IP Address และการแจก IP จาก Router"
+
+
+    },
+
+
+
+    network09: {
+
+        title: "Firewall บล็อกอินเทอร์เน็ต",
+
+        description:
+            "Firewall ของ Windows หรือโปรแกรมรักษาความปลอดภัยป้องกันการเชื่อมต่อของโปรแกรม",
+
+        time: "15–30 นาที",
+
+        symptoms: [
+
+            "โปรแกรมบางโปรแกรมเชื่อมต่ออินเทอร์เน็ตไม่ได้",
+
+            "เว็บไซต์หรือบริการบางอย่างถูกบล็อก",
+
+            "Network ทำงานแต่บางโปรแกรมใช้งานไม่ได้"
+
+        ],
+
+        tools: [
+
+            "Windows Firewall",
+
+            "Windows Security"
+
+        ],
+
+        steps: [
+
+            {
+                title: "ตรวจสอบ Firewall",
+
+                text:
+                    "เปิด Windows Security และตรวจสอบการตั้งค่า Firewall"
+            },
+
+            {
+                title: "ตรวจสอบ App Permission",
+
+                text:
+                    "ตรวจสอบว่าโปรแกรมที่มีปัญหาได้รับอนุญาตให้สื่อสารผ่าน Network"
+            },
+
+            {
+                title: "ทดสอบอีกครั้ง",
+
+                text:
+                    "เปิดโปรแกรมใหม่และตรวจสอบว่าสามารถเชื่อมต่อได้หรือไม่"
+            }
+
+        ],
+
+        warning:
+            "ไม่ควรปิด Firewall ถาวร เพราะอาจลดความปลอดภัยของเครื่อง",
+
+        summary:
+            "ตรวจสอบ Firewall Rule และสิทธิ์ของโปรแกรมก่อนเปลี่ยนการตั้งค่าความปลอดภัย"
+
+
+    },
+
+
+
+    network10: {
+
+        title: "แชร์ไฟล์ใน Network ไม่ได้",
+
+        description:
+            "ไม่สามารถเข้าถึงไฟล์หรือโฟลเดอร์ที่แชร์จากคอมพิวเตอร์เครื่องอื่นในเครือข่าย",
+
+        time: "15–30 นาที",
+
+        symptoms: [
+
+            "เปิด Shared Folder ไม่ได้",
+
+            "แสดง Access Denied",
+
+            "ไม่สามารถเข้าถึงไฟล์จากเครื่องอื่น"
+
+        ],
+
+        tools: [
+
+            "Windows Network Settings",
+
+            "Shared Folder",
+
+            "File Explorer"
+
+        ],
+
+        steps: [
+
+            {
+                title: "ตรวจสอบ Network",
+
+                text:
+                    "ตรวจสอบว่าคอมพิวเตอร์ทั้งสองเครื่องอยู่ในเครือข่ายเดียวกัน"
+            },
+
+            {
+                title: "ตรวจสอบ Folder Sharing",
+
+                text:
+                    "ตรวจสอบว่าโฟลเดอร์ถูกตั้งค่าให้แชร์ใน Network แล้ว"
+            },
+
+            {
+                title: "ตรวจสอบสิทธิ์",
+
+                text:
+                    "ตรวจสอบ Permission ของผู้ใช้งานที่ต้องการเข้าถึงไฟล์"
+            }
+
+        ],
+
+        warning:
+            "ไม่ควรเปิดสิทธิ์การเข้าถึงไฟล์ให้ทุกคนโดยไม่จำเป็น",
+
+        summary:
+            "ตรวจสอบ Network, Folder Sharing และ Permission ของผู้ใช้งาน"
+
+
+    },
+
+
+
+    network11: {
+
+        title: "มองไม่เห็นคอมพิวเตอร์ใน Network",
+
+        description:
+            "ไม่พบคอมพิวเตอร์เครื่องอื่นที่อยู่ในเครือข่ายเดียวกัน",
+
+        time: "15–30 นาที",
+
+        symptoms: [
+
+            "Network ใน File Explorer ไม่แสดงเครื่องอื่น",
+
+            "ไม่สามารถค้นหาเครื่องอื่น",
+
+            "ไม่สามารถเข้าถึง Shared Folder"
+
+        ],
+
+        tools: [
+
+            "File Explorer",
+
+            "Windows Network Settings",
+
+            "Network Discovery"
+
+        ],
+
+        steps: [
+
+            {
+                title: "ตรวจสอบ Network",
+
+                text:
+                    "ตรวจสอบว่าทุกเครื่องเชื่อมต่อ Network เดียวกัน"
+            },
+
+            {
+                title: "เปิด Network Discovery",
+
+                text:
+                    "ตรวจสอบว่า Network Discovery เปิดใช้งานอยู่"
+            },
+
+            {
+                title: "ตรวจสอบ Firewall",
+
+                text:
+                    "ตรวจสอบ Firewall ว่าไม่ได้ปิดกั้นการค้นหาอุปกรณ์ใน Network"
+            }
+
+        ],
+
+        warning:
+            "ควรเปิด Network Discovery เฉพาะเครือข่ายที่เชื่อถือได้",
+
+        summary:
+            "ตรวจสอบ Network Discovery และการตั้งค่า Firewall เพื่อให้ค้นพบอุปกรณ์ในเครือข่าย"
+
+
+    },
+
+
+
+    network12: {
+
+        title: "Network เชื่อมต่อแล้วแต่ใช้งานไม่ได้",
+
+        description:
+            "Windows แสดงสถานะว่าเชื่อมต่อ Network แล้ว แต่ไม่สามารถใช้งานอินเทอร์เน็ตได้",
+
+        time: "10–25 นาที",
+
+        symptoms: [
+
+            "Wi-Fi แสดง Connected",
+
+            "เปิดเว็บไซต์ไม่ได้",
+
+            "โปรแกรมไม่สามารถใช้อินเทอร์เน็ต"
+
+        ],
+
+        tools: [
+
+            "Router",
+
+            "Windows Network Settings",
+
+            "Command Prompt"
+
+        ],
+
+        steps: [
+
+            {
+                title: "ตรวจสอบ Router",
+
+                text:
+                    "ตรวจสอบว่า Router สามารถเชื่อมต่ออินเทอร์เน็ตจากผู้ให้บริการได้"
+            },
+
+            {
+                title: "ตรวจสอบ IP และ DNS",
+
+                text:
+                    "ตรวจสอบ IP Address และ DNS Configuration ของเครื่อง"
+            },
+
+            {
+                title: "ทดสอบการเชื่อมต่อ",
+
+                text:
+                    "ทดสอบการเชื่อมต่อ Network และทดลองเปิดเว็บไซต์อีกครั้ง"
+            }
+
+        ],
+
+        warning:
+            "หากมีหลายอุปกรณ์ใช้งานไม่ได้พร้อมกัน ปัญหาอาจอยู่ที่ Router หรือผู้ให้บริการอินเทอร์เน็ต",
+
+        summary:
+            "ตรวจสอบ Router, IP Address และ DNS เพื่อหาสาเหตุที่ Network เชื่อมต่อแต่ใช้งานไม่ได้"
+
+    }
+
+};
+
+
+
+/* =========================
+   อ่าน ID จาก URL
+========================= */
+
+const params =
+    new URLSearchParams(
+        window.location.search
+    );
+
+
+const id =
+    params.get("id");
+
+
+const data =
+    networkData[id];
+
+
+
+/* =========================
+   แสดงข้อมูล
+========================= */
+
+if (data) {
+
+
+    document.getElementById(
+        "repairTitle"
+    ).textContent =
+        data.title;
+
+
+    document.getElementById(
+        "repairDescription"
+    ).textContent =
+        data.description;
+
+
+    document.getElementById(
+        "repairTime"
+    ).textContent =
+        data.time;
+
+
+
+    /* Symptoms */
+
+    const symptomList =
+        document.getElementById(
+            "symptomList"
+        );
+
+
+    symptomList.innerHTML = "";
+
+
+    data.symptoms.forEach(
+        function(item) {
+
+            const li =
+                document.createElement("li");
+
+            li.textContent =
+                item;
+
+            symptomList.appendChild(li);
+
+        }
+    );
+
+
+
+    /* Tools */
+
+    const toolsList =
+        document.getElementById(
+            "toolsList"
+        );
+
+
+    toolsList.innerHTML = "";
+
+
+    data.tools.forEach(
+        function(item) {
+
+            const li =
+                document.createElement("li");
+
+            li.textContent =
+                item;
+
+            toolsList.appendChild(li);
+
+        }
+    );
+
+
+
+    /* Steps */
+
+    const stepsList =
+        document.getElementById(
+            "stepsList"
+        );
+
+
+    stepsList.innerHTML = "";
+
+
+    data.steps.forEach(
+        function(step, index) {
+
+
+            const stepBox =
+                document.createElement("div");
+
+
+            stepBox.className =
+                "repair-step";
+
+
+            stepBox.innerHTML = `
+
+                <div class="step-number">
+
+                    ${index + 1}
+
+                </div>
+
+
+                <div class="step-text">
+
+                    <h3>
+                        ${step.title}
+                    </h3>
+
+
+                    <p>
+                        ${step.text}
+                    </p>
+
+                </div>
+
+            `;
+
+
+            stepsList.appendChild(
+                stepBox
+            );
+
+        }
+    );
+
+
+
+    /* Warning */
+
+    document.getElementById(
+        "warningText"
+    ).textContent =
+        data.warning;
+
+
+
+    /* Summary */
+
+    document.getElementById(
+        "summaryText"
+    ).textContent =
+        data.summary;
+
+
+
+    /* Image */
+const image = document.getElementById("repairImage");
+const placeholder = document.getElementById("imagePlaceholder");
+
+image.src = "images/" + id + "_thumb.png";
+
+image.onload = function () {
+    image.style.display = "block";
+    placeholder.style.display = "none";
+};
+
+image.onerror = function () {
+    image.style.display = "none";
+    placeholder.style.display = "block";
+};
+
+
+    /* =========================
+       My Library
+    ========================= */
+
+    updateSaveButton();
+
+}
+
+else {
+
+
+    document.getElementById(
+        "repairTitle"
+    ).textContent =
+        "ไม่พบข้อมูล";
+
+
+    document.getElementById(
+        "repairDescription"
+    ).textContent =
+        "ไม่พบข้อมูลปัญหาที่ต้องการ";
+
+}
+
+
+
+/* =========================
+   บันทึกบทความลง My Library
+========================= */
+
+function saveCurrentArticle() {
+
+
+    /* ตรวจสอบ Login */
+
+    const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+
+
+    if (!isLoggedIn) {
+
+        window.location.href =
+            "login.html";
+
+        return;
+
+    }
+
+
+    /* ดึง Username */
+
+    const username = activeUser.uid;
+
+
+    if (!username) {
+
+        window.location.href =
+            "login.html";
+
+        return;
+
+    }
+
+
+    /* ตรวจสอบข้อมูล */
+
+    if (!data || !id) {
+
+        return;
+
+    }
+
+
+    /* Key สำหรับเก็บ Library */
+
+    const libraryKey =
+        "savedArticles_" + username;
+
+
+    let savedArticles =
+        JSON.parse(
+            localStorage.getItem(libraryKey)
+        ) || [];
+
+
+    /* ตรวจสอบว่าบันทึกแล้วหรือยัง */
+
+    const alreadySaved =
+        savedArticles.some(
+            function(article) {
+
+                return article.id === id;
+
+            }
+        );
+
+
+    if (alreadySaved) {
+
+        updateSaveButton();
+
+        return;
+
+    }
+
+
+    /* เพิ่มบทความลง Library */
+
+    savedArticles.push({
+
+        id: id,
+
+        title: data.title,
+
+        summary: data.description,
+
+        image:
+            "images/" +
+            id +
+            "_detail.webp",
+
+        category:
+            "Network",
+
+        savedDate:
+            new Date().toLocaleDateString("th-TH")
+
+    });
+
+
+    /* บันทึกลง LocalStorage */
+
+    localStorage.setItem(
+
+        libraryKey,
+
+        JSON.stringify(savedArticles)
+
+    );
+
+
+    /* อัปเดตปุ่ม */
+
+    updateSaveButton();
+
+}
+
+
+
+/* =========================
+   ตรวจสอบสถานะปุ่ม
+========================= */
+
+function updateSaveButton() {
+
+
+    const button =
+        document.getElementById(
+            "saveArticleButton"
+        );
+
+
+    if (!button) {
+
+        return;
+
+    }
+
+
+    const username =
+        localStorage.getItem(
+            "currentUser"
+        );
+
+
+    /* ยังไม่ได้ Login */
+
+    if (!username) {
+
+        button.textContent =
+            "📚 บันทึกบทความ";
+
+        button.classList.remove(
+            "saved"
+        );
+
+        return;
+
+    }
+
+
+    /* Key ของ Library */
+
+    const libraryKey =
+        "savedArticles_" +
+        username;
+
+
+    const savedArticles =
+        JSON.parse(
+            localStorage.getItem(
+                libraryKey
+            )
+        ) || [];
+
+
+    /* ตรวจสอบบทความปัจจุบัน */
+
+    const alreadySaved =
+        savedArticles.some(
+            function(article) {
+
+                return article.id === id;
+
+            }
+        );
+
+
+    if (alreadySaved) {
+
+        button.textContent =
+            "✓ บันทึกแล้ว";
+
+        button.classList.add(
+            "saved"
+        );
+
+    }
+
+    else {
+
+        button.textContent =
+            "📚 บันทึกบทความ";
+
+        button.classList.remove(
+            "saved"
+        );
+
+    }
+
+}
+
+</script>
+
+
+<script src="admin-panel.js" defer></script>
+    <script type="module" src="firebase-auth.js"></script>
+    <script src="satisfaction-popup.js" defer></script>
+</body>
+
+</html>
